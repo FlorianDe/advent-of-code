@@ -26,6 +26,9 @@ class Day04 {
     }
 
     private fun exactlyAtLeastOnePairOfTwoFollowingDigits(num: Int): Boolean {
+        if (num < 100) {
+            return num % 10 == (num / 10) % 10
+        }
         val intArray = num.toString().chunked(1).map { Integer.parseInt(it) }.toIntArray()
         if ((intArray[0] == intArray[1] && intArray[1] != intArray[2]) || (intArray[intArray.size - 3] != intArray[intArray.size - 2] && intArray[intArray.size - 2] == intArray[intArray.size - 1])) {
             return true
@@ -39,14 +42,14 @@ class Day04 {
     }
 
     fun part1(): String {
-        return countStuff { minTwoDigitsRegex.containsMatchIn(it.toString()) }
+        return countValidCombinations { minTwoDigitsRegex.containsMatchIn(it.toString()) }
     }
 
     fun part2(): String {
-        return countStuff { exactlyAtLeastOnePairOfTwoFollowingDigits(it) }
+        return countValidCombinations { exactlyAtLeastOnePairOfTwoFollowingDigits(it) }
     }
 
-    private fun countStuff(pred: (Int) -> Boolean): String {
+    private fun countValidCombinations(pred: (Int) -> Boolean): String {
         return getRange(INPUT_DAY_04)
             .asSequence()
             .filter { it in 100_000..999999 }
