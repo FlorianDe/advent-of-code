@@ -1,6 +1,8 @@
 package de.florian.adventofcode.y2019
 
-fun main() {
+fun main() { Day02().exec() }
+
+class Day02 : DayAoc2019() {
     fun convertToOpcodes(input: String): (IntArray) = input.split(",").map { it.toInt() }.toIntArray()
 
     fun IntArray.run(): IntArray {
@@ -25,26 +27,27 @@ fun main() {
         opcodes: IntArray,
         nounRange: IntRange,
         verbRange: IntRange,
-        predicate: (IntArray, Int, Int) -> Boolean = { _, _, _ -> false }
-    ) {
+        predicate: (IntArray) -> Boolean = { _ -> false }
+    ): IntArray {
+        var resOps : IntArray = opcodes
         outerloop@
         for (noun in nounRange) {
             for (verb in verbRange) {
-                val resOps = runOpCodesWithNounVerbSet(opcodes, noun, verb)
-                if (predicate(resOps, noun, verb)) break@outerloop
+                resOps = runOpCodesWithNounVerbSet(opcodes, noun, verb)
+                if (predicate(resOps))  break@outerloop
             }
         }
+        return resOps
     }
-
 
     val convertToOpcodes = convertToOpcodes(INPUT_DAY_02)
 
-    val print1 = runOpCodesWithNounVerbSet(convertToOpcodes, 12, 2)[0]
-    println("Print 1: $print1")
+    override fun part1(): String {
+        return runOpCodesWithNounVerbSet(convertToOpcodes, 12, 2)[0].toString()
+    }
 
-    runOpCodesWithNounVerbRange(convertToOpcodes, 0..99, 0..99) { ops, noun, verb ->
-        val res = ops[0] == 19690720
-        if (res) println("Print 2: ${100 * noun + verb}")
-        res
+    override fun part2(): String {
+        val a = runOpCodesWithNounVerbRange(convertToOpcodes, 0..99, 0..99) { ops -> ops[0] == 19690720 }
+        return (100 * a[1] + a[2]).toString()
     }
 }

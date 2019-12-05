@@ -1,12 +1,8 @@
 package de.florian.adventofcode.y2019
 
-fun main() {
-    val day04 = Day04()
-    println("Part1: ${day04.part1()}")
-    println("Part2: ${day04.part2()}")
-}
+fun main() { Day04().exec() }
 
-class Day04 {
+class Day04 : DayAoc2019() {
     private val minTwoDigitsRegex = """(\d)\1""".toRegex()
 
     private fun getRange(input: String): IntRange {
@@ -41,11 +37,11 @@ class Day04 {
         return false
     }
 
-    fun part1(): String {
+    override fun part1(): String {
         return countValidCombinations { minTwoDigitsRegex.containsMatchIn(it.toString()) }
     }
 
-    fun part2(): String {
+    override fun part2(): String {
         return countValidCombinations { exactlyAtLeastOnePairOfTwoFollowingDigits(it) }
     }
 

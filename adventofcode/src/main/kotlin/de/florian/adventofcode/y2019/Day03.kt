@@ -2,13 +2,9 @@ package de.florian.adventofcode.y2019
 
 import de.florian.adventofcode.y2019.Direction.*
 
-fun main() {
-    val day03 = Day03()
-    println("Part1: ${day03.part1()}")
-    println("Part2: ${day03.part2()}")
-}
+fun main() { Day03().exec() }
 
-class Day03 {
+class Day03 : DayAoc2019() {
     private val lines = getLines(INPUT_DAY_03)
     private val result = getIntersectionsAndCenter(lines)
 
@@ -26,14 +22,14 @@ class Day03 {
         .zipWithNext()
         .first()
 
-    fun part1(): String {
+    override fun part1(): String {
         return result.first
             .filter { it != result.second }
             .map { it.manhattanDistance(result.second) }
             .min().toString()
     }
 
-    fun part2(): String {
+    override fun part2(): String {
         val stepsToIntersection = mutableSetOf<Pair<Point, Int>>()
         for (intersection in result.first) {
             stepsToIntersection.add(Pair(intersection, lines.first.calcSteps(result.second, intersection)+lines.second.calcSteps(result.second, intersection)))
