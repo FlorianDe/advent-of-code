@@ -4,24 +4,20 @@ import com.sun.javaws.exceptions.InvalidArgumentException
 import de.florian.adventofcode.y2019.Instruction.*
 import kotlin.math.pow
 
-fun main() {
-    val day05 = Day05()
-    println("Part1: ${day05.part1()}")
-    println("Part2: ${day05.part2()}")
-}
+fun main() { Day05().exec() }
 
-class Day05 {
+class Day05 : DayAoc2019() {
     val memory = convertToOpcodes(INPUT_DAY_05)
 
     fun convertToOpcodes(input: String): (IntArray) = input.split(",").map { it.toInt() }.toIntArray()
 
-    fun part1(): String {
+    override fun part1(): String {
         val computerProgram = ComputerProgram(memory)
         computerProgram.input = 1
         return computerProgram.run().last().toString()
     }
 
-    fun part2(): String {
+    override fun part2(): String {
         val computerProgram = ComputerProgram(convertToOpcodes(INPUT_DAY_05))
         computerProgram.input = 5
         return computerProgram.run().last().toString()
