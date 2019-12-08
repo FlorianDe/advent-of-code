@@ -1,6 +1,6 @@
-package de.florian.adventofcode.y2019
+package de.florian.adventofcode
 
-abstract class DayAoc2019 {
+abstract class AoCDay {
     abstract fun part1(): String
     abstract fun part2(): String
 

@@ -1,25 +1,28 @@
 package de.florian.adventofcode.y2019
 
-import com.sun.javaws.exceptions.InvalidArgumentException
+import de.florian.adventofcode.AoCDay
+import de.florian.adventofcode.util.Collection.Store
 import de.florian.adventofcode.y2019.Instruction.*
+import java.util.concurrent.Callable
+import java.util.concurrent.LinkedBlockingQueue
 import kotlin.math.pow
 
 fun main() { Day05().exec() }
 
-class Day05 : DayAoc2019() {
-    val memory = convertToOpcodes(INPUT_DAY_05)
+class Day05 : AoCDay() {
+    private val memory = convertToOpcodes(Inputs_2019.DAY_05)
 
-    fun convertToOpcodes(input: String): (IntArray) = input.split(",").map { it.toInt() }.toIntArray()
+    private fun convertToOpcodes(input: String): (IntArray) = input.split(",").map { it.toInt() }.toIntArray()
 
     override fun part1(): String {
         val computerProgram = ComputerProgram(memory)
-        computerProgram.input = 1
+        computerProgram.inputs.put(1)
         return computerProgram.run().last().toString()
     }
 
     override fun part2(): String {
-        val computerProgram = ComputerProgram(convertToOpcodes(INPUT_DAY_05))
-        computerProgram.input = 5
+        val computerProgram = ComputerProgram(convertToOpcodes(Inputs_2019.DAY_05))
+        computerProgram.inputs.put(5)
         return computerProgram.run().last().toString()
     }
 }
@@ -36,12 +39,7 @@ enum class Instruction(val opCode: Int, val parameterCount: Int = 0) {
     STOP(99);
 
     companion object {
-        val map : Map<Int, Instruction> = values().map { it.opCode to it }.toMap()
-
-        fun valueOfOpCode(opCode: Int): Instruction {
-            map[opCode]?.let { return it }
-            throw InvalidArgumentException(arrayOf("Object with id $opCode not supported atm."))
-        }
+        val store = Store(values()) {it.opCode to it}
     }
 }
 
@@ -50,12 +48,7 @@ enum class ParameterMode(val modeCode: Int) {
     IMMEDIATE(1);
 
     companion object {
-        val map = values().map { it.modeCode to it }.toMap()
-
-        fun valueOfModeCode(modeCode: Int): ParameterMode {
-            map[modeCode]?.let { return it }
-            throw InvalidArgumentException(arrayOf("Object with id $modeCode not supported atm."))
-        }
+        val store = Store(values()) {it.modeCode to it}
     }
 }
 
@@ -64,21 +57,22 @@ class Operation(memory: Int) {
     val parameters: Array<ParameterMode>
 
     init {
-        this.instruction = Instruction.valueOfOpCode(memory % 100)
+        this.instruction = Instruction.store.of(memory % 100)
         if(this.instruction.parameterCount < 1){
             this.parameters = emptyArray()
         } else {
             parameters = Array(instruction.parameterCount) {
-                ParameterMode.valueOfModeCode(memory/10.0.pow(it+2).toInt()%10)
+                ParameterMode.store.of(memory/10.0.pow(it+2).toInt()%10)
             }
         }
     }
 }
 
-class ComputerProgram(memory: IntArray) {
+class ComputerProgram(memory: IntArray, val name: String = "default-name") : Callable<Pair<String, Int>> {
     val opcodes = memory.copyOf()
-    var input = 0
+    var inputs = LinkedBlockingQueue<Int>()
     var diagnosticCode = mutableListOf<Int>()
+    var outputs = LinkedBlockingQueue<Int>()
 
     fun run() : List<Int> {
         var op: Operation
@@ -96,7 +90,7 @@ class ComputerProgram(memory: IntArray) {
             when(op.instruction){
                 ADD -> opcodes[resultAddress] =  getValue(op, pos, 1) + getValue(op, pos, 2)
                 MULTIPLY -> opcodes[resultAddress] = getValue(op, pos, 1) * getValue(op, pos, 2)
-                STORE -> opcodes[resultAddress] =  input
+                STORE -> opcodes[resultAddress] =  inputs.take()
                 JIT -> if( getValue(op, pos, 1) != 0) {
                     pos = getValue(op, pos, 2)
                     posModified=true
@@ -107,7 +101,11 @@ class ComputerProgram(memory: IntArray) {
                 }
                 LT -> opcodes[resultAddress] = if( getValue(op, pos, 1) < getValue(op, pos, 2)) 1 else 0
                 EQ -> opcodes[resultAddress] = if( getValue(op, pos, 1) == getValue(op, pos, 2)) 1 else 0
-                OUTPUT -> diagnosticCode.add(opcodes[getAddress(op.parameters[op.parameters.size-1], pos+op.parameters.size)])
+                OUTPUT -> {
+                    val output = opcodes[getAddress(op.parameters[op.parameters.size - 1], pos + op.parameters.size)]
+                    diagnosticCode.add(output)
+                    outputs.put(output)
+                }
             }
             if(!posModified) {
                 pos += op.instruction.parameterCount + 1
@@ -123,5 +121,9 @@ class ComputerProgram(memory: IntArray) {
 
     private fun getAddress(paramMode: ParameterMode, address: Int) : Int{
         return if (paramMode == ParameterMode.IMMEDIATE) address else opcodes[address]
+    }
+
+    override fun call(): Pair<String, Int> {
+        return Pair(name, run().last())
     }
 }
