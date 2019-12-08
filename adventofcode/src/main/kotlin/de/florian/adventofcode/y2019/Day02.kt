@@ -1,8 +1,10 @@
 package de.florian.adventofcode.y2019
 
+import de.florian.adventofcode.AoCDay
+
 fun main() { Day02().exec() }
 
-class Day02 : DayAoc2019() {
+class Day02 : AoCDay() {
     fun convertToOpcodes(input: String): (IntArray) = input.split(",").map { it.toInt() }.toIntArray()
 
     fun IntArray.run(): IntArray {
@@ -40,7 +42,7 @@ class Day02 : DayAoc2019() {
         return resOps
     }
 
-    val convertToOpcodes = convertToOpcodes(INPUT_DAY_02)
+    val convertToOpcodes = convertToOpcodes(Inputs_2019.DAY_02)
 
     override fun part1(): String {
         return runOpCodesWithNounVerbSet(convertToOpcodes, 12, 2)[0].toString()

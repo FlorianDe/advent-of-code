@@ -1,11 +1,12 @@
 package de.florian.adventofcode.y2019
 
+import de.florian.adventofcode.AoCDay
 import de.florian.adventofcode.y2019.Direction.*
 
 fun main() { Day03().exec() }
 
-class Day03 : DayAoc2019() {
-    private val lines = getLines(INPUT_DAY_03)
+class Day03 : AoCDay() {
+    private val lines = getLines(Inputs_2019.DAY_03)
     private val result = getIntersectionsAndCenter(lines)
 
     private fun getLines(input: String) = input

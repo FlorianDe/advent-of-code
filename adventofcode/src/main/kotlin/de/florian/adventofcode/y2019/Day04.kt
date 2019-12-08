@@ -1,8 +1,10 @@
 package de.florian.adventofcode.y2019
 
+import de.florian.adventofcode.AoCDay
+
 fun main() { Day04().exec() }
 
-class Day04 : DayAoc2019() {
+class Day04 : AoCDay() {
     private val minTwoDigitsRegex = """(\d)\1""".toRegex()
 
     private fun getRange(input: String): IntRange {
@@ -46,7 +48,7 @@ class Day04 : DayAoc2019() {
     }
 
     private fun countValidCombinations(pred: (Int) -> Boolean): String {
-        return getRange(INPUT_DAY_04)
+        return getRange(Inputs_2019.DAY_04)
             .asSequence()
             .filter { it in 100_000..999999 }
             .filter { isIncreasingNumber(it) }
