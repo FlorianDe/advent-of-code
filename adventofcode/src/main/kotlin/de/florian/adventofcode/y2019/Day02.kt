@@ -2,7 +2,9 @@ package de.florian.adventofcode.y2019
 
 import de.florian.adventofcode.AoCDay
 
-fun main() { Day02().exec() }
+fun main() {
+    Day02().exec()
+}
 
 class Day02 : AoCDay() {
     fun convertToOpcodes(input: String): (IntArray) = input.split(",").map { it.toInt() }.toIntArray()
@@ -31,12 +33,12 @@ class Day02 : AoCDay() {
         verbRange: IntRange,
         predicate: (IntArray) -> Boolean = { _ -> false }
     ): IntArray {
-        var resOps : IntArray = opcodes
+        var resOps: IntArray = opcodes
         outerloop@
         for (noun in nounRange) {
             for (verb in verbRange) {
                 resOps = runOpCodesWithNounVerbSet(opcodes, noun, verb)
-                if (predicate(resOps))  break@outerloop
+                if (predicate(resOps)) break@outerloop
             }
         }
         return resOps
