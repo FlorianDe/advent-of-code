@@ -2,7 +2,7 @@ package de.florian.adventofcode.y2019
 
 import de.florian.adventofcode.AoCDay
 import de.florian.adventofcode.util.permute
-import java.util.LinkedList
+import java.util.*
 import java.util.concurrent.Executors
 import java.util.concurrent.Future
 
@@ -45,12 +45,12 @@ class Day07 : AoCDay() {
         val permThrusterOutput = mutableMapOf<List<Int>, Int>()
         val perms = listOf(5, 6, 7, 8, 9).permute()
         for (perm in perms) {
-            val programs = Array(perm.size) {ComputerProgram(memory, "Computer-${(65+it).toChar()}")}
+            val programs = Array(perm.size) { ComputerProgram(memory, "Computer-${(65 + it).toChar()}") }
             for (i in programs.indices) {
-                programs[Math.floorMod(i -1 , programs.size)].outputs.put(perm[i])
-                programs[i].inputs = programs[Math.floorMod(i -1 , programs.size)].outputs
+                programs[Math.floorMod(i - 1, programs.size)].outputs.put(perm[i])
+                programs[i].inputs = programs[Math.floorMod(i - 1, programs.size)].outputs
             }
-            programs[programs.size-1].outputs.put(0)
+            programs[programs.size - 1].outputs.put(0)
             val executor = Executors.newFixedThreadPool(programs.size)
             val futures = LinkedList<Future<Pair<String, Int>>>()
             for (i in programs.indices) {
@@ -58,7 +58,7 @@ class Day07 : AoCDay() {
             }
             for (future in futures) {
                 val computerResult = future.get()
-                if("Computer-E" == computerResult.first){
+                if ("Computer-E" == computerResult.first) {
                     permThrusterOutput[perm] = computerResult.second
                 }
             }

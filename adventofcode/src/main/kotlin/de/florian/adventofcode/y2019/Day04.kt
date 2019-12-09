@@ -2,7 +2,9 @@ package de.florian.adventofcode.y2019
 
 import de.florian.adventofcode.AoCDay
 
-fun main() { Day04().exec() }
+fun main() {
+    Day04().exec()
+}
 
 class Day04 : AoCDay() {
     private val minTwoDigitsRegex = """(\d)\1""".toRegex()

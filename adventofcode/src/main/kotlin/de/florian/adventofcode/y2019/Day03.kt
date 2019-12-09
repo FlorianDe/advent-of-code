@@ -3,7 +3,9 @@ package de.florian.adventofcode.y2019
 import de.florian.adventofcode.AoCDay
 import de.florian.adventofcode.y2019.Direction.*
 
-fun main() { Day03().exec() }
+fun main() {
+    Day03().exec()
+}
 
 class Day03 : AoCDay() {
     private val lines = getLines(Inputs_2019.DAY_03)
@@ -33,7 +35,15 @@ class Day03 : AoCDay() {
     override fun part2(): String {
         val stepsToIntersection = mutableSetOf<Pair<Point, Int>>()
         for (intersection in result.first) {
-            stepsToIntersection.add(Pair(intersection, lines.first.calcSteps(result.second, intersection)+lines.second.calcSteps(result.second, intersection)))
+            stepsToIntersection.add(
+                Pair(
+                    intersection,
+                    lines.first.calcSteps(result.second, intersection) + lines.second.calcSteps(
+                        result.second,
+                        intersection
+                    )
+                )
+            )
         }
 
         return stepsToIntersection
@@ -49,7 +59,7 @@ class Day03 : AoCDay() {
         val coordOffsetX = Math.min(bb1.first.x, bb2.first.x)
         val maxHeight = Math.max(bb1.second.y, bb2.second.y)
         val maxWidth = Math.max(bb1.second.x, bb2.second.x)
-        val breadboard = Array(maxHeight - coordOffsetY + 1) {Array(maxWidth - coordOffsetX + 1) {false} }
+        val breadboard = Array(maxHeight - coordOffsetY + 1) { Array(maxWidth - coordOffsetX + 1) { false } }
 
         val center = Point(-coordOffsetY, -coordOffsetX)
 
@@ -66,7 +76,7 @@ class Day03 : AoCDay() {
         for (direction in lines.second.directions) {
             for (i in 0 until direction.second) {
                 curPos = direction.first.operation(curPos)
-                if(breadboard[curPos.y][curPos.x]) {
+                if (breadboard[curPos.y][curPos.x]) {
                     intersections.add(curPos.copy())
                 }
             }
@@ -75,8 +85,9 @@ class Day03 : AoCDay() {
         return Pair(intersections, center)
     }
 }
-data class Point(val y: Int, val x: Int){
-    fun manhattanDistance(point: Point) : Int{
+
+data class Point(val y: Int, val x: Int) {
+    fun manhattanDistance(point: Point): Int {
         return Math.abs(this.x - point.x) + Math.abs(this.y - point.y)
     }
 
@@ -92,21 +103,21 @@ data class Point(val y: Int, val x: Int){
     }
 }
 
-enum class Direction(val operation : (Point) -> Point) {
-    R({p -> Point(p.y, p.x+1)}),
-    D({p -> Point(p.y-1, p.x)}),
-    L({p -> Point(p.y, p.x-1)}),
-    U({p -> Point(p.y+1, p.x)})
+enum class Direction(val operation: (Point) -> Point) {
+    R({ p -> Point(p.y, p.x + 1) }),
+    D({ p -> Point(p.y - 1, p.x) }),
+    L({ p -> Point(p.y, p.x - 1) }),
+    U({ p -> Point(p.y + 1, p.x) })
 }
 
 class Line(val directions: List<Pair<Direction, Int>>) {
 
-    fun calcSteps(center: Point, point: Point) : Int{
+    fun calcSteps(center: Point, point: Point): Int {
         var steps = 0
         var curPos = Point(center.y, center.x)
 
         for (direction in directions) {
-            for (i in 0 until direction.second){
+            for (i in 0 until direction.second) {
                 curPos = direction.first.operation(curPos)
                 steps++
                 if (curPos == point) {
@@ -117,7 +128,7 @@ class Line(val directions: List<Pair<Direction, Int>>) {
         return -1
     }
 
-    fun boundingBox() : Pair<Point, Point>{
+    fun boundingBox(): Pair<Point, Point> {
         var minWidth = 0
         var maxWidth = 0
 
@@ -127,26 +138,26 @@ class Line(val directions: List<Pair<Direction, Int>>) {
         var curWidth = 0
         var curHeight = 0
         for (direction in directions) {
-            when(direction.first){
+            when (direction.first) {
                 R -> {
                     curWidth += direction.second
-                    if(curWidth > maxWidth) maxWidth = curWidth
+                    if (curWidth > maxWidth) maxWidth = curWidth
                 }
                 D -> {
                     curHeight -= direction.second
-                    if(curHeight < minHeight) minHeight = curHeight
+                    if (curHeight < minHeight) minHeight = curHeight
                 }
                 L -> {
                     curWidth -= direction.second
-                    if(curWidth < minWidth) minWidth = curWidth
+                    if (curWidth < minWidth) minWidth = curWidth
                 }
                 U -> {
                     curHeight += direction.second
-                    if(curHeight > maxHeight) maxHeight = curHeight
+                    if (curHeight > maxHeight) maxHeight = curHeight
                 }
             }
         }
 
-        return Pair(Point(minHeight, minWidth),Point(maxHeight, maxWidth))
+        return Pair(Point(minHeight, minWidth), Point(maxHeight, maxWidth))
     }
 }
