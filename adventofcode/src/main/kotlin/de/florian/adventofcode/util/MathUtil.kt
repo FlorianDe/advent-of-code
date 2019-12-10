@@ -16,5 +16,8 @@ abstract class Math {
             return perms
         }
     }
+    class Point{
+        atan2((target.x - x).toDouble(), (target.y - y).toDouble())
+    }
 }
 fun <T> List<T>.permute() = Math.permute(this)
