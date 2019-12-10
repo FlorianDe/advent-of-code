@@ -16,6 +16,6 @@ class Day09 : AoCDay() {
     }
 
     override fun part2(): String {
-        return ComputerProgram(memory, listOf(BigInteger.TWO)).also { it.run() }.outputs.last().toString()
+        return ComputerProgram(memory, listOf(BigInteger.valueOf(2))).also { it.run() }.outputs.last().toString()
     }
 }
