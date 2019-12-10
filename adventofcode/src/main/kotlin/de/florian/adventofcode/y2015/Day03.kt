@@ -1,7 +1,7 @@
 package de.florian.adventofcode.y2015
 
 import de.florian.adventofcode.AoCDay
-import de.florian.adventofcode.util.Collection.Store
+import de.florian.adventofcode.util.CollectionsUtil.Store
 
 fun main() {
     Day03().exec()

@@ -1,7 +1,9 @@
 package de.florian.adventofcode.y2019
 
-import de.florian.adventofcode.util.Collection
+import de.florian.adventofcode.util.CollectionsUtil
 import de.florian.adventofcode.y2019.Instruction.*
+import de.florian.adventofcode.y2019.ParameterMode.*
+import java.math.BigInteger
 import java.util.concurrent.Callable
 import java.util.concurrent.LinkedBlockingQueue
 import kotlin.math.pow
@@ -15,19 +17,21 @@ enum class Instruction(val opCode: Int, val parameterCount: Int = 0) {
     JIF(6, 2),
     LT(7, 3),
     EQ(8, 3),
+    ARB(9, 1),
     STOP(99);
 
     companion object {
-        val store = Collection.Store(values()) { it.opCode to it }
+        val store = CollectionsUtil.Store(values()) { it.opCode to it }
     }
 }
 
 enum class ParameterMode(val modeCode: Int) {
     POSITION(0),
-    IMMEDIATE(1);
-
+    IMMEDIATE(1),
+    RELATIVE(2)
+;
     companion object {
-        val store = Collection.Store(values()) { it.modeCode to it }
+        val store = CollectionsUtil.Store(values()) { it.modeCode to it }
     }
 }
 
@@ -47,41 +51,44 @@ class Operation(memory: Int) {
     }
 }
 
-class ComputerProgram(memory: IntArray, val name: String = "default-name") : Callable<Pair<String, Int>> {
-    val opcodes = memory.copyOf()
-    var inputs = LinkedBlockingQueue<Int>()
-    var diagnosticCode = mutableListOf<Int>()
-    var outputs = LinkedBlockingQueue<Int>()
+class ComputerProgram(memory: Array<BigInteger>, inputs : List<BigInteger> = emptyList(), val name: String = "default-name") : Callable<Pair<String, BigInteger>> {
+    var memory = memory.copyOf()
+    var inputs = LinkedBlockingQueue<BigInteger>(inputs)
+    var diagnosticCode = mutableListOf<BigInteger>()
+    var outputs = LinkedBlockingQueue<BigInteger>()
 
-    fun run(): List<Int> {
+    fun run(): List<BigInteger> {
         var op: Operation
         var pos = 0
+        var relativeBase = 0
         var resultAddress = 0
         do {
-            op = Operation(opcodes[pos])
+            //TODO REFACTOR
+            op = Operation(memory[pos].toInt())
 
             var posModified = false
             if (op.parameters.isNotEmpty()) {
                 val resultParameter = op.parameters[op.parameters.size - 1]
-                assert(resultParameter != ParameterMode.IMMEDIATE)
-                resultAddress = getAddress(resultParameter, pos + op.parameters.size)
+                assert(resultParameter != IMMEDIATE)
+                resultAddress = getAddress(resultParameter, pos + op.parameters.size, relativeBase)
             }
             when (op.instruction) {
-                ADD -> opcodes[resultAddress] = getValue(op, pos, 1) + getValue(op, pos, 2)
-                MULTIPLY -> opcodes[resultAddress] = getValue(op, pos, 1) * getValue(op, pos, 2)
-                STORE -> opcodes[resultAddress] = inputs.take()
-                JIT -> if (getValue(op, pos, 1) != 0) {
-                    pos = getValue(op, pos, 2)
+                ADD -> memory[resultAddress] = getValue(op, pos, relativeBase, 1) + getValue(op, pos, relativeBase, 2)
+                MULTIPLY -> memory[resultAddress] = getValue(op, pos, relativeBase, 1) * getValue(op, pos, relativeBase, 2)
+                STORE -> memory[resultAddress] = inputs.take()
+                JIT -> if (getValue(op, pos, relativeBase, 1) != BigInteger.ZERO) {
+                    pos = getValue(op, pos, relativeBase, 2).toInt()
                     posModified = true
                 }
-                JIF -> if (getValue(op, pos, 1) == 0) {
-                    pos = getValue(op, pos, 2)
+                JIF -> if (getValue(op, pos, relativeBase, 1) == BigInteger.ZERO) {
+                    pos = getValue(op, pos, relativeBase, 2).toInt()
                     posModified = true
                 }
-                LT -> opcodes[resultAddress] = if (getValue(op, pos, 1) < getValue(op, pos, 2)) 1 else 0
-                EQ -> opcodes[resultAddress] = if (getValue(op, pos, 1) == getValue(op, pos, 2)) 1 else 0
+                LT -> memory[resultAddress] = if (getValue(op, pos, relativeBase, 1) < getValue(op, pos, relativeBase, 2)) BigInteger.ONE else BigInteger.ZERO
+                EQ -> memory[resultAddress] = if (getValue(op, pos, relativeBase, 1) == getValue(op, pos, relativeBase, 2)) BigInteger.ONE else BigInteger.ZERO
+                ARB -> relativeBase += getValue(op, pos, relativeBase, 1).toInt()
                 OUTPUT -> {
-                    val output = opcodes[getAddress(op.parameters[op.parameters.size - 1], pos + op.parameters.size)]
+                    val output = memory[getAddress(op.parameters[op.parameters.size - 1], pos + op.parameters.size, relativeBase)]
                     diagnosticCode.add(output)
                     outputs.put(output)
                 }
@@ -94,15 +101,24 @@ class ComputerProgram(memory: IntArray, val name: String = "default-name") : Cal
         return diagnosticCode
     }
 
-    private fun getValue(operation: Operation, pos: Int, param: Int): Int {
-        return opcodes[getAddress(operation.parameters[param - 1], pos + param)]
+    private fun getValue(operation: Operation, pos: Int, relativeAddress: Int, param: Int): BigInteger {
+        return memory[getAddress(operation.parameters[param - 1], pos + param, relativeAddress)]
     }
 
-    private fun getAddress(paramMode: ParameterMode, address: Int): Int {
-        return if (paramMode == ParameterMode.IMMEDIATE) address else opcodes[address]
+    private fun getAddress(paramMode: ParameterMode, address: Int, relativeAddress: Int): Int {
+        val addr = when(paramMode){
+            POSITION -> memory[address].toInt()
+            IMMEDIATE -> address
+            RELATIVE -> relativeAddress+memory[address].toInt()
+        }
+        assert(addr>0)
+        if(addr>=memory.size){
+            memory = memory.plus(Array<BigInteger>(addr-memory.size+1) {BigInteger.ZERO})
+        }
+        return addr
     }
 
-    override fun call(): Pair<String, Int> {
+    override fun call(): Pair<String, BigInteger> {
         return Pair(name, run().last())
     }
 }
