@@ -1,6 +1,7 @@
 package de.florian.adventofcode.y2019
 
 import de.florian.adventofcode.AoCDay
+import de.florian.adventofcode.util.Point
 import de.florian.adventofcode.y2019.Direction.*
 
 fun main() {
@@ -61,9 +62,9 @@ class Day03 : AoCDay() {
         val maxWidth = Math.max(bb1.second.x, bb2.second.x)
         val breadboard = Array(maxHeight - coordOffsetY + 1) { Array(maxWidth - coordOffsetX + 1) { false } }
 
-        val center = Point(-coordOffsetY, -coordOffsetX)
+        val center = Point(-coordOffsetX, -coordOffsetY)
 
-        var curPos = Point(center.y, center.x)
+        var curPos = Point(center.x, center.y)
         for (direction in lines.first.directions) {
             for (i in 0 until direction.second) {
                 curPos = direction.first.operation(curPos)
@@ -72,7 +73,7 @@ class Day03 : AoCDay() {
         }
 
         val intersections = mutableSetOf<Point>()
-        curPos = Point(center.y, center.x)
+        curPos = Point(center.x, center.y)
         for (direction in lines.second.directions) {
             for (i in 0 until direction.second) {
                 curPos = direction.first.operation(curPos)
@@ -86,35 +87,18 @@ class Day03 : AoCDay() {
     }
 }
 
-data class Point(val y: Int, val x: Int) {
-    fun manhattanDistance(point: Point): Int {
-        return Math.abs(this.x - point.x) + Math.abs(this.y - point.y)
-    }
-
-    override fun equals(other: Any?): Boolean {
-        if (other == null || other !is Point || x != other.x || y != other.y) return false
-        return true
-    }
-
-    override fun hashCode(): Int {
-        var result = y
-        result = 31 * result + x
-        return result
-    }
-}
-
 enum class Direction(val operation: (Point) -> Point) {
-    R({ p -> Point(p.y, p.x + 1) }),
-    D({ p -> Point(p.y - 1, p.x) }),
-    L({ p -> Point(p.y, p.x - 1) }),
-    U({ p -> Point(p.y + 1, p.x) })
+    R({ p -> Point(p.x + 1, p.y) }),
+    D({ p -> Point(p.x, p.y - 1) }),
+    L({ p -> Point(p.x - 1, p.y) }),
+    U({ p -> Point(p.x, p.y + 1) })
 }
 
 class Line(val directions: List<Pair<Direction, Int>>) {
 
     fun calcSteps(center: Point, point: Point): Int {
         var steps = 0
-        var curPos = Point(center.y, center.x)
+        var curPos = Point(center.x, center.y)
 
         for (direction in directions) {
             for (i in 0 until direction.second) {
@@ -158,6 +142,6 @@ class Line(val directions: List<Pair<Direction, Int>>) {
             }
         }
 
-        return Pair(Point(minHeight, minWidth), Point(maxHeight, maxWidth))
+        return Pair(Point(minWidth, minHeight), Point(maxWidth, maxHeight))
     }
 }

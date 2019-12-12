@@ -1,6 +1,7 @@
 package de.florian.adventofcode.util
 
-abstract class Math {
+fun <T> List<T>.permute() = MathUtil.permute(this)
+abstract class MathUtil {
     companion object {
         fun <T> permute(input: List<T>): List<List<T>> {
             if (input.size == 1) return listOf(input)
@@ -16,8 +17,5 @@ abstract class Math {
             return perms
         }
     }
-    class Point{
-        atan2((target.x - x).toDouble(), (target.y - y).toDouble())
-    }
 }
-fun <T> List<T>.permute() = Math.permute(this)
+
