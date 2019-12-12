@@ -58,54 +58,19 @@ class Day10 : AoCDay() {
                             }
                         } else {
                             anglesPerMonitoringStation[curPoint]?.add(curPoint.angle(Point(sX, sY)))
-
-                            //y = m*x+b
-                            //var m = (sY - y).toDouble() / (sX - x)
-                            //var f: (Int) -> (Double) = { _x -> m * _x - m * sX - sY }
-
-                            //slope eq
-//                            val slopeBA = (sX+0.5 - x+0.5) / (sY+0.5 - y+0.5)
-//                            val points = mutableListOf<Point>()
-//                            val angles = mutableListOf<Double>()
-//                            for (lineY in map.indices) {
-//                                for (lineX in map[lineY].indices) {
-//                                    if (map[lineY][lineX] == "." || (y == lineY || x == lineX)) {
-//                                        continue
-//                                    }
-//                                    var slopeCA = (lineX + 0.5 - x + 0.5) / (lineY + 0.5 - y + 0.5)
-//                                    if (abs(slopeBA - slopeCA) < 0.000001) {
-//                                        points.add(Point(lineX, lineY))
-//                                    }
-//                                }
-//                            }
-//                            if (points.isNotEmpty()) {
-//                                points.minBy { it.dist(curPoint) }?.let { asteroidsPerMonitoringStation[curPoint]!![it] = true }
-//                            }
                         }
                     }
                 }
             }
         }
 
-        var countPerAsteroid = mutableMapOf<Point, Int>()
-//        var resMap = map.map{ it.clone() }.toTypedArray()
+        val countPerAsteroid = mutableMapOf<Point, Int>()
         for (mutableEntry in asteroidsPerMonitoringStation) {
             var size = mutableEntry.value.size
             val angles = anglesPerMonitoringStation[mutableEntry.key]?.distinct()?.size
-            angles?.let {
-                size += angles
-            }
+            angles?.let { size += angles }
             countPerAsteroid[mutableEntry.key] = size
-
-//            println("${mutableEntry.key} -> ${mutableEntry.value}")
-//            resMap[mutableEntry.key.y][mutableEntry.key.x] = countPerAsteroid[mutableEntry.key].toString()
         }
-//        for (y in resMap.indices) {
-//            for (x in resMap[y].indices) {
-//                print(resMap[y][x])
-//            }
-//            println()
-//        }
         return countPerAsteroid
     }
 
