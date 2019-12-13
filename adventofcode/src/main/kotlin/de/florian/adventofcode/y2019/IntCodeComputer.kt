@@ -51,7 +51,7 @@ class Operation(memory: Int) {
     }
 }
 
-class ComputerProgram(memory: Array<BigInteger>, inputs : List<BigInteger> = emptyList(), val name: String = "default-name") : Callable<Pair<String, BigInteger>> {
+class IntCodeComputer(memory: Array<BigInteger>, inputs : List<BigInteger> = emptyList(), val name: String = "default-name") : Callable<Pair<String, BigInteger>> {
     var memory = memory.copyOf()
     var inputs = LinkedBlockingQueue<BigInteger>(inputs)
     var diagnosticCode = mutableListOf<BigInteger>()
@@ -102,7 +102,8 @@ class ComputerProgram(memory: Array<BigInteger>, inputs : List<BigInteger> = emp
     }
 
     private fun getValue(operation: Operation, pos: Int, relativeAddress: Int, param: Int): BigInteger {
-        return memory[getAddress(operation.parameters[param - 1], pos + param, relativeAddress)]
+        val addr = synchronized(memory) { getAddress(operation.parameters[param - 1], pos + param, relativeAddress) }
+        return memory[addr]
     }
 
     private fun getAddress(paramMode: ParameterMode, address: Int, relativeAddress: Int): Int {

@@ -12,13 +12,13 @@ class Day05 : AoCDay() {
     private val memory = CollectionsUtil.getMemory(Inputs_2019.DAY_05)
 
     override fun part1(): String {
-        val computerProgram = ComputerProgram(memory)
+        val computerProgram = IntCodeComputer(memory)
         computerProgram.inputs.put(BigInteger.ONE)
         return computerProgram.run().last().toString()
     }
 
     override fun part2(): String {
-        val computerProgram = ComputerProgram(memory)
+        val computerProgram = IntCodeComputer(memory)
         computerProgram.inputs.put(BigInteger.valueOf(5))
         return computerProgram.run().last().toString()
     }
