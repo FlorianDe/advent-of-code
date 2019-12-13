@@ -21,9 +21,9 @@ class Day07 : AoCDay() {
         val perms = listOf(0, 1, 2, 3, 4).map { it.toBigInteger() }.permute()
 
         for (perm in perms) {
-            var programs = mutableListOf<ComputerProgram>()
+            var programs = mutableListOf<IntCodeComputer>()
             for (value in perm) {
-                val comp = ComputerProgram(memory)
+                val comp = IntCodeComputer(memory)
                 comp.inputs.put(value)
                 programs.add(comp)
             }
@@ -45,7 +45,7 @@ class Day07 : AoCDay() {
         val permThrusterOutput = mutableMapOf<List<BigInteger>, BigInteger>()
         val perms = listOf(5, 6, 7, 8, 9).map { it.toBigInteger() }.permute()
         for (perm in perms) {
-            val programs = Array(perm.size) { ComputerProgram(memory, name = "Computer-${(65 + it).toChar()}") }
+            val programs = Array(perm.size) { IntCodeComputer(memory, name = "Computer-${(65 + it).toChar()}") }
             for (i in programs.indices) {
                 programs[Math.floorMod(i - 1, programs.size)].outputs.put(perm[i])
                 programs[i].inputs = programs[Math.floorMod(i - 1, programs.size)].outputs
