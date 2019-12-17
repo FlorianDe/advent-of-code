@@ -1,5 +1,8 @@
 package de.florian.adventofcode.util
 
+import java.math.BigInteger
+
+fun BigInteger.lcm(b: BigInteger) = (this / this.gcd(b) * b)
 fun <T> List<T>.permute() = MathUtil.permute(this)
 abstract class MathUtil {
     companion object {
