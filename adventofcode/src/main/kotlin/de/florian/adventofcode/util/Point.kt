@@ -8,7 +8,10 @@ data class Point(var x: Int, var y: Int){
         DEG_180(PI/2),
         DEG_270(2*PI*(3/4.0))
     }
-
+    fun setPos(x: Int, y: Int){
+        this.x = x
+        this.y = y
+    }
     fun manhattanDistance(point: Point): Int {
         return abs(this.x - point.x) + abs(this.y - point.y)
     }
