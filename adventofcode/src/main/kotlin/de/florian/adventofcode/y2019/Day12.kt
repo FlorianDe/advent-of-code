@@ -2,9 +2,8 @@ package de.florian.adventofcode.y2019
 
 import de.florian.adventofcode.AoCDay
 import de.florian.adventofcode.util.Point3D
-import de.florian.adventofcode.util.permute
-import java.time.LocalDateTime
-import javax.swing.plaf.metal.MetalLookAndFeel
+import de.florian.adventofcode.util.lcm
+import java.math.BigInteger
 
 fun main() {
     Day12().exec()
@@ -21,7 +20,13 @@ class Day12 : AoCDay() {
             g[1]?.let { x ->
                 g[2]?.let { y ->
                     g[3]?.let { z ->
-                        planet = Planet(Point3D(Integer.valueOf(x.value), Integer.valueOf(y.value), Integer.valueOf(z.value)))
+                        planet = Planet(
+                            Point3D(
+                                Integer.valueOf(x.value),
+                                Integer.valueOf(y.value),
+                                Integer.valueOf(z.value)
+                            )
+                        )
                     }
                 }
             }
@@ -29,7 +34,7 @@ class Day12 : AoCDay() {
         planet
     }
 
-    private fun simulationStep(planets: List<Planet>) : List<Planet>{
+    private fun simulationStep(planets: List<Planet>): List<Planet> {
         var from = 1
         for (a in planets.indices) {
             for (b in from until planets.size) {
@@ -64,14 +69,14 @@ class Day12 : AoCDay() {
             planet.pos += planet.velocity
         }
 
-        return planets.map{it.copy()}
+        return planets.map { it.copy() }
     }
 
 
     override fun part1(): String {
         val planets = convertInput(Inputs_2019.DAY_12)
 
-        for(step in 1..1000) {
+        for (step in 1..1000) {
             simulationStep(planets)
         }
 
@@ -88,24 +93,24 @@ class Day12 : AoCDay() {
         statesZ.add(planets.idz())
 
         var step: Long = 1
-        var stepsX: Long  = 0
-        var stepsY: Long  = 0
-        var stepsZ: Long  = 0
-        while(true) {
+        var stepsX: Long = 0
+        var stepsY: Long = 0
+        var stepsZ: Long = 0
+        while (true) {
             val state = simulationStep(planets)
-            if(stepsX == 0L && statesX.contains(state.idx())){
+            if (stepsX == 0L && statesX.contains(state.idx())) {
                 stepsX = step
                 println("X: $stepsX")
             }
-            if(stepsY == 0L && statesY.contains(state.idy())){
+            if (stepsY == 0L && statesY.contains(state.idy())) {
                 stepsY = step
                 println("Y: $stepsX")
             }
-            if(stepsZ == 0L && statesZ.contains(state.idz())){
+            if (stepsZ == 0L && statesZ.contains(state.idz())) {
                 stepsZ = step
                 println("Z: $stepsX")
             }
-            if(stepsX > 0 && stepsY > 0 && stepsZ > 0){
+            if (stepsX > 0 && stepsY > 0 && stepsZ > 0) {
                 break
             }
             statesX.add(state.idx())
@@ -113,23 +118,15 @@ class Day12 : AoCDay() {
             statesZ.add(state.idz())
             step++
         }
-        // LCM = (n1 * n2) / GCD
-        MetalLookAndFeel.getControlDisabled()
-        return lcm(lcm(stepsX, stepsY), stepsZ).toString()
-    }
-
-    fun gcd(a: Long, b: Long): Long {
-        if (b == 0L) return a
-        return gcd(b, a % b)
-    }
-
-    fun lcm(a: Long, b: Long): Long {
-        return a / gcd(a, b) * b
+        return BigInteger.valueOf(stepsX)
+            .lcm(BigInteger.valueOf(stepsY))
+            .lcm(BigInteger.valueOf(stepsZ))
+            .toString()
     }
 
     fun List<Planet>.idx() = this.joinToString(separator = "") { "${it.pos.x}${it.velocity.x}" }
     fun List<Planet>.idy() = this.joinToString(separator = "") { "${it.pos.y}${it.velocity.y}" }
     fun List<Planet>.idz() = this.joinToString(separator = "") { "${it.pos.z}${it.velocity.z}" }
-    data class Planet(var pos: Point3D, var velocity: Point3D = Point3D(0,0,0))
+    data class Planet(var pos: Point3D, var velocity: Point3D = Point3D(0, 0, 0))
 }
 
