@@ -18,7 +18,7 @@ class Day13 : AoCDay() {
     }
 
     override fun part2(): String {
-        memory[0] = BigInteger.TWO
+        memory[0] = BigInteger.valueOf(2)
         return Game(IntCodeComputer(memory)).run().toString()
     }
 
