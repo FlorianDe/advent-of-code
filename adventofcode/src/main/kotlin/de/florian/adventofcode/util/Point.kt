@@ -25,12 +25,14 @@ data class Point(var x: Int, var y: Int){
         )
     }
 
+    operator fun plus(p: Point) = Point(this.x + p.x, this.y + p.y)
     operator fun plusAssign(p: Point) {
         this.x += p.x
         this.y += p.y
     }
 
     companion object {
+        fun zero() = Point(0,0)
         fun dist(a: Point, b: Point) : Double  = sqrt((b.y - a.y).toDouble().pow(2) + (b.y - a.y).toDouble().pow(2))
         fun angle(from: Point, to: Point) = atan2((to.x - from.x).toDouble(), (to.y - from.y).toDouble())
         fun minValues(a: Point, b: Point) = Point(min(a.x, b.x), min(a.y, b.y))
