@@ -61,7 +61,7 @@ class Day11 : AoCDay() {
         return run {
             var curDir = Point(0, 1)
             val painted = mutableMapOf<Point, BigInteger>()
-            val pos = Point(0, 0)
+            var pos = Point(0, 0)
 
             comp.inputs.put(startColor)
             while (!painter.isInterrupted) {
@@ -78,7 +78,7 @@ class Day11 : AoCDay() {
                 }
 
                 painted[pos.copy()] = color
-                pos += curDir
+                pos = curDir
                 comp.inputs.put(painted.getOrDefault(pos, BLACK))
             }
 
