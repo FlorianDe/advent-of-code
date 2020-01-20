@@ -31,6 +31,10 @@ data class Point(var x: Int, var y: Int){
         this.y += p.y
     }
 
+    operator fun unaryMinus(): Point {
+        return Point(-this.x, -this.y)
+    }
+
     companion object {
         fun zero() = Point(0,0)
         fun dist(a: Point, b: Point) : Double  = sqrt((b.y - a.y).toDouble().pow(2) + (b.y - a.y).toDouble().pow(2))
