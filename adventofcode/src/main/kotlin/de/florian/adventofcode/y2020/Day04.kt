@@ -48,20 +48,18 @@ class Day04 : AoCDay() {
     private val passports = convertInput(Inputs_2020.DAY_04)
 
     override fun part1(): String {
-        val valid: (fields: Map<String, String>) -> Boolean = { fields ->
+        return passports.count { fields ->
             PassportDataField.values()
-                .filter { it.required }
-                .all { req -> fields.containsKey(req.value)}
-        }
-        return passports.count(valid).toString()
+                    .filter { it.required }
+                    .all { req -> fields.containsKey(req.value) }
+        }.toString()
     }
 
     override fun part2(): String {
-        val valid:  (fields: Map<String, String>) -> Boolean = { fields ->
+        return passports.count { fields ->
             PassportDataField.values()
                     .filter { it.required }
-                    .all { fieldRule -> fields[fieldRule.value]?.let(fieldRule.apply) ?: false}
-        }
-        return passports.count(valid).toString()
+                    .all { fieldRule -> fields[fieldRule.value]?.let(fieldRule.apply) ?: false }
+        }.toString()
     }
 }
