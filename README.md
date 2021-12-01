@@ -3,7 +3,7 @@
 ## Languages used per year
 | Year              | Kotlin                                                                             | Python                                   |
 | ----------------- | ---------------------------------------------------------------------------------- | ---------------------------------------- |
-| [2021](#aoc-2021) | :x:                                                                                | :white_check_mark: ([here](/python/2021) |
+| [2021](#aoc-2021) | :x:                                                                                | :white_check_mark: ([here](/python/2021)) |
 | [2020](#aoc-2020) | :white_check_mark: ([here](/kotlin/src/main/kotlin/de/florian/adventofcode/y2020)) | :x:                                      |
 | [2019](#aoc-2019) | :white_check_mark: ([here](/kotlin/src/main/kotlin/de/florian/adventofcode/y2019)) | :x:                                      |
 | [2018](#aoc-2018) | :x:                                                                                | :x:                                      |
