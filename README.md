@@ -1,21 +1,22 @@
 # Advent of Code
 
 ## Languages used per year
-| Year              | Kotlin                                                                             | Python                                   |
-| ----------------- | ---------------------------------------------------------------------------------- | ---------------------------------------- |
+| Year              | Kotlin                                                                             | Python                                    |
+| ----------------- | ---------------------------------------------------------------------------------- | ----------------------------------------- |
 | [2021](#aoc-2021) | :x:                                                                                | :white_check_mark: ([here](/python/2021)) |
-| [2020](#aoc-2020) | :white_check_mark: ([here](/kotlin/src/main/kotlin/de/florian/adventofcode/y2020)) | :x:                                      |
-| [2019](#aoc-2019) | :white_check_mark: ([here](/kotlin/src/main/kotlin/de/florian/adventofcode/y2019)) | :x:                                      |
-| [2018](#aoc-2018) | :x:                                                                                | :x:                                      |
-| [2017](#aoc-2017) | :x:                                                                                | :x:                                      |
-| [2016](#aoc-2016) | :x:                                                                                | :x:                                      |
-| [2015](#aoc-2015) | :white_check_mark: ([here](/kotlin/src/main/kotlin/de/florian/adventofcode/y2015)) | :x:                                      |
+| [2020](#aoc-2020) | :white_check_mark: ([here](/kotlin/src/main/kotlin/de/florian/adventofcode/y2020)) | :x:                                       |
+| [2019](#aoc-2019) | :white_check_mark: ([here](/kotlin/src/main/kotlin/de/florian/adventofcode/y2019)) | :x:                                       |
+| [2018](#aoc-2018) | :x:                                                                                | :x:                                       |
+| [2017](#aoc-2017) | :x:                                                                                | :x:                                       |
+| [2016](#aoc-2016) | :x:                                                                                | :x:                                       |
+| [2015](#aoc-2015) | :white_check_mark: ([here](/kotlin/src/main/kotlin/de/florian/adventofcode/y2015)) | :x:                                       |
 
 ## Yearly Overview
 ### AoC 2021:
 | Day | Puzzle                                            | Python                                        |
 | --- | ------------------------------------------------- | --------------------------------------------- |
 | 01  | [Sonar Sweep](http://adventofcode.com/2020/day/1) | [Day 01 Python (2/2)](/python/2021/day_01.py) |
+| 02  | [Dive!](http://adventofcode.com/2020/day/2)       | [Day 02 Python (2/2)](/python/2021/day_02.py) |
 
 ### AoC 2020:
 | Day | Puzzle                                                         | Kotlin                                                                                |
