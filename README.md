@@ -16,8 +16,8 @@
 | Day | Puzzle                                                  | Kotlin                                                                                | Python                                        |
 | --- | ------------------------------------------------------- | ------------------------------------------------------------------------------------- | --------------------------------------------- |
 | 01  | [Sonar Sweep](http://adventofcode.com/2020/day/1)       | [Day 01 Kotlin (2/2)](/kotlin/src/main/kotlin/de/florian/adventofcode/y2021/Day01.kt) | [Day 01 Python (2/2)](/python/2021/day_01.py) |
-| 02  | [Dive!](http://adventofcode.com/2020/day/2)             | [Day 02 Kotlin (2/2)](/kotlin/src/main/kotlin/de/florian/adventofcode/y2021/Day02.kt)                                                                                     | [Day 02 Python (2/2)](/python/2021/day_02.py) |
-| 03  | [Binary Diagnostic](http://adventofcode.com/2020/day/3) | -                                                                                     | [Day 03 Python (2/2)](/python/2021/day_03.py) |
+| 02  | [Dive!](http://adventofcode.com/2020/day/2)             | [Day 02 Kotlin (2/2)](/kotlin/src/main/kotlin/de/florian/adventofcode/y2021/Day02.kt) | [Day 02 Python (2/2)](/python/2021/day_02.py) |
+| 03  | [Binary Diagnostic](http://adventofcode.com/2020/day/3) | [Day 03 Kotlin (2/2)](/kotlin/src/main/kotlin/de/florian/adventofcode/y2021/Day03.kt) | [Day 03 Python (2/2)](/python/2021/day_03.py) |
 | 04  | [Giant Squid](http://adventofcode.com/2020/day/4)       | -                                                                                     | [Day 04 Python (2/2)](/python/2021/day_04.py) |
 
 ### AoC 2020:
