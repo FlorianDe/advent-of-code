@@ -1,3 +1,4 @@
+package de.florian.adventofcode.y2020
 
 abstract class Inputs_2020 {
     companion object {
