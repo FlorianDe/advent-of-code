@@ -1,3 +1,5 @@
+package de.florian.adventofcode.y2020
+
 import de.florian.adventofcode.AoCDay
 import de.florian.adventofcode.util.BigPoint
 import java.math.BigDecimal

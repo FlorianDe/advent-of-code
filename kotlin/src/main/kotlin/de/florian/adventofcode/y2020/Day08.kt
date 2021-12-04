@@ -1,7 +1,6 @@
+package de.florian.adventofcode.y2020
+
 import de.florian.adventofcode.AoCDay
-import de.florian.adventofcode.y2020.BootCodeInterpreter
-import de.florian.adventofcode.y2020.Instruction
-import de.florian.adventofcode.y2020.Operation
 
 fun main() {
     Day08().exec()

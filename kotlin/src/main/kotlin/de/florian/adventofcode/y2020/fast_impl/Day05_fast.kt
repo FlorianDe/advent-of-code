@@ -1,4 +1,6 @@
+package de.florian.adventofcode.y2020.fast_impl
 import de.florian.adventofcode.AoCDay
+import de.florian.adventofcode.y2020.Inputs_2020
 import kotlin.system.measureTimeMillis
 
 fun main() {

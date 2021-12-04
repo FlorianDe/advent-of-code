@@ -1,3 +1,5 @@
+package de.florian.adventofcode.y2020
+
 import de.florian.adventofcode.AoCDay
 
 fun main() { Day06().exec() }
