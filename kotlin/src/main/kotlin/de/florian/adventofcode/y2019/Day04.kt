@@ -1,12 +1,14 @@
 package de.florian.adventofcode.y2019
 
 import de.florian.adventofcode.AoCDay
+import de.florian.adventofcode.Day
+import de.florian.adventofcode.Year
 
 fun main() {
     Day04().exec()
 }
 
-class Day04 : AoCDay() {
+class Day04 : AoCDay(Year.YEAR_2019, Day.DAY_04) {
     private val minTwoDigitsRegex = """(\d)\1""".toRegex()
 
     private fun getRange(input: String): IntRange {

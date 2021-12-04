@@ -1,6 +1,8 @@
 package de.florian.adventofcode.y2019
 
 import de.florian.adventofcode.AoCDay
+import de.florian.adventofcode.Day
+import de.florian.adventofcode.Year
 import de.florian.adventofcode.util.CollectionsUtil
 import de.florian.adventofcode.util.Grid
 import de.florian.adventofcode.util.Point
@@ -11,7 +13,7 @@ fun main() {
     Day17(Inputs_2019.DAY_17).exec()
 }
 
-class Day17(inputStr: String) : AoCDay() {
+class Day17(inputStr: String) : AoCDay(Year.YEAR_2019, Day.DAY_17) {
     val memory = CollectionsUtil.getMemory(inputStr)
 
     override fun part1(): String {

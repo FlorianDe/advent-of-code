@@ -1,6 +1,8 @@
 package de.florian.adventofcode.y2019
 
 import de.florian.adventofcode.AoCDay
+import de.florian.adventofcode.Day
+import de.florian.adventofcode.Year
 import de.florian.adventofcode.util.Point
 import de.florian.adventofcode.y2019.Direction.*
 
@@ -8,7 +10,7 @@ fun main() {
     Day03().exec()
 }
 
-class Day03 : AoCDay() {
+class Day03 : AoCDay(Year.YEAR_2019, Day.DAY_03) {
     private val lines = getLines(Inputs_2019.DAY_03)
     private val result = getIntersectionsAndCenter(lines)
 

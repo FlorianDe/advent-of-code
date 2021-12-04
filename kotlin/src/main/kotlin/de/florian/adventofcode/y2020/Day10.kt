@@ -1,12 +1,14 @@
 package de.florian.adventofcode.y2020
 
 import de.florian.adventofcode.AoCDay
+import de.florian.adventofcode.Day
+import de.florian.adventofcode.Year
 
 fun main() {
     Day10().exec()
 }
 
-class Day10 : AoCDay() {
+class Day10 : AoCDay(Year.YEAR_2020, Day.DAY_10) {
     private val adapters: List<Int> = Inputs_2020.DAY_10.split("\n").map { it.trim().toInt() }.sorted()
 
     override fun part1(): String {

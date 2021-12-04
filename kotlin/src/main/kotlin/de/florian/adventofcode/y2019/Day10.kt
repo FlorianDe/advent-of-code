@@ -1,6 +1,8 @@
 package de.florian.adventofcode.y2019
 
 import de.florian.adventofcode.AoCDay
+import de.florian.adventofcode.Day
+import de.florian.adventofcode.Year
 import de.florian.adventofcode.util.Point
 import de.florian.adventofcode.util.indices2DFiltered
 
@@ -9,7 +11,7 @@ fun main() {
     Day10().exec()
 }
 
-class Day10 : AoCDay() {
+class Day10 : AoCDay(Year.YEAR_2019, Day.DAY_10) {
     private fun convertInput(input: String) = input.trim().split("\n").map { it.chunked(1).toTypedArray() }.toTypedArray()
 
     fun getBestMonitoringStation(map : Array<Array<String>>): MutableMap<Point, Int> {

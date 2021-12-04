@@ -1,12 +1,14 @@
 package de.florian.adventofcode.y2020
 
 import de.florian.adventofcode.AoCDay
+import de.florian.adventofcode.Day
+import de.florian.adventofcode.Year
 
 fun main() {
     Day08().exec()
 }
 
-class Day08 : AoCDay() {
+class Day08 : AoCDay(Year.YEAR_2020, Day.DAY_08) {
 
     override fun part1(): String {
         val interpreter = BootCodeInterpreter(BootCodeInterpreter.parseInput(Inputs_2020.DAY_08)).apply { run() }

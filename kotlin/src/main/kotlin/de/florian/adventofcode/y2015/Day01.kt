@@ -1,10 +1,12 @@
 package de.florian.adventofcode.y2015
 
 import de.florian.adventofcode.AoCDay
+import de.florian.adventofcode.Day
+import de.florian.adventofcode.Year
 
 fun main() { Day01().exec() }
 
-class Day01 : AoCDay() {
+class Day01 : AoCDay(Year.YEAR_2015, Day.DAY_01) {
     private fun convertInput(input: String) = input.split("")
     val determineDir : (String) -> (Int) = {
         when(it){

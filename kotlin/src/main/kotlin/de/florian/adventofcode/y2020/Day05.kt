@@ -1,13 +1,15 @@
 package de.florian.adventofcode.y2020
 
 import de.florian.adventofcode.AoCDay
+import de.florian.adventofcode.Day
+import de.florian.adventofcode.Year
 import kotlin.system.measureTimeMillis
 
 fun main() {
     println("Took ${measureTimeMillis { Day05().exec()}} ms")
 }
 
-class Day05 : AoCDay() {
+class Day05 : AoCDay(Year.YEAR_2020, Day.DAY_05) {
     private val replaceBinaryHigh: (str: String) -> String = {it.replace(Regex("[BR]"), "1")}
     private val replaceBinaryLow: (str: String) -> String = {it.replace(Regex("[FL]"), "0")}
     private val parseNumberFromBinary: (str: String ) -> Int = { it.toInt(2) }

@@ -1,6 +1,8 @@
 package de.florian.adventofcode.y2019
 
 import de.florian.adventofcode.AoCDay
+import de.florian.adventofcode.Day
+import de.florian.adventofcode.Year
 import de.florian.adventofcode.util.times
 import kotlin.math.abs
 
@@ -8,7 +10,7 @@ fun main() {
     Day16(Inputs_2019.DAY_16).exec()
 }
 
-class Day16(inputStr: String) : AoCDay() {
+class Day16(inputStr: String) : AoCDay(Year.YEAR_2019, Day.DAY_16) {
     companion object {
         private val BASE_PATTERN = intArrayOf(0, 1, 0, -1)
     }

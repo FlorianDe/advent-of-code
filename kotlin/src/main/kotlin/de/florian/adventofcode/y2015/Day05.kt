@@ -1,12 +1,14 @@
 package de.florian.adventofcode.y2015
 
 import de.florian.adventofcode.AoCDay
+import de.florian.adventofcode.Day
+import de.florian.adventofcode.Year
 
 fun main() {
     Day05().exec()
 }
 
-class Day05 : AoCDay() {
+class Day05 : AoCDay(Year.YEAR_2015, Day.DAY_05) {
     private val minTwoChars = """(\w)\1""".toRegex()
     private val exceptionCharCombi = """ab|cd|pq|xy""".toRegex()
 

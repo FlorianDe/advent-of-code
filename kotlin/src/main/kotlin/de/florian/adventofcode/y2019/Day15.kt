@@ -1,6 +1,8 @@
 package de.florian.adventofcode.y2019
 
 import de.florian.adventofcode.AoCDay
+import de.florian.adventofcode.Day
+import de.florian.adventofcode.Year
 import de.florian.adventofcode.util.CollectionsUtil
 import de.florian.adventofcode.util.Grid
 import de.florian.adventofcode.util.Point
@@ -11,7 +13,7 @@ fun main() {
     Day15().exec()
 }
 
-class Day15 : AoCDay() {
+class Day15 : AoCDay(Year.YEAR_2019, Day.DAY_15) {
     companion object {
         val NORTH = BigInteger.valueOf(1)
         val SOUTH = BigInteger.valueOf(2)

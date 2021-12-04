@@ -1,6 +1,8 @@
 package de.florian.adventofcode.y2015
 
 import de.florian.adventofcode.AoCDay
+import de.florian.adventofcode.Day
+import de.florian.adventofcode.Year
 import java.math.BigInteger
 import java.security.MessageDigest
 
@@ -8,7 +10,7 @@ fun main() {
     Day04().exec()
 }
 
-class Day04 : AoCDay() {
+class Day04 : AoCDay(Year.YEAR_2015, Day.DAY_04) {
     fun String.md5(): String {
         val md = MessageDigest.getInstance("MD5")
         return BigInteger(1, md.digest(toByteArray())).toString(16).padStart(32, '0')

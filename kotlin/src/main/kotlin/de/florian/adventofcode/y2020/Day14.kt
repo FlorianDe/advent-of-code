@@ -1,12 +1,14 @@
 package de.florian.adventofcode.y2020
 
 import de.florian.adventofcode.AoCDay
+import de.florian.adventofcode.Day
+import de.florian.adventofcode.Year
 
 fun main() {
     Day14().exec()
 }
 
-class Day14 : AoCDay() {
+class Day14 : AoCDay(Year.YEAR_2020, Day.DAY_14) {
     companion object {
         val MEM_ADDRESS_VALUE_REGEX = Regex("\\[(\\d+)] = (\\d+)")
     }

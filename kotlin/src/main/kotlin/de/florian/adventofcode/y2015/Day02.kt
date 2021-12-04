@@ -1,10 +1,12 @@
 package de.florian.adventofcode.y2015
 
 import de.florian.adventofcode.AoCDay
+import de.florian.adventofcode.Day
+import de.florian.adventofcode.Year
 
 fun main() { Day02().exec() }
 
-class Day02 : AoCDay() {
+class Day02 : AoCDay(Year.YEAR_2015, Day.DAY_02) {
     private fun convertInput(input: String) = input.split("\n").map {
         val p = it.split("x")
         Triple(Integer.valueOf(p[0]), Integer.valueOf(p[1]), Integer.valueOf(p[2]))

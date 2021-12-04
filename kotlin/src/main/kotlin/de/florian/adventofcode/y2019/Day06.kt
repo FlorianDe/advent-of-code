@@ -1,6 +1,8 @@
 package de.florian.adventofcode.y2019
 
 import de.florian.adventofcode.AoCDay
+import de.florian.adventofcode.Day
+import de.florian.adventofcode.Year
 import java.util.*
 import kotlin.collections.HashMap
 
@@ -9,7 +11,7 @@ fun main() {
     Day06().exec()
 }
 
-class Day06 : AoCDay() {
+class Day06 : AoCDay(Year.YEAR_2019, Day.DAY_06) {
     fun convertInput(input: String) = input.split("\n").map {
         assert(it.contains(")"))
         assert(!it.contains("("))

@@ -1,13 +1,15 @@
 package de.florian.adventofcode.y2020
 
 import de.florian.adventofcode.AoCDay
+import de.florian.adventofcode.Day
+import de.florian.adventofcode.Year
 import java.util.*
 
 fun main() {
     Day07().exec()
 }
 
-class Day07 : AoCDay() {
+class Day07 : AoCDay(Year.YEAR_2020, Day.DAY_07) {
     companion object {
         //language=RegExp
         val BAG_COUNT_REGEX = """(\d+) ([\w\s ]+)""".toRegex()

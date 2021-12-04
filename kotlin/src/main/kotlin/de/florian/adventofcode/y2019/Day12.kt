@@ -1,6 +1,8 @@
 package de.florian.adventofcode.y2019
 
 import de.florian.adventofcode.AoCDay
+import de.florian.adventofcode.Day
+import de.florian.adventofcode.Year
 import de.florian.adventofcode.util.Point3D
 import de.florian.adventofcode.util.lcm
 import java.math.BigInteger
@@ -9,7 +11,7 @@ fun main() {
     Day12().exec()
 }
 
-class Day12 : AoCDay() {
+class Day12 : AoCDay(Year.YEAR_2019, Day.DAY_12) {
     private val inputRegex = """<x=([-]?\d+), y=([-]?\d+), z=([-]?\d+)>""".toRegex()
 
     fun convertInput(input: String) = input.split("\n").map {

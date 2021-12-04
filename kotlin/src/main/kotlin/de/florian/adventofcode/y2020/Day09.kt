@@ -1,13 +1,15 @@
 package de.florian.adventofcode.y2020
 
 import de.florian.adventofcode.AoCDay
+import de.florian.adventofcode.Day
+import de.florian.adventofcode.Year
 import java.math.BigInteger
 
 fun main() {
     Day09().exec()
 }
 
-class Day09 : AoCDay() {
+class Day09 : AoCDay(Year.YEAR_2020, Day.DAY_09) {
 
     companion object {
         const val PREAMBLE_SIZE = 25

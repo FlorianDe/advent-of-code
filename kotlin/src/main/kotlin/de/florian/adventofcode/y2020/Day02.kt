@@ -1,11 +1,13 @@
 package de.florian.adventofcode.y2020
 
 import de.florian.adventofcode.AoCDay
+import de.florian.adventofcode.Day
+import de.florian.adventofcode.Year
 
 
 fun main() { Day02().exec() }
 
-class Day02 : AoCDay() {
+class Day02 : AoCDay(Year.YEAR_2020, Day.DAY_02) {
     companion object {
         val SIMPLE_RANGE_PASSWORD_REGEX =  """(\d+)-(\d+) (\w): (.+)""".toRegex()
     }

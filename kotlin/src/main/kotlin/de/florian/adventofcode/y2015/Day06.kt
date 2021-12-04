@@ -1,12 +1,14 @@
 package de.florian.adventofcode.y2015
 
 import de.florian.adventofcode.AoCDay
+import de.florian.adventofcode.Day
+import de.florian.adventofcode.Year
 
 fun main() {
     Day06().exec()
 }
 
-class Day06 : AoCDay() {
+class Day06 : AoCDay(Year.YEAR_2015, Day.DAY_06) {
     companion object {
         const val TURN_ON = "turn on"
         const val TURN_OFF = "turn off"
