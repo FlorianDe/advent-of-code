@@ -1,6 +1,8 @@
 package de.florian.adventofcode.y2019
 
 import de.florian.adventofcode.AoCDay
+import de.florian.adventofcode.Day
+import de.florian.adventofcode.Year
 import java.util.*
 import kotlin.math.ceil
 
@@ -8,7 +10,7 @@ fun main() {
     Day14().exec()
 }
 
-class Day14 : AoCDay() {
+class Day14 : AoCDay(Year.YEAR_2019, Day.DAY_14) {
     val amountStrRegex = """(\d+) (\w+)""".toRegex()
     val toElementQuantity: (String) -> (ElementQuantity) = {
         val (amount, element) = amountStrRegex.find(it.trim())!!.destructured

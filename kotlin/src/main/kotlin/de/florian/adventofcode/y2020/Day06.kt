@@ -1,10 +1,12 @@
 package de.florian.adventofcode.y2020
 
 import de.florian.adventofcode.AoCDay
+import de.florian.adventofcode.Day
+import de.florian.adventofcode.Year
 
 fun main() { Day06().exec() }
 
-class Day06 : AoCDay() {
+class Day06 : AoCDay(Year.YEAR_2020, Day.DAY_06) {
     private fun convertInput(input: String): List<List<MutableSet<Char>>> = input.split(Regex("\\n\\n")).map { group ->
         group.trim().split("\n").map { it.toSortedSet()}
     }

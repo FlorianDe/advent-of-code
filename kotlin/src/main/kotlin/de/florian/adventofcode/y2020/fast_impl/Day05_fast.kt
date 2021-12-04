@@ -1,5 +1,7 @@
 package de.florian.adventofcode.y2020.fast_impl
 import de.florian.adventofcode.AoCDay
+import de.florian.adventofcode.Day
+import de.florian.adventofcode.Year
 import de.florian.adventofcode.y2020.Inputs_2020
 import kotlin.system.measureTimeMillis
 
@@ -7,7 +9,7 @@ fun main() {
     println("\nAll took ${measureTimeMillis { Day05_Fast().exec()}} ms")
 }
 
-class Day05_Fast : AoCDay() {
+class Day05_Fast : AoCDay(Year.YEAR_2020, Day.DAY_05) {
     companion object{
         private const val MAX_ROWS: Int  = 7
         private const val MAX_COLS: Int  = 3

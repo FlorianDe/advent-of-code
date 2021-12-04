@@ -1,13 +1,15 @@
 package de.florian.adventofcode.y2015
 
 import de.florian.adventofcode.AoCDay
+import de.florian.adventofcode.Day
+import de.florian.adventofcode.Year
 import de.florian.adventofcode.util.CollectionsUtil.Store
 
 fun main() {
     Day03().exec()
 }
 
-class Day03 : AoCDay() {
+class Day03 : AoCDay(Year.YEAR_2015, Day.DAY_03) {
     private fun convertInput(input: String) = input.split("").filter { it.isNotBlank() }
     private fun convertInputForBoth(input: String) = convertInput(input).chunked(2).map { it.zipWithNext().first() }
 

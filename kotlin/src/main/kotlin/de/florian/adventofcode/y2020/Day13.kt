@@ -1,13 +1,15 @@
 package de.florian.adventofcode.y2020
 
 import de.florian.adventofcode.AoCDay
+import de.florian.adventofcode.Day
+import de.florian.adventofcode.Year
 import kotlin.math.ceil
 
 fun main() {
     Day13().exec()
 }
 
-class Day13 : AoCDay() {
+class Day13 : AoCDay(Year.YEAR_2020, Day.DAY_13) {
     data class Bus(val id: Long, val offset: Long)
     data class BusInformation(val earliestTs: Long, val busses: List<Bus>)
 

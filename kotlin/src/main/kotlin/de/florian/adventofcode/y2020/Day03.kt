@@ -1,6 +1,8 @@
 package de.florian.adventofcode.y2020
 
 import de.florian.adventofcode.AoCDay
+import de.florian.adventofcode.Day
+import de.florian.adventofcode.Year
 import de.florian.adventofcode.util.Point
 import java.math.BigInteger
 
@@ -8,7 +10,7 @@ fun main() {
     Day03().exec()
 }
 
-class Day03 : AoCDay() {
+class Day03 : AoCDay(Year.YEAR_2020, Day.DAY_03) {
     companion object {
         const val TREE = "#"
         const val PAVEMENT = "."

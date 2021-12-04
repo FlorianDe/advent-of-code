@@ -1,6 +1,8 @@
 package de.florian.adventofcode.y2019
 
 import de.florian.adventofcode.AoCDay
+import de.florian.adventofcode.Day
+import de.florian.adventofcode.Year
 import de.florian.adventofcode.util.CollectionsUtil
 import de.florian.adventofcode.util.Point
 import de.florian.adventofcode.y2019.Day13.Game.Tile.*
@@ -10,7 +12,7 @@ fun main() {
     Day13().exec()
 }
 
-class Day13 : AoCDay() {
+class Day13 : AoCDay(Year.YEAR_2019, Day.DAY_13) {
     val memory = CollectionsUtil.getMemory(Inputs_2019.DAY_13)
 
     override fun part1(): String {

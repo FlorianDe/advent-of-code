@@ -1,13 +1,15 @@
 package de.florian.adventofcode.y2019
 
 import de.florian.adventofcode.AoCDay
+import de.florian.adventofcode.Day
+import de.florian.adventofcode.Year
 
 
 fun main() {
     Day08().exec()
 }
 
-class Day08 : AoCDay() {
+class Day08 : AoCDay(Year.YEAR_2019, Day.DAY_08) {
     val COLOR_BLACK = 0
     val COLOR_WHITE = 1
     val COLOR_TRANSPARENT = 2

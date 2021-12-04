@@ -1,6 +1,8 @@
 package de.florian.adventofcode.y2020
 
 import de.florian.adventofcode.AoCDay
+import de.florian.adventofcode.Day
+import de.florian.adventofcode.Year
 import java.awt.Point
 
 fun main() {
@@ -10,7 +12,7 @@ fun main() {
 typealias NeighbourCounter = (grid: List<CharArray>, curPos: Point) -> Int
 typealias CrowdDetector = (tile: Char, neighbourCount: Int) -> Boolean
 
-class Day11 : AoCDay() {
+class Day11 : AoCDay(Year.YEAR_2020, Day.DAY_11) {
 
     companion object {
         const val SEAT_EMPTY = 'L'

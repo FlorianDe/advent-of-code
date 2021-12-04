@@ -1,12 +1,14 @@
 package de.florian.adventofcode.y2019
 
 import de.florian.adventofcode.AoCDay
+import de.florian.adventofcode.Day
+import de.florian.adventofcode.Year
 
 fun main() {
     Day02().exec()
 }
 
-class Day02 : AoCDay() {
+class Day02 : AoCDay(Year.YEAR_2019, Day.DAY_02) {
     fun convertToOpcodes(input: String): (IntArray) = input.split(",").map { it.toInt() }.toIntArray()
 
     fun IntArray.run(): IntArray {

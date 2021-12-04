@@ -1,6 +1,8 @@
 package de.florian.adventofcode.y2019
 
 import de.florian.adventofcode.AoCDay
+import de.florian.adventofcode.Day
+import de.florian.adventofcode.Year
 import kotlin.math.floor
 import kotlin.streams.asSequence
 
@@ -8,7 +10,7 @@ fun main() {
     Day01().exec()
 }
 
-class Day01 : AoCDay() {
+class Day01 : AoCDay(Year.YEAR_2019, Day.DAY_01) {
     fun String.splittedDoubleSequence() = this.split("\n").stream().asSequence().map { it.toDouble() }
     val formula: (Double) -> Double = { floor(it / 3.0) - 2 }
     fun recFormula(it: Double): (Double) = if (formula(it) < 0) 0.0 else formula(it) + recFormula(formula(it))

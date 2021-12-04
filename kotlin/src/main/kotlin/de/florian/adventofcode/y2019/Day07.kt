@@ -1,6 +1,8 @@
 package de.florian.adventofcode.y2019
 
 import de.florian.adventofcode.AoCDay
+import de.florian.adventofcode.Day
+import de.florian.adventofcode.Year
 import de.florian.adventofcode.util.CollectionsUtil
 import de.florian.adventofcode.util.permute
 import java.math.BigInteger
@@ -13,7 +15,7 @@ fun main() {
     Day07().exec()
 }
 
-class Day07 : AoCDay() {
+class Day07 : AoCDay(Year.YEAR_2019, Day.DAY_07) {
     private val memory = CollectionsUtil.getMemory(Inputs_2019.DAY_07)
 
     override fun part1(): String {

@@ -1,6 +1,8 @@
 package de.florian.adventofcode.y2020
 
 import de.florian.adventofcode.AoCDay
+import de.florian.adventofcode.Day
+import de.florian.adventofcode.Year
 import de.florian.adventofcode.util.BigPoint
 import java.math.BigDecimal
 import java.math.BigDecimal.*
@@ -12,7 +14,7 @@ fun main() {
 
 typealias Point = BigPoint
 
-class Day12 : AoCDay() {
+class Day12 : AoCDay(Year.YEAR_2020, Day.DAY_12) {
     companion object {
         val SAIL_ACTION_REGEX = Regex("([NSEWLRF])(\\d+)")
     }
