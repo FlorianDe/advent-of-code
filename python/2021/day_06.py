@@ -5,7 +5,9 @@ from itertools import groupby
 from utils.file_utils import get_input
 from utils.measurements import timed
 
-lanterns = [int(counter) for counter in get_input().strip().split(",")]
+
+input = get_input().strip()
+lanterns = [int(counter) for counter in input.strip().split(",")]
 
 
 def estimate_fish_population(fish: list[int], days: int = 80, offsprings: list[int] = (7, 9)) -> int:
@@ -30,6 +32,17 @@ def part02():
     return estimate_fish_population(lanterns, days=256)
 
 
+@timed("Part02_Fast:")
+def part02_fast(days: int = 256):
+    groups = [input.count(str(i)) for i in range(9)]
+    for _ in range(days):
+        births = groups[0]
+        groups = groups[1:] + [births]
+        groups[6] += births
+    return sum(groups)
+
+
 if __name__ == '__main__':
     part01()
     part02()
+    part02_fast(256)
