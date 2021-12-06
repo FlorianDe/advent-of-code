@@ -20,6 +20,7 @@
 | 03  | [Binary Diagnostic](http://adventofcode.com/2020/day/3)    | [Day 03 Kotlin (2/2)](/kotlin/src/main/kotlin/de/florian/adventofcode/y2021/Day03.kt) | [Day 03 Python (2/2)](/python/2021/day_03.py) |
 | 04  | [Giant Squid](http://adventofcode.com/2020/day/4)          | -                                                                                     | [Day 04 Python (2/2)](/python/2021/day_04.py) |
 | 05  | [Hydrothermal Venture](http://adventofcode.com/2020/day/5) | -                                                                                     | [Day 05 Python (2/2)](/python/2021/day_05.py) |
+| 06  | [Lanternfish](http://adventofcode.com/2020/day/6)          | -                                                                                     | [Day 05 Python (2/2)](/python/2021/day_06.py) |
 
 
 ### AoC 2020:
