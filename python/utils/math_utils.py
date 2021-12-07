@@ -1,7 +1,15 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Optional
+from typing import Optional, TypeVar
+
+T = TypeVar('T')
+
+
+class Func:
+    @staticmethod
+    def identity(x: T) -> T:
+        return x
 
 
 @dataclass(frozen=True, eq=True)
