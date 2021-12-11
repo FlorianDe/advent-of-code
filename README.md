@@ -23,7 +23,8 @@
 | 06  | [Lanternfish](http://adventofcode.com/2020/day/6)             | -                                                                                     | [Day 06 Python (2/2)](/python/2021/day_06.py) |
 | 07  | [The Treachery of Whales](http://adventofcode.com/2020/day/7) | -                                                                                     | [Day 07 Python (2/2)](/python/2021/day_07.py) |
 | 08  | [Seven Segment Search](http://adventofcode.com/2020/day/8)    | -                                                                                     | [Day 08 Python (1/2)](/python/2021/day_08.py) |
-| 09  | [Seven Segment Search](http://adventofcode.com/2020/day/9)    | -                                                                                     | [Day 09 Python (1/2)](/python/2021/day_09.py) |
+| 09  | [Smoke Basin](http://adventofcode.com/2020/day/9)             | -                                                                                     | [Day 09 Python (1/2)](/python/2021/day_09.py) |
+| 10  | [Syntax Scoring](http://adventofcode.com/2020/day/10)         | -                                                                                     | [Day 10 Python (2/2)](/python/2021/day_10.py) |
 
 
 ### AoC 2020:
