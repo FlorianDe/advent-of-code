@@ -1,7 +1,5 @@
 from collections import defaultdict
-from typing import Callable, Union
 from ..utils.file_utils import get_input_lines
-from ..utils.math_utils import Point2D
 from ..utils.measurements import timed
 
 def create_adjacency_list(input_lines: list[str])-> dict[str, list[str]]:
