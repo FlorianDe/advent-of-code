@@ -1,14 +1,11 @@
-import os
-
 import sys
+from pathlib import Path
 from typing import TextIO
 
-
 def get_input_file() -> TextIO:
-    path = sys.argv[0]
-    filename = os.path.basename(path)
-    return open(f"inputs/{filename.replace('.py', '.txt')}", "r")
-
+    path = Path(sys.argv[0])
+    filename = str(path.name)
+    return open(f"{path.parent}/inputs/{filename.replace('.py', '.txt')}", "r")
 
 def get_input() -> str:
     return get_input_file().read()
