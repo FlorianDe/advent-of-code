@@ -26,6 +26,8 @@
 | 09  | [Smoke Basin](http://adventofcode.com/2020/day/9)             | -                                                                                     | [Day 09 Python (1/2)](/python/2021/day_09.py) |
 | 10  | [Syntax Scoring](http://adventofcode.com/2020/day/10)         | -                                                                                     | [Day 10 Python (2/2)](/python/2021/day_10.py) |
 | 11  | [Dumbo Octopus](http://adventofcode.com/2020/day/11)          | -                                                                                     | [Day 11 Python (2/2)](/python/2021/day_11.py) |
+| 12  | [Passage Pathing](http://adventofcode.com/2020/day/12)        | -                                                                                     | [Day 12 Python (2/2)](/python/2021/day_12.py) |
+
 
 ### AoC 2020:
 | Day | Puzzle                                                         | Kotlin                                                                                |
