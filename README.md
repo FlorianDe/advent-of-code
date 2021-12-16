@@ -27,6 +27,7 @@
 | 10  | [Syntax Scoring](http://adventofcode.com/2020/day/10)         | -                                                                                     | [Day 10 Python (2/2)](/python/2021/day_10.py) |
 | 11  | [Dumbo Octopus](http://adventofcode.com/2020/day/11)          | -                                                                                     | [Day 11 Python (2/2)](/python/2021/day_11.py) |
 | 12  | [Passage Pathing](http://adventofcode.com/2020/day/12)        | -                                                                                     | [Day 12 Python (2/2)](/python/2021/day_12.py) |
+| 13  | [Transparent Origami](http://adventofcode.com/2020/day/13)    | -                                                                                     | [Day 13 Python (2/2)](/python/2021/day_13.py) |
 
 
 ### AoC 2020:
