@@ -1,7 +1,5 @@
 from dataclasses import dataclass
-from dataclasses import dataclass
 from ..utils.file_utils import get_input
-from ..utils.measurements import timed
 from ..utils.math_utils import Point2D
 
 @dataclass
@@ -17,21 +15,15 @@ def draw_dots_board(dots: set[Point2D]):
         board += "\n"
     return board
 
+def fold_point(p: Point2D, inst: Instruction) -> Point2D:
+    return Point2D(p.x if p.x < inst.value or inst.axis != 'x' else 2*inst.value-p.x, p.y if p.y < inst.value or inst.axis != 'y' else 2*inst.value-p.y)
 
-@timed("Calculate result for part01/02:")
 def fold_paper(dots: set[Point2D], instructions: list[Instruction]):
-    def fold(old: int, cut: int) -> int:
-        return 2*cut - old
     for idx, inst in enumerate(instructions):
-        if inst.axis == 'x':
-            dots = set([Point2D(p.x if p.x < inst.value else fold(p.x, inst.value), p.y) for p in dots])
-        else:
-            dots = set([Point2D(p.x, p.y if p.y < inst.value else fold(p.y, inst.value)) for p in dots])
-        if(idx == 0):
+        dots = set([fold_point(p, inst) for p in dots])
+        if(idx == 0): 
             yield len(dots)
-    
     yield draw_dots_board(dots)    
-
 
 if __name__ == '__main__':
     dot_input, instructions_input = get_input().split("\n\n")
