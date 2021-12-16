@@ -13,22 +13,22 @@
 
 ## Yearly Overview
 ### AoC 2021:
-| Day | Puzzle                                                        | Kotlin                                                                                | Python                                        |
-| --- | ------------------------------------------------------------- | ------------------------------------------------------------------------------------- | --------------------------------------------- |
-| 01  | [Sonar Sweep](http://adventofcode.com/2020/day/1)             | [Day 01 Kotlin (2/2)](/kotlin/src/main/kotlin/de/florian/adventofcode/y2021/Day01.kt) | [Day 01 Python (2/2)](/python/2021/day_01.py) |
-| 02  | [Dive!](http://adventofcode.com/2020/day/2)                   | [Day 02 Kotlin (2/2)](/kotlin/src/main/kotlin/de/florian/adventofcode/y2021/Day02.kt) | [Day 02 Python (2/2)](/python/2021/day_02.py) |
-| 03  | [Binary Diagnostic](http://adventofcode.com/2020/day/3)       | [Day 03 Kotlin (2/2)](/kotlin/src/main/kotlin/de/florian/adventofcode/y2021/Day03.kt) | [Day 03 Python (2/2)](/python/2021/day_03.py) |
-| 04  | [Giant Squid](http://adventofcode.com/2020/day/4)             | -                                                                                     | [Day 04 Python (2/2)](/python/2021/day_04.py) |
-| 05  | [Hydrothermal Venture](http://adventofcode.com/2020/day/5)    | -                                                                                     | [Day 05 Python (2/2)](/python/2021/day_05.py) |
-| 06  | [Lanternfish](http://adventofcode.com/2020/day/6)             | -                                                                                     | [Day 06 Python (2/2)](/python/2021/day_06.py) |
-| 07  | [The Treachery of Whales](http://adventofcode.com/2020/day/7) | -                                                                                     | [Day 07 Python (2/2)](/python/2021/day_07.py) |
-| 08  | [Seven Segment Search](http://adventofcode.com/2020/day/8)    | -                                                                                     | [Day 08 Python (1/2)](/python/2021/day_08.py) |
-| 09  | [Smoke Basin](http://adventofcode.com/2020/day/9)             | -                                                                                     | [Day 09 Python (1/2)](/python/2021/day_09.py) |
-| 10  | [Syntax Scoring](http://adventofcode.com/2020/day/10)         | -                                                                                     | [Day 10 Python (2/2)](/python/2021/day_10.py) |
-| 11  | [Dumbo Octopus](http://adventofcode.com/2020/day/11)          | -                                                                                     | [Day 11 Python (2/2)](/python/2021/day_11.py) |
-| 12  | [Passage Pathing](http://adventofcode.com/2020/day/12)        | -                                                                                     | [Day 12 Python (2/2)](/python/2021/day_12.py) |
-| 13  | [Transparent Origami](http://adventofcode.com/2020/day/13)    | -                                                                                     | [Day 13 Python (2/2)](/python/2021/day_13.py) |
-
+| Day | Puzzle                                                         | Kotlin                                                                                | Python                                        |
+| --- | -------------------------------------------------------------- | ------------------------------------------------------------------------------------- | --------------------------------------------- |
+| 01  | [Sonar Sweep](http://adventofcode.com/2020/day/1)              | [Day 01 Kotlin (2/2)](/kotlin/src/main/kotlin/de/florian/adventofcode/y2021/Day01.kt) | [Day 01 Python (2/2)](/python/2021/day_01.py) |
+| 02  | [Dive!](http://adventofcode.com/2020/day/2)                    | [Day 02 Kotlin (2/2)](/kotlin/src/main/kotlin/de/florian/adventofcode/y2021/Day02.kt) | [Day 02 Python (2/2)](/python/2021/day_02.py) |
+| 03  | [Binary Diagnostic](http://adventofcode.com/2020/day/3)        | [Day 03 Kotlin (2/2)](/kotlin/src/main/kotlin/de/florian/adventofcode/y2021/Day03.kt) | [Day 03 Python (2/2)](/python/2021/day_03.py) |
+| 04  | [Giant Squid](http://adventofcode.com/2020/day/4)              | -                                                                                     | [Day 04 Python (2/2)](/python/2021/day_04.py) |
+| 05  | [Hydrothermal Venture](http://adventofcode.com/2020/day/5)     | -                                                                                     | [Day 05 Python (2/2)](/python/2021/day_05.py) |
+| 06  | [Lanternfish](http://adventofcode.com/2020/day/6)              | -                                                                                     | [Day 06 Python (2/2)](/python/2021/day_06.py) |
+| 07  | [The Treachery of Whales](http://adventofcode.com/2020/day/7)  | -                                                                                     | [Day 07 Python (2/2)](/python/2021/day_07.py) |
+| 08  | [Seven Segment Search](http://adventofcode.com/2020/day/8)     | -                                                                                     | [Day 08 Python (1/2)](/python/2021/day_08.py) |
+| 09  | [Smoke Basin](http://adventofcode.com/2020/day/9)              | -                                                                                     | [Day 09 Python (1/2)](/python/2021/day_09.py) |
+| 10  | [Syntax Scoring](http://adventofcode.com/2020/day/10)          | -                                                                                     | [Day 10 Python (2/2)](/python/2021/day_10.py) |
+| 11  | [Dumbo Octopus](http://adventofcode.com/2020/day/11)           | -                                                                                     | [Day 11 Python (2/2)](/python/2021/day_11.py) |
+| 12  | [Passage Pathing](http://adventofcode.com/2020/day/12)         | -                                                                                     | [Day 12 Python (2/2)](/python/2021/day_12.py) |
+| 13  | [Transparent Origami](http://adventofcode.com/2020/day/13)     | -                                                                                     | [Day 13 Python (2/2)](/python/2021/day_13.py) |
+| 14  | [Extended Polymerization](http://adventofcode.com/2020/day/14) | -                                                                                     | [Day 14 Python (2/2)](/python/2021/day_14.py) |
 
 ### AoC 2020:
 | Day | Puzzle                                                         | Kotlin                                                                                |
