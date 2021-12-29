@@ -43,6 +43,10 @@ class Point2D:
                 steps -= 1
             cur = cur + direction
 
+    def __lt__(self, other):
+        return self.x < other.x or self.y < other.y
+
+
 
 @dataclass(frozen=True, eq=True)
 class Line2D:
