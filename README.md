@@ -29,6 +29,7 @@
 | 12  | [Passage Pathing](http://adventofcode.com/2020/day/12)         | -                                                                                     | [Day 12 Python (2/2)](/python/2021/day_12.py) |
 | 13  | [Transparent Origami](http://adventofcode.com/2020/day/13)     | -                                                                                     | [Day 13 Python (2/2)](/python/2021/day_13.py) |
 | 14  | [Extended Polymerization](http://adventofcode.com/2020/day/14) | -                                                                                     | [Day 14 Python (2/2)](/python/2021/day_14.py) |
+| 15  | [Chiton](http://adventofcode.com/2020/day/15)                  | -                                                                                     | [Day 15 Python (2/2)](/python/2021/day_15.py) |
 
 ### AoC 2020:
 | Day | Puzzle                                                         | Kotlin                                                                                |
