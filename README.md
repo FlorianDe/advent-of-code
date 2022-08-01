@@ -1,15 +1,15 @@
 # Advent of Code
 
 ## Languages used per year
-| Year              | Kotlin                                                                             | Python                                    |
-| ----------------- | ---------------------------------------------------------------------------------- | ----------------------------------------- |
-| [2021](#aoc-2021) | :white_check_mark: ([here](/kotlin/src/main/kotlin/de/florian/adventofcode/y2021)) | :white_check_mark: ([here](/python/2021)) |
-| [2020](#aoc-2020) | :white_check_mark: ([here](/kotlin/src/main/kotlin/de/florian/adventofcode/y2020)) | :x:                                       |
-| [2019](#aoc-2019) | :white_check_mark: ([here](/kotlin/src/main/kotlin/de/florian/adventofcode/y2019)) | :x:                                       |
-| [2018](#aoc-2018) | :x:                                                                                | :x:                                       |
-| [2017](#aoc-2017) | :x:                                                                                | :x:                                       |
-| [2016](#aoc-2016) | :x:                                                                                | :x:                                       |
-| [2015](#aoc-2015) | :white_check_mark: ([here](/kotlin/src/main/kotlin/de/florian/adventofcode/y2015)) | :x:                                       |
+| Year              | Kotlin                                                                             | Python                                    | Rust                                               |
+| ----------------- | ---------------------------------------------------------------------------------- | ----------------------------------------- | -------------------------------------------------- |
+| [2021](#aoc-2021) | :white_check_mark: ([here](/kotlin/src/main/kotlin/de/florian/adventofcode/y2021)) | :white_check_mark: ([here](/python/2021)) | :x:                                                |
+| [2020](#aoc-2020) | :white_check_mark: ([here](/kotlin/src/main/kotlin/de/florian/adventofcode/y2020)) | :x:                                       | :x:                                                |
+| [2019](#aoc-2019) | :white_check_mark: ([here](/kotlin/src/main/kotlin/de/florian/adventofcode/y2019)) | :x:                                       | :x:                                                |
+| [2018](#aoc-2018) | :x:                                                                                | :x:                                       | :x:                                                |
+| [2017](#aoc-2017) | :x:                                                                                | :x:                                       | :x:                                                |
+| [2016](#aoc-2016) | :x:                                                                                | :x:                                       | :white_check_mark: ([here](/rust/src/y2016/days/)) |
+| [2015](#aoc-2015) | :white_check_mark: ([here](/kotlin/src/main/kotlin/de/florian/adventofcode/y2015)) | :x:                                       | :white_check_mark: ([here](/rust/src/y2015/days/)) |
 
 ## Yearly Overview
 ### AoC 2021:
@@ -96,59 +96,59 @@ Not implemented yet
 ### AoC 2017:
 Not implemented yet
 ### AoC 2016:
-| Day | Puzzle                                                                       | Rust | 
-| --- | ---------------------------------------------------------------------------- | -------------------------------------------------- | 
-| 01  | [Not Quite Lisp](http://adventofcode.com/2015/day/1)                         | [Day 01 Rust (2/2)](/rust/src/y2016/days/day01.rs) |
-| 02  | [I Was Told There Would Be No Math](http://adventofcode.com/2015/day/2)      | - |
-| 03  | [Perfectly Spherical Houses in a Vacuum](http://adventofcode.com/2015/day/3) | - |
-| 04  | [The Ideal Stocking Stuffer](http://adventofcode.com/2015/day/4)             | - |
-| 05  | [Doesn't He Have Intern-Elves For This?](http://adventofcode.com/2015/day/5) | - |
-| 06  | [Probably a Fire Hazard](http://adventofcode.com/2015/day/6)                 | - |
-| 07  | [Some Assembly Required](http://adventofcode.com/2015/day/7)                 | - |
-| 08  | [Matchsticks](http://adventofcode.com/2015/day/8)                            | - |
-| 09  | [All in a Single Night](http://adventofcode.com/2015/day/9)                  | - |
-| 10  | [Elves Look, Elves Say](http://adventofcode.com/2015/day/10)                 | - |
-| 11  | [Corporate Policy](http://adventofcode.com/2015/day/11)                      | - |
-| 12  | [JSAbacusFramework.io](http://adventofcode.com/2015/day/12)                  | - |
-| 13  | [Knights of the Dinner Table](http://adventofcode.com/2015/day/13)           | - |
-| 14  | [Reindeer Olympics](http://adventofcode.com/2015/day/14)                     | - |
-| 15  | [Science for Hungry People](http://adventofcode.com/2015/day/15)             | - |
-| 16  | [Aunt Sue](http://adventofcode.com/2015/day/16)                              | - |
-| 17  | [No Such Thing as Too Much](http://adventofcode.com/2015/day/17)             | - |
-| 18  | [Like a GIF For Your Yard](http://adventofcode.com/2015/day/18)              | - |
-| 19  | [Medicine for Rudolph](http://adventofcode.com/2015/day/19)                  | - |
-| 20  | [Infinite Elves and Infinite Houses](http://adventofcode.com/2015/day/20)    | - |
-| 21  | [RPG Simulator 20XX](http://adventofcode.com/2015/day/21)                    | - |
-| 22  | [Wizard Simulator 20XX](http://adventofcode.com/2015/day/22)                 | - |
-| 23  | [Opening the Turing Lock](http://adventofcode.com/2015/day/23)               | - |
-| 24  | [It Hangs in the Balance](http://adventofcode.com/2015/day/24)               | - |
-| 25  | [Let It Snow](http://adventofcode.com/2015/day/25)                           | - |
+| Day | Puzzle                                                                        | Rust                                               |
+| --- | ----------------------------------------------------------------------------- | -------------------------------------------------- |
+| 01  | [No Time for a Taxicab](http://adventofcode.com/2016/day/1)                   | [Day 01 Rust (2/2)](/rust/src/y2016/days/day01.rs) |
+| 02  | [Bathroom Security](http://adventofcode.com/2016/day/2)                       | -                                                  |
+| 03  | [Squares With Three Sides](http://adventofcode.com/2016/day/3)                | -                                                  |
+| 04  | [Security Through Obscurity](http://adventofcode.com/2016/day/4)              | -                                                  |
+| 05  | [How About a Nice Game of Chess?](http://adventofcode.com/2016/day/5)         | -                                                  |
+| 06  | [Signals and Noise](http://adventofcode.com/2016/day/6)                       | -                                                  |
+| 07  | [Internet Protocol Version 7](http://adventofcode.com/2016/day/7)             | -                                                  |
+| 08  | [Two-Factor Authentication](http://adventofcode.com/2016/day/8)               | -                                                  |
+| 09  | [Explosives in Cyberspace](http://adventofcode.com/2016/day/9)                | -                                                  |
+| 10  | [Balance Bots](http://adventofcode.com/2016/day/10)                           | -                                                  |
+| 11  | [Radioisotope Thermoelectric Generators](http://adventofcode.com/2016/day/11) | -                                                  |
+| 12  | [Leonardo's Monorail](http://adventofcode.com/2016/day/12)                    | -                                                  |
+| 13  | [A Maze of Twisty Little Cubicles](http://adventofcode.com/2016/day/13)       | -                                                  |
+| 14  | [One-Time Pad](http://adventofcode.com/2016/day/14)                           | -                                                  |
+| 15  | [Timing is Everything](http://adventofcode.com/2016/day/15)                   | -                                                  |
+| 16  | [Dragon Checksum](http://adventofcode.com/2016/day/16)                        | -                                                  |
+| 17  | [Two Steps Forward](http://adventofcode.com/2016/day/17)                      | -                                                  |
+| 18  | [Like a Rogue](http://adventofcode.com/2016/day/18)                           | -                                                  |
+| 19  | [An Elephant Named Joseph](http://adventofcode.com/2016/day/19)               | -                                                  |
+| 20  | [Firewall Rules](http://adventofcode.com/2016/day/20)                         | -                                                  |
+| 21  | [Scrambled Letters and Hash](http://adventofcode.com/2016/day/21)             | -                                                  |
+| 22  | [Grid Computing](http://adventofcode.com/2016/day/22)                         | -                                                  |
+| 23  | [Safe Cracking](http://adventofcode.com/2016/day/23)                          | -                                                  |
+| 24  | [Air Duct Spelunking](http://adventofcode.com/2016/day/24)                    | -                                                  |
+| 25  | [Clock Signal](http://adventofcode.com/2016/day/25)                           | -                                                  |
 
 ### AoC 2015:
-| Day | Puzzle                                                                       | Kotlin                                                                                | Rust | 
-| --- | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | -------------------------------------------------- | 
+| Day | Puzzle                                                                       | Kotlin                                                                                | Rust                                               |
+| --- | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | -------------------------------------------------- |
 | 01  | [Not Quite Lisp](http://adventofcode.com/2015/day/1)                         | [Day 01 Kotlin (2/2)](/kotlin/src/main/kotlin/de/florian/adventofcode/y2015/Day01.kt) | [Day 01 Rust (2/2)](/rust/src/y2015/days/day01.rs) |
-| 02  | [I Was Told There Would Be No Math](http://adventofcode.com/2015/day/2)      | [Day 02 Kotlin (2/2)](/kotlin/src/main/kotlin/de/florian/adventofcode/y2015/Day02.kt) | - |
-| 03  | [Perfectly Spherical Houses in a Vacuum](http://adventofcode.com/2015/day/3) | [Day 03 Kotlin (2/2)](/kotlin/src/main/kotlin/de/florian/adventofcode/y2015/Day03.kt) | - |
-| 04  | [The Ideal Stocking Stuffer](http://adventofcode.com/2015/day/4)             | [Day 04 Kotlin (2/2)](/kotlin/src/main/kotlin/de/florian/adventofcode/y2015/Day04.kt) | - |
-| 05  | [Doesn't He Have Intern-Elves For This?](http://adventofcode.com/2015/day/5) | [Day 05 Kotlin (2/2)](/kotlin/src/main/kotlin/de/florian/adventofcode/y2015/Day05.kt) | - |
-| 06  | [Probably a Fire Hazard](http://adventofcode.com/2015/day/6)                 | [Day 06 Kotlin (2/2)](/kotlin/src/main/kotlin/de/florian/adventofcode/y2015/Day06.kt) | - |
-| 07  | [Some Assembly Required](http://adventofcode.com/2015/day/7)                 | -                                                                                     | - |
-| 08  | [Matchsticks](http://adventofcode.com/2015/day/8)                            | -                                                                                     | - |
-| 09  | [All in a Single Night](http://adventofcode.com/2015/day/9)                  | -                                                                                     | - |
-| 10  | [Elves Look, Elves Say](http://adventofcode.com/2015/day/10)                 | -                                                                                     | - |
-| 11  | [Corporate Policy](http://adventofcode.com/2015/day/11)                      | -                                                                                     | - |
-| 12  | [JSAbacusFramework.io](http://adventofcode.com/2015/day/12)                  | -                                                                                     | - |
-| 13  | [Knights of the Dinner Table](http://adventofcode.com/2015/day/13)           | -                                                                                     | - |
-| 14  | [Reindeer Olympics](http://adventofcode.com/2015/day/14)                     | -                                                                                     | - |
-| 15  | [Science for Hungry People](http://adventofcode.com/2015/day/15)             | -                                                                                     | - |
-| 16  | [Aunt Sue](http://adventofcode.com/2015/day/16)                              | -                                                                                     | - |
-| 17  | [No Such Thing as Too Much](http://adventofcode.com/2015/day/17)             | -                                                                                     | - |
-| 18  | [Like a GIF For Your Yard](http://adventofcode.com/2015/day/18)              | -                                                                                     | - |
-| 19  | [Medicine for Rudolph](http://adventofcode.com/2015/day/19)                  | -                                                                                     | - |
-| 20  | [Infinite Elves and Infinite Houses](http://adventofcode.com/2015/day/20)    | -                                                                                     | - |
-| 21  | [RPG Simulator 20XX](http://adventofcode.com/2015/day/21)                    | -                                                                                     | - |
-| 22  | [Wizard Simulator 20XX](http://adventofcode.com/2015/day/22)                 | -                                                                                     | - |
-| 23  | [Opening the Turing Lock](http://adventofcode.com/2015/day/23)               | -                                                                                     | - |
-| 24  | [It Hangs in the Balance](http://adventofcode.com/2015/day/24)               | -                                                                                     | - |
-| 25  | [Let It Snow](http://adventofcode.com/2015/day/25)                           | -                                                                                     | - |
+| 02  | [I Was Told There Would Be No Math](http://adventofcode.com/2015/day/2)      | [Day 02 Kotlin (2/2)](/kotlin/src/main/kotlin/de/florian/adventofcode/y2015/Day02.kt) | -                                                  |
+| 03  | [Perfectly Spherical Houses in a Vacuum](http://adventofcode.com/2015/day/3) | [Day 03 Kotlin (2/2)](/kotlin/src/main/kotlin/de/florian/adventofcode/y2015/Day03.kt) | -                                                  |
+| 04  | [The Ideal Stocking Stuffer](http://adventofcode.com/2015/day/4)             | [Day 04 Kotlin (2/2)](/kotlin/src/main/kotlin/de/florian/adventofcode/y2015/Day04.kt) | -                                                  |
+| 05  | [Doesn't He Have Intern-Elves For This?](http://adventofcode.com/2015/day/5) | [Day 05 Kotlin (2/2)](/kotlin/src/main/kotlin/de/florian/adventofcode/y2015/Day05.kt) | -                                                  |
+| 06  | [Probably a Fire Hazard](http://adventofcode.com/2015/day/6)                 | [Day 06 Kotlin (2/2)](/kotlin/src/main/kotlin/de/florian/adventofcode/y2015/Day06.kt) | -                                                  |
+| 07  | [Some Assembly Required](http://adventofcode.com/2015/day/7)                 | -                                                                                     | -                                                  |
+| 08  | [Matchsticks](http://adventofcode.com/2015/day/8)                            | -                                                                                     | -                                                  |
+| 09  | [All in a Single Night](http://adventofcode.com/2015/day/9)                  | -                                                                                     | -                                                  |
+| 10  | [Elves Look, Elves Say](http://adventofcode.com/2015/day/10)                 | -                                                                                     | -                                                  |
+| 11  | [Corporate Policy](http://adventofcode.com/2015/day/11)                      | -                                                                                     | -                                                  |
+| 12  | [JSAbacusFramework.io](http://adventofcode.com/2015/day/12)                  | -                                                                                     | -                                                  |
+| 13  | [Knights of the Dinner Table](http://adventofcode.com/2015/day/13)           | -                                                                                     | -                                                  |
+| 14  | [Reindeer Olympics](http://adventofcode.com/2015/day/14)                     | -                                                                                     | -                                                  |
+| 15  | [Science for Hungry People](http://adventofcode.com/2015/day/15)             | -                                                                                     | -                                                  |
+| 16  | [Aunt Sue](http://adventofcode.com/2015/day/16)                              | -                                                                                     | -                                                  |
+| 17  | [No Such Thing as Too Much](http://adventofcode.com/2015/day/17)             | -                                                                                     | -                                                  |
+| 18  | [Like a GIF For Your Yard](http://adventofcode.com/2015/day/18)              | -                                                                                     | -                                                  |
+| 19  | [Medicine for Rudolph](http://adventofcode.com/2015/day/19)                  | -                                                                                     | -                                                  |
+| 20  | [Infinite Elves and Infinite Houses](http://adventofcode.com/2015/day/20)    | -                                                                                     | -                                                  |
+| 21  | [RPG Simulator 20XX](http://adventofcode.com/2015/day/21)                    | -                                                                                     | -                                                  |
+| 22  | [Wizard Simulator 20XX](http://adventofcode.com/2015/day/22)                 | -                                                                                     | -                                                  |
+| 23  | [Opening the Turing Lock](http://adventofcode.com/2015/day/23)               | -                                                                                     | -                                                  |
+| 24  | [It Hangs in the Balance](http://adventofcode.com/2015/day/24)               | -                                                                                     | -                                                  |
+| 25  | [Let It Snow](http://adventofcode.com/2015/day/25)                           | -                                                                                     | -                                                  |
