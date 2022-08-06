@@ -2,14 +2,15 @@ import {AocDay, Solutions} from "../aoc";
 
 export class Day01 extends AocDay {
 	constructor() {
-		super(2017, 1)
+		super(2017, 1);
 	}
+
 	private calcCaptcha(nextDigitIndexSupplier: (idx: number, inputLength: number) => number): number {
-		const inputLength = this.input.split("").length
+		const inputLength = this.input.split("").length;
 		let sum = 0;
 		for (let i = 0; i < inputLength; i++) {
 			if (this.input[i] === this.input[nextDigitIndexSupplier(i, inputLength)]) {
-				sum += Number.parseInt(this.input[i]);
+				sum += Number.parseInt(this.input[i], 10);
 			}
 		}
 		return sum;
