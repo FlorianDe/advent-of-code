@@ -1,0 +1,25 @@
+{
+  "name": "aoc2021",
+  "version": "1.0.0",
+  "description": "Advent of Code typescript solutions",
+  "type": "commonjs",
+  "scripts": {
+    "start": "ts-node ./src/index.ts",
+    "format": "prettier -w src"
+  },
+  "keywords": [
+    "aoc"
+  ],
+  "author": "FlorianDe",
+  "devDependencies": {
+    "typescript": "^4.7.4",
+    "ts-node": "^10.9.1",
+    "@types/node": "^14.18.23",
+    "prettier": "^2.4.1"
+  },
+  "dependencies": {
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
