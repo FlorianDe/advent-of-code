@@ -18,17 +18,19 @@ export class Day02 extends AocDay {
 	solve(): Solutions {
 		const table = this.input.split("\n")
 			.map(row => row.split(/\s+/)
-				.map(cell => Number.parseInt(cell))
+				.map(cell => Number.parseInt(cell, 10))
 			);
 
-		const calcTableChecksum = (aggregator: RowAggregator) => table.map(aggregator).reduce((sum, row) => sum + row)
+		const calcTableChecksum = (aggregator: RowAggregator) => table.map(aggregator).reduce((sum, row) => sum + row);
 		const maxRowDiff: RowAggregator = (row) => Math.max(...row) - Math.min(...row);
 		const evenlyDivisibleValues: RowAggregator = (row) => {
-			for (let [a,b] of crossProductIdxGenerator(row))
-				if (a !== b && row[a] % row[b] === 0)
+			for (const [a,b] of crossProductIdxGenerator(row)){
+				if (a !== b && row[a] % row[b] === 0){
 					return row[a] / row[b];
+				}
+			}
 			return 1;
-		}
+		};
 		return {
 			part1: calcTableChecksum(maxRowDiff),
 			part2: calcTableChecksum(evenlyDivisibleValues),
