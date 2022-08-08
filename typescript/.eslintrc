@@ -15,6 +15,11 @@
     "no-underscore-dangle": "off",
     "no-console": "off",
     "no-restricted-syntax": "off",
-    "semi": [1, "always"]
+    "semi": [1, "always"],
+    "class-methods-use-this": "off",
+    "max-classes-per-file": "off",
+    "lines-between-class-members": "off",
+    "@typescript-eslint/lines-between-class-members": "off",
+    "@typescript-eslint/no-dupe-class-members": "off"
   }
 }
