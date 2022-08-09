@@ -20,6 +20,8 @@
     "max-classes-per-file": "off",
     "lines-between-class-members": "off",
     "@typescript-eslint/lines-between-class-members": "off",
-    "@typescript-eslint/no-dupe-class-members": "off"
+    "@typescript-eslint/no-dupe-class-members": "off",
+    "yoda": "off",
+    "one-var": "off"
   }
 }
