@@ -1,35 +1,41 @@
 # Advent of Code
 
 ## Languages used per year
-| Year              | Kotlin                                                                             | Python                                    | Rust                                               |
-| ----------------- | ---------------------------------------------------------------------------------- | ----------------------------------------- | -------------------------------------------------- |
-| [2021](#aoc-2021) | :white_check_mark: ([here](/kotlin/src/main/kotlin/de/florian/adventofcode/y2021)) | :white_check_mark: ([here](/python/2021)) | :x:                                                |
-| [2020](#aoc-2020) | :white_check_mark: ([here](/kotlin/src/main/kotlin/de/florian/adventofcode/y2020)) | :x:                                       | :x:                                                |
-| [2019](#aoc-2019) | :white_check_mark: ([here](/kotlin/src/main/kotlin/de/florian/adventofcode/y2019)) | :x:                                       | :x:                                                |
-| [2018](#aoc-2018) | :x:                                                                                | :x:                                       | :x:                                                |
-| [2017](#aoc-2017) | :x:                                                                                | :x:                                       | :x:                                                |
-| [2016](#aoc-2016) | :x:                                                                                | :x:                                       | :white_check_mark: ([here](/rust/src/y2016/days/)) |
-| [2015](#aoc-2015) | :white_check_mark: ([here](/kotlin/src/main/kotlin/de/florian/adventofcode/y2015)) | :x:                                       | :white_check_mark: ([here](/rust/src/y2015/days/)) |
+| Year              | Kotlin                                                                             | Python                                    | Rust                                               | Typescript                                         |
+| ----------------- | ---------------------------------------------------------------------------------- | ----------------------------------------- | -------------------------------------------------- | -------------------------------------------------- |
+| [2022](#aoc-2022) | :x:                                                                                | :x:                                       | :x:                                                | :white_check_mark: ([here](/typescript/src/2022/)) |
+| [2021](#aoc-2021) | :white_check_mark: ([here](/kotlin/src/main/kotlin/de/florian/adventofcode/y2021)) | :white_check_mark: ([here](/python/2021)) | :x:                                                | :x:                                                |
+| [2020](#aoc-2020) | :white_check_mark: ([here](/kotlin/src/main/kotlin/de/florian/adventofcode/y2020)) | :x:                                       | :x:                                                | :x:                                                |
+| [2019](#aoc-2019) | :white_check_mark: ([here](/kotlin/src/main/kotlin/de/florian/adventofcode/y2019)) | :x:                                       | :x:                                                | :x:                                                |
+| [2018](#aoc-2018) | :x:                                                                                | :x:                                       | :x:                                                | :x:                                                |
+| [2017](#aoc-2017) | :x:                                                                                | :x:                                       | :x:                                                | :white_check_mark: ([here](/typescript/src/2017/)) |
+| [2016](#aoc-2016) | :x:                                                                                | :x:                                       | :white_check_mark: ([here](/rust/src/y2016/days/)) | :x:                                                |
+| [2015](#aoc-2015) | :white_check_mark: ([here](/kotlin/src/main/kotlin/de/florian/adventofcode/y2015)) | :x:                                       | :white_check_mark: ([here](/rust/src/y2015/days/)) | :x:                                                |
 
 ## Yearly Overview
+| Day | Puzzle                                                    | Kotlin | Typescript                                               |
+| --- | --------------------------------------------------------- | ------ | -------------------------------------------------------- |
+| 01  | [Calorie Counting](http://adventofcode.com/2021/day/1)    | -      | [Day 01 Typescript (2/2)](/typescript/src/2022/day01.ts) |
+| 02  | [Rock Paper Scissors](http://adventofcode.com/2021/day/2) | -      | [Day 02 Typescript (2/2)](/typescript/src/2022/day02.ts) |
+
 ### AoC 2021:
 | Day | Puzzle                                                         | Kotlin                                                                                | Python                                        |
 | --- | -------------------------------------------------------------- | ------------------------------------------------------------------------------------- | --------------------------------------------- |
-| 01  | [Sonar Sweep](http://adventofcode.com/2020/day/1)              | [Day 01 Kotlin (2/2)](/kotlin/src/main/kotlin/de/florian/adventofcode/y2021/Day01.kt) | [Day 01 Python (2/2)](/python/2021/day_01.py) |
-| 02  | [Dive!](http://adventofcode.com/2020/day/2)                    | [Day 02 Kotlin (2/2)](/kotlin/src/main/kotlin/de/florian/adventofcode/y2021/Day02.kt) | [Day 02 Python (2/2)](/python/2021/day_02.py) |
-| 03  | [Binary Diagnostic](http://adventofcode.com/2020/day/3)        | [Day 03 Kotlin (2/2)](/kotlin/src/main/kotlin/de/florian/adventofcode/y2021/Day03.kt) | [Day 03 Python (2/2)](/python/2021/day_03.py) |
-| 04  | [Giant Squid](http://adventofcode.com/2020/day/4)              | -                                                                                     | [Day 04 Python (2/2)](/python/2021/day_04.py) |
-| 05  | [Hydrothermal Venture](http://adventofcode.com/2020/day/5)     | -                                                                                     | [Day 05 Python (2/2)](/python/2021/day_05.py) |
-| 06  | [Lanternfish](http://adventofcode.com/2020/day/6)              | -                                                                                     | [Day 06 Python (2/2)](/python/2021/day_06.py) |
-| 07  | [The Treachery of Whales](http://adventofcode.com/2020/day/7)  | -                                                                                     | [Day 07 Python (2/2)](/python/2021/day_07.py) |
-| 08  | [Seven Segment Search](http://adventofcode.com/2020/day/8)     | -                                                                                     | [Day 08 Python (1/2)](/python/2021/day_08.py) |
-| 09  | [Smoke Basin](http://adventofcode.com/2020/day/9)              | -                                                                                     | [Day 09 Python (1/2)](/python/2021/day_09.py) |
-| 10  | [Syntax Scoring](http://adventofcode.com/2020/day/10)          | -                                                                                     | [Day 10 Python (2/2)](/python/2021/day_10.py) |
-| 11  | [Dumbo Octopus](http://adventofcode.com/2020/day/11)           | -                                                                                     | [Day 11 Python (2/2)](/python/2021/day_11.py) |
-| 12  | [Passage Pathing](http://adventofcode.com/2020/day/12)         | -                                                                                     | [Day 12 Python (2/2)](/python/2021/day_12.py) |
-| 13  | [Transparent Origami](http://adventofcode.com/2020/day/13)     | -                                                                                     | [Day 13 Python (2/2)](/python/2021/day_13.py) |
-| 14  | [Extended Polymerization](http://adventofcode.com/2020/day/14) | -                                                                                     | [Day 14 Python (2/2)](/python/2021/day_14.py) |
-| 15  | [Chiton](http://adventofcode.com/2020/day/15)                  | -                                                                                     | [Day 15 Python (2/2)](/python/2021/day_15.py) |
+| 01  | [Sonar Sweep](http://adventofcode.com/2021/day/1)              | [Day 01 Kotlin (2/2)](/kotlin/src/main/kotlin/de/florian/adventofcode/y2021/Day01.kt) | [Day 01 Python (2/2)](/python/2021/day_01.py) |
+| 02  | [Dive!](http://adventofcode.com/2021/day/2)                    | [Day 02 Kotlin (2/2)](/kotlin/src/main/kotlin/de/florian/adventofcode/y2021/Day02.kt) | [Day 02 Python (2/2)](/python/2021/day_02.py) |
+| 03  | [Binary Diagnostic](http://adventofcode.com/2021/day/3)        | [Day 03 Kotlin (2/2)](/kotlin/src/main/kotlin/de/florian/adventofcode/y2021/Day03.kt) | [Day 03 Python (2/2)](/python/2021/day_03.py) |
+| 04  | [Giant Squid](http://adventofcode.com/2021/day/4)              | -                                                                                     | [Day 04 Python (2/2)](/python/2021/day_04.py) |
+| 05  | [Hydrothermal Venture](http://adventofcode.com/2021/day/5)     | -                                                                                     | [Day 05 Python (2/2)](/python/2021/day_05.py) |
+| 06  | [Lanternfish](http://adventofcode.com/2021/day/6)              | -                                                                                     | [Day 06 Python (2/2)](/python/2021/day_06.py) |
+| 07  | [The Treachery of Whales](http://adventofcode.com/2021/day/7)  | -                                                                                     | [Day 07 Python (2/2)](/python/2021/day_07.py) |
+| 08  | [Seven Segment Search](http://adventofcode.com/2021/day/8)     | -                                                                                     | [Day 08 Python (1/2)](/python/2021/day_08.py) |
+| 09  | [Smoke Basin](http://adventofcode.com/2021/day/9)              | -                                                                                     | [Day 09 Python (1/2)](/python/2021/day_09.py) |
+| 10  | [Syntax Scoring](http://adventofcode.com/2021/day/10)          | -                                                                                     | [Day 10 Python (2/2)](/python/2021/day_10.py) |
+| 11  | [Dumbo Octopus](http://adventofcode.com/2021/day/11)           | -                                                                                     | [Day 11 Python (2/2)](/python/2021/day_11.py) |
+| 12  | [Passage Pathing](http://adventofcode.com/2021/day/12)         | -                                                                                     | [Day 12 Python (2/2)](/python/2021/day_12.py) |
+| 13  | [Transparent Origami](http://adventofcode.com/2021/day/13)     | -                                                                                     | [Day 13 Python (2/2)](/python/2021/day_13.py) |
+| 14  | [Extended Polymerization](http://adventofcode.com/2021/day/14) | -                                                                                     | [Day 14 Python (2/2)](/python/2021/day_14.py) |
+| 15  | [Chiton](http://adventofcode.com/2021/day/15)                  | -                                                                                     | [Day 15 Python (2/2)](/python/2021/day_15.py) |
 
 ### AoC 2020:
 | Day | Puzzle                                                         | Kotlin                                                                                |
@@ -94,7 +100,35 @@
 ### AoC 2018:
 Not implemented yet
 ### AoC 2017:
-Not implemented yet
+| Day | Puzzle                                                                        | Typescript                                               |
+| --- | ----------------------------------------------------------------------------- | -------------------------------------------------------- |
+| 01  | [Inverse Captcha](http://adventofcode.com/2017/day/1)                         | [Day 01 Typescript (2/2)](/typescript/src/2017/day01.ts) |
+| 02  | [Corruption Checksum](http://adventofcode.com/2017/day/2)                     | [Day 02 Typescript (2/2)](/typescript/src/2017/day02.ts) |
+| 03  | [Spiral Memory](http://adventofcode.com/2017/day/3)                           | [Day 03 Typescript (2/2)](/typescript/src/2017/day03.ts) |
+| 04  | [High-Entropy Passphrases](http://adventofcode.com/2017/day/4)                | [Day 04 Typescript (2/2)](/typescript/src/2017/day03.ts) |
+| 05  | [A Maze of Twisty Trampolines, All Alike](http://adventofcode.com/2017/day/5) | [Day 05 Typescript (2/2)](/typescript/src/2017/day03.ts) |
+| 06  | [Memory Reallocation](http://adventofcode.com/2017/day/6)                     | [Day 06 Typescript (2/2)](/typescript/src/2017/day03.ts) |
+| 07  | [Recursive Circus](http://adventofcode.com/2017/day/7)                        | -                                                        |
+| 08  | [Heard You Like Registers](http://adventofcode.com/2017/day/8)                | -                                                        |
+| 09  | [Stream Processing](http://adventofcode.com/2017/day/9)                       | -                                                        |
+| 10  | [Knot Hash](http://adventofcode.com/2017/day/10)                              | -                                                        |
+| 11  | [Hex Ed](http://adventofcode.com/2017/day/11)                                 | -                                                        |
+| 12  | [Digital Plumber](http://adventofcode.com/2017/day/12)                        | -                                                        |
+| 13  | [Packet Scanners](http://adventofcode.com/2017/day/13)                        | -                                                        |
+| 14  | [Disk Defragmentation](http://adventofcode.com/2017/day/14)                   | -                                                        |
+| 15  | [Dueling Generators](http://adventofcode.com/2017/day/15)                     | -                                                        |
+| 16  | [Permutation Promenade](http://adventofcode.com/2017/day/16)                  | -                                                        |
+| 17  | [Spinlock](http://adventofcode.com/2017/day/17)                               | -                                                        |
+| 18  | [Duet](http://adventofcode.com/2017/day/18)                                   | -                                                        |
+| 19  | [A Series of Tubes](http://adventofcode.com/2017/day/19)                      | -                                                        |
+| 20  | [Particle Swarm](http://adventofcode.com/2017/day/20)                         | -                                                        |
+| 21  | [Fractal Art](http://adventofcode.com/2017/day/21)                            | -                                                        |
+| 22  | [Sporifica Virus](http://adventofcode.com/2017/day/22)                        | -                                                        |
+| 23  | [Coprocessor Conflagration](http://adventofcode.com/2017/day/23)              | -                                                        |
+| 24  | [Electromagnetic Moat](http://adventofcode.com/2017/day/24)                   | -                                                        |
+| 25  | [The Halting Problem](http://adventofcode.com/2017/day/25)                    | -                                                        |
+
+
 ### AoC 2016:
 | Day | Puzzle                                                                        | Rust                                               |
 | --- | ----------------------------------------------------------------------------- | -------------------------------------------------- |
