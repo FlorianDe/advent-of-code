@@ -1,55 +1,19 @@
-import {readInput} from "./utils";
+type ZeroToFive = 0|1|2|3|4|5
+type Digits = 1|2|3|4|5|6|7|8|9
+export type Year = `201${ZeroToFive}` | `20${Digits}${0|Digits}`
+export type Day =  `${Digits}`| `0${Digits}` | `1${0|Digits}` | `2${ZeroToFive}`
 
-export type SolutionType = string | number;
-
-export type Solutions = {
-	part1: SolutionType;
-	part2: SolutionType;
+export function assertValidDay(day: number | string | Day): asserts day is Day {
+	const numDay: number = (typeof day !== 'number') ? parseInt(day, 10) : day;
+	if(!Number.isInteger(numDay) || !(numDay >= 1 && numDay <= 25)){
+		throw Error("The provided day is not a valid integer between 1 and 25");
+	}
 }
 
-export abstract class AocDay {
-	private static instances = new Map<string, string>();
-
-	protected input: string;
-
-	private readonly _year: number;
-
-	get year(): number {
-		return this._year;
+export function assertValidYear(year: number | string | Year): asserts year is Year {
+	const numYear: number = (typeof year !== 'number') ? parseInt(year, 10) : year;
+	if(!Number.isInteger(numYear) ||  numYear < 2015 ||  numYear > 2099){
+		throw Error("The provided year is not a valid integer between 2015 and 2099");
 	}
-
-	private readonly _day: number;
-
-	get day(): number {
-		return this._day;
-	}
-
-	protected constructor(year: number, day: number) {
-		this._year = year;
-		this._day = day;
-		this.input = readInput(year, day);
-		const aocDayKey = `${year}${day}`;
-		const aocDayValue = `${this.constructor.name}`;
-		const instanceValue = AocDay.instances.get(aocDayKey);
-		if(instanceValue){
-			if(instanceValue !== aocDayValue){
-				throw Error(`Cannot create instance for ${aocDayValue}, another AocDay implementation ${instanceValue} already claimed the implementation for year: ${this._year} day: ${this._day}.`);
-			}
-		} else {
-			AocDay.instances.set(aocDayKey, aocDayValue);
-		}
-	}
-
-	abstract solve(): Solutions;
-
-	public toString = () : string => {
-		const solutions = this.solve();
-		return `
-${this.year} - Day${String(this.day).padStart(2, '0')}:
-Part1: ${solutions.part1}
-Part2: ${solutions.part2}`;
-
-	};
-
 }
 

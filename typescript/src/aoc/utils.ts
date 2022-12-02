@@ -1,21 +1,8 @@
 import {readFileSync} from 'fs';
 import * as path from 'path';
+import {assertValidDay, assertValidYear, Day, Year} from "./types";
 
-const assertValidDay = (day: number): number => {
-	if(!Number.isInteger(day) || !(day >= 1 && day <= 25)){
-		throw Error("The provided day is not a valid integer between 1 and 25");
-	}
-	return day;
-};
-
-const assertValidYear = (year: number): number => {
-	if(!Number.isInteger(year) ||  year < 2015){
-		throw Error("The provided day is not a valid integer between 1 and 25");
-	}
-	return year;
-};
-
-export const readInput = (year: number, day: number): string => {
+export const readInput = (year: number | string | Year, day: number | string | Day): string => {
 	assertValidYear(year);
 	assertValidDay(day);
 	const fileName = `day${String(day).padStart(2, '0')}.txt`;
