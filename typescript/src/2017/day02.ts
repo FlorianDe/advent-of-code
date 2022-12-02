@@ -1,4 +1,4 @@
-import {AocDay, Solutions} from "../aoc";
+import {AocDay, AocDayDecorator, SolutionParts} from "../aoc";
 
 type RowAggregator = (row: number[]) => number;
 
@@ -10,12 +10,9 @@ function* crossProductIdxGenerator<T>(arr: T[]): Generator<number[]> {
 	}
 }
 
+@AocDayDecorator('2017', '2')
 export class Day02 extends AocDay {
-	constructor() {
-		super(2017, 2);
-	}
-
-	solve(): Solutions {
+	solveImpl(): SolutionParts {
 		const table = this.input.split("\n")
 			.map(row => row.split(/\s+/)
 				.map(cell => Number.parseInt(cell, 10))

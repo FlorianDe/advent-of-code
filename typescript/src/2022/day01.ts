@@ -1,10 +1,7 @@
-import {AocDay, Solutions} from "../aoc";
+import {AocDay, AocDayDecorator, SolutionParts} from "../aoc";
 
+@AocDayDecorator('2022', '1')
 export class Day01 extends AocDay {
-	constructor() {
-		super(2022, 1);
-	}
-
 	private getSortedElfWeights(): number[] {
 		return this.input.split("\n\n")
 			.map(list =>
@@ -18,7 +15,7 @@ export class Day01 extends AocDay {
 		return [ ...Array(elves).keys() ].map(idx => weights[idx]).reduce((acc, cur) => acc+cur, 0);
 	}
 
-	solve(): Solutions {
+	solveImpl(): SolutionParts {
 		const weights = this.getSortedElfWeights();
 
 		return {

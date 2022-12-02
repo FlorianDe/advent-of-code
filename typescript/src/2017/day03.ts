@@ -1,12 +1,9 @@
-import {AocDay, Solutions} from "../aoc";
+import {AocDay, AocDayDecorator, SolutionParts} from "../aoc";
 import {DiagonalGridDirections, Point2D, VerticalAndHorizontalGridDirections} from "../aoc/math/point";
 import {HashMap} from "../aoc/collections/hashmap";
 
+@AocDayDecorator('2017', '3')
 export class Day03 extends AocDay {
-	constructor() {
-		super(2017, 3);
-	}
-
 	private calculateManhattanDistance(gridNumber: number): number {
 		const sumCellsUntilLayer = (l: number) =>  4*l*(l-1)+1;
 		const cellsInLayerPerSide = (l: number) => 2*l+1;
@@ -50,7 +47,7 @@ export class Day03 extends AocDay {
 		return gridNumber;
 	}
 
-	solve(): Solutions {
+	solveImpl(): SolutionParts {
 		const gridNumber = Number.parseInt(this.input, 10);
 
 		return {

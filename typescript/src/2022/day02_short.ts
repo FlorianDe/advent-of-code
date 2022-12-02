@@ -1,11 +1,7 @@
-import {AocDay, Solutions} from "../aoc";
+import {AocDay, SolutionParts} from "../aoc";
 
 export class Day02 extends AocDay {
-	constructor() {
-		super(2022, 2);
-	}
-
-	solve(): Solutions {
+	solveImpl(): SolutionParts {
 		type SymbolMapFn = ([ops, you]: number[]) => number[];
 		const SYMBOL_MAP = Object.fromEntries(['A', 'B', 'C', 'X', 'Y', 'Z'].map((e, idx) => [e, idx % 3]));
 		const symbolsToNumber = ([ops, you]: string[]): number[] => [SYMBOL_MAP[ops], SYMBOL_MAP[you]];

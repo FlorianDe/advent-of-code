@@ -1,11 +1,8 @@
-import {AocDay, Solutions} from "../aoc";
+import {AocDay, AocDayDecorator, SolutionParts} from "../aoc";
 
+@AocDayDecorator('2017', '6')
 export class Day06 extends AocDay {
-	constructor() {
-		super(2017, 6);
-	}
-
-	solve(): Solutions {
+	solveImpl(): SolutionParts {
 		const memoryBanks = this.input.split(/\s+/).map(cell => Number.parseInt(cell, 10));
 
 		const seenMemoryConfigs = new Map<string, number>();

@@ -1,10 +1,7 @@
-import {AocDay, Solutions} from "../aoc";
+import {AocDay, AocDayDecorator, SolutionParts} from "../aoc";
 
+@AocDayDecorator('2017', '1')
 export class Day01 extends AocDay {
-	constructor() {
-		super(2017, 1);
-	}
-
 	private calcCaptcha(nextDigitIndexSupplier: (idx: number, inputLength: number) => number): number {
 		const inputLength = this.input.split("").length;
 		let sum = 0;
@@ -16,7 +13,7 @@ export class Day01 extends AocDay {
 		return sum;
 	}
 
-	solve(): Solutions {
+	solveImpl(): SolutionParts {
 		return {
 			part1: this.calcCaptcha((idx, inputLength) => (idx + 1) % inputLength),
 			part2: this.calcCaptcha((idx, inputLength) => (idx + (inputLength/2)) % inputLength),

@@ -1,4 +1,4 @@
-import {AocDay, Solutions} from "../aoc";
+import {AocDay, AocDayDecorator, SolutionParts} from "../aoc";
 
 type GuideSymbolsLeft = 'A' | 'B' | 'C'
 type GuideSymbolsRight = 'X' | 'Y' | 'Z'
@@ -20,10 +20,8 @@ const RoundOutcomePoints: Record<RoundOutcome, number> = {
 	Draw: 3,
 	Won: 6
 };
+@AocDayDecorator('2022', '2')
 export class Day02 extends AocDay {
-	constructor() {
-		super(2022, 2);
-	}
 	calcRoundOutcome(round: Round): RoundOutcome {
 		if(round.op === round.you){
 			return 'Draw';
@@ -84,7 +82,7 @@ export class Day02 extends AocDay {
 			};
 		});
 	}
-	solve(): Solutions {
+	solveImpl(): SolutionParts {
 		const guideLines = this.input.split("\n");
 		return {
 			part1: this.calculateScore(this.getMisreadGuideRounds(guideLines)),

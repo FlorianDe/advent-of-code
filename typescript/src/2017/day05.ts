@@ -1,11 +1,8 @@
-import {AocDay, Solutions} from "../aoc";
+import {AocDay, AocDayDecorator, SolutionParts} from "../aoc";
 
+@AocDayDecorator('2017', '5')
 export class Day05 extends AocDay {
-	constructor() {
-		super(2017, 5);
-	}
-
-	solve(): Solutions {
+	solveImpl(): SolutionParts {
 		const parsedInstructions = this.input.split("\n").map(n => Number.parseInt(n, 10));
 
 		const executeJumps = (isPart2?: boolean): number => {

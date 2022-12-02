@@ -1,12 +1,10 @@
-import {AocDay, Solutions} from "../aoc";
+import {AocDay, AocDayDecorator, SolutionParts} from "../aoc";
 
 type WordHashFn = (word: string) => string
-export class Day04 extends AocDay {
-	constructor() {
-		super(2017, 4);
-	}
 
-	solve(): Solutions {
+@AocDayDecorator('2017', '4')
+export class Day04 extends AocDay {
+	solveImpl(): SolutionParts {
 		const passphrases = this.input.split("\n").map(line => line.split(" "));
 
 		const rowSecurityCheck = (hashFn?: WordHashFn) => passphrases.filter(row => {
