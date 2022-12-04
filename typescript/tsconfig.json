@@ -1,4 +1,9 @@
 {
+  "ts-node": {
+    "transpileOnly": false,
+    "files": true,
+    "compilerOptions": {}
+  },
   "compilerOptions": {
     "outDir": "./dist",
     "target": "es2022",
