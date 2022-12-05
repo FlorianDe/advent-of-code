@@ -13,10 +13,13 @@
 | [2015](#aoc-2015) | :white_check_mark: ([here](/kotlin/src/main/kotlin/de/florian/adventofcode/y2015)) | :x:                                       | :white_check_mark: ([here](/rust/src/y2015/days/)) | :x:                                                |
 
 ## Yearly Overview
-| Day | Puzzle                                                    | Kotlin | Typescript                                               |
-| --- | --------------------------------------------------------- | ------ | -------------------------------------------------------- |
-| 01  | [Calorie Counting](http://adventofcode.com/2021/day/1)    | -      | [Day 01 Typescript (2/2)](/typescript/src/2022/day01.ts) |
-| 02  | [Rock Paper Scissors](http://adventofcode.com/2021/day/2) | -      | [Day 02 Typescript (2/2)](/typescript/src/2022/day02.ts) |
+| Day | Puzzle                                                        | Kotlin | Typescript                                               |
+| --- | ------------------------------------------------------------- | ------ | -------------------------------------------------------- |
+| 01  | [Calorie Counting](http://adventofcode.com/2021/day/1)        | -      | [Day 01 Typescript (2/2)](/typescript/src/2022/day01.ts) |
+| 02  | [Rock Paper Scissors](http://adventofcode.com/2021/day/2)     | -      | [Day 02 Typescript (2/2)](/typescript/src/2022/day02.ts) |
+| 03  | [Rucksack Reorganization](http://adventofcode.com/2021/day/3) | -      | [Day 03 Typescript (2/2)](/typescript/src/2022/day03.ts) |
+| 04  | [Camp Cleanup](http://adventofcode.com/2021/day/4)            | -      | [Day 04 Typescript (2/2)](/typescript/src/2022/day04.ts) |
+| 05  | [Supply Stacks](http://adventofcode.com/2021/day/5)           | -      | [Day 05 Typescript (2/2)](/typescript/src/2022/day05.ts) |
 
 ### AoC 2021:
 | Day | Puzzle                                                         | Kotlin                                                                                | Python                                        |
