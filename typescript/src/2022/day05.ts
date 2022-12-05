@@ -8,7 +8,7 @@ export class Day05 extends AocDay {
 		const [rawCrates, rawInstructions] = this.input.split("\n\n");
 
 		const createRows = rawCrates.split("\n");
-		const stacksCount = (createRows[createRows.length - 1].length + 1) / 4;
+		const stacksCount = (createRows[createRows.length - 1].length + 2) / 4;
 		const crateStacks = createRows.slice(0, -1).reverse()
 			.reduce<string[][]>((acc, cur) => {
 				const cols = cur.padEnd(stacksCount * 4 - 1, " ").split("").filter((e, idx) => ((idx - 1) % 4) === 0);
@@ -18,7 +18,7 @@ export class Day05 extends AocDay {
 					}
 				}
 				return acc;
-			}, Array.from({length: 9}, () => []));
+			}, Array.from({length: stacksCount}, () => []));
 
 		const instructions = rawInstructions.split("\n").map(l => l.trim())
 			.map(s => INSTRUCTION_EXTRACTION_REGEX.exec(s))
