@@ -6,8 +6,12 @@ export namespace Sets {
 	export const intersection = <T>(a: Set<T> | Iterable<T>, b: Set<T>): Set<T> => new Set([...a].filter(x => b.has(x)));
 }
 
+export namespace Functions {
+	export const identity = <T>(e: T) => e;
+}
 
 export const sum = (acc: number, cur: number): number => acc+cur;
+export const notEmpty = <T>(value: T | null | undefined): value is T => value !== null && value !== undefined;
 
 export const chunk = <T>(arr: T[], size: number): T[][] => Array.from({ length: Math.ceil(arr.length / size) }, (v, i) =>
 	arr.slice(i * size, i * size + size)
