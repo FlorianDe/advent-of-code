@@ -7,9 +7,9 @@ export class Day05 extends AocDay {
 		const INSTRUCTION_EXTRACTION_REGEX = /move (?<amount>\d+) from (?<from>\d) to (?<to>\d)/;
 		const [rawCrates, rawInstructions] = this.input.split("\n\n");
 
-		const createRows = rawCrates.split("\n");
-		const stacksCount = (createRows[createRows.length - 1].length + 2) / 4;
-		const crateStacks = createRows.slice(0, -1).reverse()
+		const crateRows = rawCrates.split("\n");
+		const stacksCount = (crateRows[crateRows.length - 1].length + 2) / 4;
+		const crateStacks = crateRows.slice(0, -1).reverse()
 			.reduce<string[][]>((acc, cur) => {
 				const cols = cur.padEnd(stacksCount * 4 - 1, " ").split("").filter((e, idx) => ((idx - 1) % 4) === 0);
 				for (const [idx, c] of cols.entries()) {
