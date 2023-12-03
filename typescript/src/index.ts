@@ -2,6 +2,7 @@ import {AocDay, AocDayConstructor, AocDayConstructorMap, getAocDays, parseArgs, 
 
 import * as y2017 from './2017';
 import * as y2022 from './2022';
+import * as y2023 from './2023';
 
 const {year, day} = parseArgs();
 
@@ -22,7 +23,7 @@ const runYear = (aocDayCtrMap: AocDayConstructorMap | Record<any, AocDayConstruc
 if(year){
 	Object.values(getAocDays(year, day)).forEach(runDay);
 } else {
-	[y2017, y2022].forEach(runYear);
+	[y2017, y2022, y2023].forEach(runYear);
 }
 
 
