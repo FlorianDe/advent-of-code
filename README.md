@@ -3,6 +3,7 @@
 ## Languages used per year
 | Year              | Kotlin                                                                             | Python                                    | Rust                                               | Typescript                                         |
 | ----------------- | ---------------------------------------------------------------------------------- | ----------------------------------------- | -------------------------------------------------- | -------------------------------------------------- |
+| [2023](#aoc-2023) | :x:                                                                                | :x:                                       | :x:                                                | :white_check_mark: ([here](/typescript/src/2023/)) |
 | [2022](#aoc-2022) | :x:                                                                                | :x:                                       | :x:                                                | :white_check_mark: ([here](/typescript/src/2022/)) |
 | [2021](#aoc-2021) | :white_check_mark: ([here](/kotlin/src/main/kotlin/de/florian/adventofcode/y2021)) | :white_check_mark: ([here](/python/2021)) | :x:                                                | :x:                                                |
 | [2020](#aoc-2020) | :white_check_mark: ([here](/kotlin/src/main/kotlin/de/florian/adventofcode/y2020)) | :x:                                       | :x:                                                | :x:                                                |
@@ -13,13 +14,28 @@
 | [2015](#aoc-2015) | :white_check_mark: ([here](/kotlin/src/main/kotlin/de/florian/adventofcode/y2015)) | :x:                                       | :white_check_mark: ([here](/rust/src/y2015/days/)) | :x:                                                |
 
 ## Yearly Overview
+
+### AoC 2023:
 | Day | Puzzle                                                        | Kotlin | Typescript                                               |
 | --- | ------------------------------------------------------------- | ------ | -------------------------------------------------------- |
-| 01  | [Calorie Counting](http://adventofcode.com/2021/day/1)        | -      | [Day 01 Typescript (2/2)](/typescript/src/2022/day01.ts) |
-| 02  | [Rock Paper Scissors](http://adventofcode.com/2021/day/2)     | -      | [Day 02 Typescript (2/2)](/typescript/src/2022/day02.ts) |
-| 03  | [Rucksack Reorganization](http://adventofcode.com/2021/day/3) | -      | [Day 03 Typescript (2/2)](/typescript/src/2022/day03.ts) |
-| 04  | [Camp Cleanup](http://adventofcode.com/2021/day/4)            | -      | [Day 04 Typescript (2/2)](/typescript/src/2022/day04.ts) |
-| 05  | [Supply Stacks](http://adventofcode.com/2021/day/5)           | -      | [Day 05 Typescript (2/2)](/typescript/src/2022/day05.ts) |
+| 01  | [Trebuchet?!](http://adventofcode.com/2023/day/1)        | -      | [Day 01 Typescript (2/2)](/typescript/src/2023/day01.ts) |
+| 02  | [Cube Conundrum](http://adventofcode.com/2023/day/2)     | -      | [Day 02 Typescript (2/2)](/typescript/src/2023/day02.ts) |
+| 03  | [Gear Ratios](http://adventofcode.com/2023/day/3) | -      | [Day 03 Typescript (2/2)](/typescript/src/2023/day03.ts) |
+| 04  | [Scratchcards](http://adventofcode.com/2023/day/4)            | -      | [Day 04 Typescript (2/2)](/typescript/src/2023/day04.ts) |
+
+
+### AoC 2022:
+| Day | Puzzle                                                        | Kotlin | Typescript                                               |
+| --- | ------------------------------------------------------------- | ------ | -------------------------------------------------------- |
+| 01  | [Calorie Counting](http://adventofcode.com/2022/day/1)        | -      | [Day 01 Typescript (2/2)](/typescript/src/2022/day01.ts) |
+| 02  | [Rock Paper Scissors](http://adventofcode.com/2022/day/2)     | -      | [Day 02 Typescript (2/2)](/typescript/src/2022/day02.ts) |
+| 03  | [Rucksack Reorganization](http://adventofcode.com/2022/day/3) | -      | [Day 03 Typescript (2/2)](/typescript/src/2022/day03.ts) |
+| 04  | [Camp Cleanup](http://adventofcode.com/2022/day/4)            | -      | [Day 04 Typescript (2/2)](/typescript/src/2022/day04.ts) |
+| 05  | [Supply Stacks](http://adventofcode.com/2022/day/5)           | -      | [Day 05 Typescript (2/2)](/typescript/src/2022/day05.ts) |
+| 06  | [Tuning Trouble](http://adventofcode.com/2022/day/6)           | -      | [Day 06 Typescript (2/2)](/typescript/src/2022/day06.ts) |
+| 07  | [No Space Left On Device](http://adventofcode.com/2022/day/7)           | -      | [Day 07 Typescript (2/2)](/typescript/src/2022/day07.ts) |
+| 08  | [Treetop Tree House](http://adventofcode.com/2022/day/8)           | -      | [Day 08 Typescript (2/2)](/typescript/src/2022/day08.ts) |
+| 09  | [Rope Bridge](http://adventofcode.com/2022/day/9)           | -      | [Day 09 Typescript (2/2)](/typescript/src/2022/day09.ts) |
 
 ### AoC 2021:
 | Day | Puzzle                                                         | Kotlin                                                                                | Python                                        |
