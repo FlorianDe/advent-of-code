@@ -1,4 +1,4 @@
-import {AocDay, AocDayDecorator, SolutionParts, sum} from "../aoc";
+import {AocDay, AocDayDecorator, SolutionParts, Aggregates} from "../aoc";
 
 @AocDayDecorator('2023', '1')
 export class Day01 extends AocDay {
@@ -25,7 +25,7 @@ export class Day01 extends AocDay {
 			.map((line) => line.trim())
 			.map((line) => getRowNumber(line, withLiterals))
 			.map(str => parseInt(str, 10))
-			.reduce(sum);
+			.reduce(Aggregates.sum);
 
 		return {
 			part1: getCalibrationSum(false),

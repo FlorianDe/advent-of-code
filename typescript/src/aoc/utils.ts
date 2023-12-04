@@ -10,21 +10,30 @@ export namespace Functions {
 	export const identity = <T>(e: T) => e;
 }
 
-export const sum = (acc: number, cur: number): number => acc+cur;
-export const notEmpty = <T>(value: T | null | undefined): value is T => value !== null && value !== undefined;
+export namespace Aggregates {
+	export const sum = (acc: number, cur: number): number => acc+cur;
+}
 
-export const chunk = <T>(arr: T[], size: number): T[][] => Array.from({ length: Math.ceil(arr.length / size) }, (v, i) =>
-	arr.slice(i * size, i * size + size)
-);
+export namespace Filters {
+	export const notEmpty = <T>(value: T | null | undefined): value is T => value !== null && value !== undefined;
+}
 
-export const readInput = (year: number | string | Year, day: number | string | Day): string => {
-	assertValidYear(year);
-	assertValidDay(day);
-	const fileName = `day${String(day).padStart(2, '0')}.txt`;
-	const inputTextPath = path.resolve(__dirname, "..", `${year}`, 'inputs', fileName);
-	const fileContent = readFileSync(inputTextPath, {encoding: "utf-8"});
-	if(fileContent.trim().length === 0){
-		throw new Error(`The content of the puzzle input for the year ${year} day ${day} is empty!`);
-	}
-	return fileContent;
-};
+export namespace Arrays {
+	export const chunk = <T>(arr: T[], size: number): T[][] => Array.from({ length: Math.ceil(arr.length / size) }, (v, i) =>
+		arr.slice(i * size, i * size + size)
+	);
+}
+
+export namespace Files {
+	export const readContent = (year: number | string | Year, day: number | string | Day): string => {
+		assertValidYear(year);
+		assertValidDay(day);
+		const fileName = `day${String(day).padStart(2, '0')}.txt`;
+		const inputTextPath = path.resolve(__dirname, "..", `${year}`, 'inputs', fileName);
+		const fileContent = readFileSync(inputTextPath, {encoding: "utf-8"});
+		if(fileContent.trim().length === 0){
+			throw new Error(`The content of the puzzle input for the year ${year} day ${day} is empty!`);
+		}
+		return fileContent;
+	};
+}

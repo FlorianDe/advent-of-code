@@ -1,5 +1,5 @@
 import {performance} from "perf_hooks";
-import {readInput} from "./utils";
+import {Files} from "./utils";
 import {Day, Year} from "./types";
 
 export type AocDayConstructor = new (...args: any[]) => IAocDay
@@ -7,9 +7,10 @@ export type AocDayConstructorMap = Partial<Record<Day, AocDayConstructor>>;
 export type AocYearDaysConstructorMap = Partial<Record<Year, AocDayConstructorMap>>
 
 const aocDayConstructors: AocYearDaysConstructorMap = {};
+
 export function AocDayDecorator(year: Year, day: Day) {
 	return <T extends AocDayConstructor>(constructor: T) => {
-		if(!aocDayConstructors[year]){
+		if (!aocDayConstructors[year]) {
 			aocDayConstructors[year] = {};
 		}
 		const aocYear = aocDayConstructors[year];
@@ -17,22 +18,23 @@ export function AocDayDecorator(year: Year, day: Day) {
 			_year = year;
 			_day = day;
 		};
-		if(aocYear && !aocYear[day]){
+		if (aocYear && !aocYear[day]) {
 			aocYear[day] = enrichedConstructor;
 		}
 		return enrichedConstructor;
 	};
 }
+
 export function getAocDays(year: Year, day?: Day): Partial<Record<Day, AocDayConstructor>> {
 	const aocYear = aocDayConstructors[year];
-	if(!aocYear){
+	if (!aocYear) {
 		throw Error(`No solutions found for year ${year}.`);
 	}
-	if(!day){
+	if (!day) {
 		return aocYear;
 	}
 	const aocDay = aocYear[day];
-	if(!aocDay){
+	if (!aocDay) {
 		throw Error(`No solutions found for year ${year}, day: ${day}.`);
 	}
 	return {[day]: aocDay};
@@ -50,15 +52,17 @@ export type SolutionMetaData = {
 	duration: number;
 }
 export type Solution = SolutionParts & SolutionMetaData
+
 export interface IAocDay {
 	solve(): Solution;
 }
-export abstract class AocDay implements IAocDay{
+
+export abstract class AocDay implements IAocDay {
 	private static instances = new Map<string, string>();
 
 	protected _input: string | undefined;
 	get input(): string {
-		if(!this._input){
+		if (!this._input) {
 			throw Error(`The private _input field of the AocDay implementation ${this.constructor.name} was not set.`);
 		}
 		return this._input;
@@ -66,7 +70,7 @@ export abstract class AocDay implements IAocDay{
 
 	private readonly _year: Year | undefined;
 	get year(): Year {
-		if(!this._year){
+		if (!this._year) {
 			throw Error(`The private _year field of the AocDay implementation ${this.constructor.name} should be set via the ${AocDayDecorator.name} decorator.`);
 		}
 		return this._year;
@@ -74,7 +78,7 @@ export abstract class AocDay implements IAocDay{
 
 	private readonly _day: Day | undefined;
 	get day(): Day {
-		if(!this._day){
+		if (!this._day) {
 			throw Error(`The private _day field of the AocDay implementation ${this.constructor.name} should be set via the ${AocDayDecorator.name} decorator.`);
 		}
 		return this._day;
@@ -83,12 +87,12 @@ export abstract class AocDay implements IAocDay{
 	protected abstract solveImpl(): SolutionParts;
 
 	solve(): Solution {
-		this._input = readInput(this.year, this.day);
+		this._input = Files.readContent(this.year, this.day);
 		const aocDayKey = `${this.year}${this.day}`;
 		const aocDayValue = `${this.constructor.name}`;
 		const instanceValue = AocDay.instances.get(aocDayKey);
-		if(instanceValue){
-			if(instanceValue !== aocDayValue){
+		if (instanceValue) {
+			if (instanceValue !== aocDayValue) {
 				throw Error(`Cannot call solve for instance ${aocDayValue}, another AocDay implementation ${instanceValue} already claimed the implementation for year: ${this._year} day: ${this._day}.`);
 			}
 		} else {
@@ -97,7 +101,7 @@ export abstract class AocDay implements IAocDay{
 
 		const start = performance.now();
 		const solutionParts = this.solveImpl();
-		const duration = performance.now()-start;
+		const duration = performance.now() - start;
 		return {
 			...solutionParts,
 			duration,
