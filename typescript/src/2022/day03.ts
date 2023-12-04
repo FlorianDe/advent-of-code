@@ -1,4 +1,4 @@
-import {AocDay, AocDayDecorator, chunk, Sets, SolutionParts, sum} from "../aoc";
+import {AocDay, AocDayDecorator, Sets, SolutionParts, Aggregates, Arrays} from "../aoc";
 
 @AocDayDecorator('2022', '3')
 export class Day03 extends AocDay {
@@ -16,13 +16,13 @@ export class Day03 extends AocDay {
 	score = (groupedCompartments: string[][]): number => groupedCompartments
 		.map(this.getDuplicateItem)
 		.map(this.getBadgePriority)
-		.reduce(sum);
+		.reduce(Aggregates.sum);
 
 	solveImpl(): SolutionParts {
 		const lines = this.input.split("\n");
 		return {
 			part1: this.score(lines.map((line) => [line.substring(0, line.length/2), line.substring(line.length/2, line.length)])),
-			part2: this.score(chunk(lines, 3)),
+			part2: this.score(Arrays.chunk(lines, 3)),
 		};
 	}
 }

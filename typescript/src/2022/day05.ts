@@ -1,4 +1,4 @@
-import {AocDay, AocDayDecorator, Functions, notEmpty, SolutionParts} from "../aoc";
+import {AocDay, AocDayDecorator, Functions, SolutionParts, Filters} from "../aoc";
 
 @AocDayDecorator('2022', '5')
 export class Day05 extends AocDay {
@@ -22,7 +22,7 @@ export class Day05 extends AocDay {
 
 		const instructions = rawInstructions.split("\n").map(l => l.trim())
 			.map(s => INSTRUCTION_EXTRACTION_REGEX.exec(s))
-			.filter(notEmpty)
+			.filter(Filters.notEmpty)
 			.map(match => {
 				const {amount, from, to} = match.groups!!;
 				return {

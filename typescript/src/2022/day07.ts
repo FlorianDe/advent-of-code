@@ -1,4 +1,4 @@
-import {AocDay, AocDayDecorator, SolutionParts, sum} from "../aoc";
+import {AocDay, AocDayDecorator, SolutionParts, Aggregates} from "../aoc";
 
 @AocDayDecorator('2022', '7')
 export class Day07 extends AocDay {
@@ -63,7 +63,7 @@ export class Day07 extends AocDay {
 			part1: Object.values(nodes)
 				.filter(isDir)
 				.filter(e => e.size <= 100000)
-				.map(e => e.size).reduce(sum),
+				.map(e => e.size).reduce(Aggregates.sum),
 
 			part2: Object.values(nodes)
 				.filter(isDir)

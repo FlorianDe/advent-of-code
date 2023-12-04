@@ -1,4 +1,4 @@
-import {AocDay, AocDayDecorator, Sets, SolutionParts, sum} from "../aoc";
+import {AocDay, AocDayDecorator, Sets, SolutionParts, Aggregates} from "../aoc";
 
 @AocDayDecorator('2023', '4')
 export class Day04 extends AocDay {
@@ -29,7 +29,7 @@ export class Day04 extends AocDay {
 			return hits > 0 ? 2**(hits-1) : 0;
 		};
 
-		const sumOfScratchCardPoints = () => scratchcards.map(calculateScratchCardWin).reduce(sum);
+		const sumOfScratchCardPoints = () => scratchcards.map(calculateScratchCardWin).reduce(Aggregates.sum);
 
 		const amountOfDynamicScratchCards = (): number => {
 			const cardAmounts: number[] = Array.from<number>({length: scratchcards.length}).fill(1);
@@ -39,7 +39,7 @@ export class Day04 extends AocDay {
 					cardAmounts[i+step] += cardAmounts[i];
 				}
 			}
-			return cardAmounts.reduce(sum);
+			return cardAmounts.reduce(Aggregates.sum);
 		};
 
 		return {

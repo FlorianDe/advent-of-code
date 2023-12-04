@@ -1,4 +1,4 @@
-import {AocDay, AocDayDecorator, SolutionParts, sum} from "../aoc";
+import {AocDay, AocDayDecorator, SolutionParts, Aggregates} from "../aoc";
 
 @AocDayDecorator('2023', '2')
 export class Day02 extends AocDay {
@@ -45,7 +45,7 @@ export class Day02 extends AocDay {
 			return true;
 		}
 
-		const part1 = games.filter(hasEnoughBalls).map(g => g.id).reduce(sum);
+		const part1 = games.filter(hasEnoughBalls).map(g => g.id).reduce(Aggregates.sum);
 		const part2 = games.reduce<number>((gameSum,game) => {
 			const maxOfEachColorPerGame = Object.keys(balls).reduce<Record<string, number>>((acc, color) => {
 				game.draws.forEach((draw) => {
