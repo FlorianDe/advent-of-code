@@ -24,7 +24,7 @@ export class Day01 extends AocDay {
 		const getCalibrationSum = (withLiterals: boolean) => this.input.split("\n")
 			.map((line) => line.trim())
 			.map((line) => getRowNumber(line, withLiterals))
-			.map(parseInt)
+			.map(str => parseInt(str, 10))
 			.reduce(sum);
 
 		return {
