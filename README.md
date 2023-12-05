@@ -23,6 +23,7 @@
 | [02 - Cube Conundrum](https://adventofcode.com/2023/day/2)                                           | [Day 02 TypeScript](/typescript/src/2023/day02.ts) | 
 | [03 - Gear Ratios](https://adventofcode.com/2023/day/3)                                              | [Day 03 TypeScript](/typescript/src/2023/day03.ts) | 
 | [04 - Scratchcards](https://adventofcode.com/2023/day/4)                                             | [Day 04 TypeScript](/typescript/src/2023/day04.ts) | 
+| [05 - If You Give A Seed A Fertilizer](https://adventofcode.com/2023/day/5)                          | [Day 05 TypeScript](/typescript/src/2023/day05.ts) | 
 
 ### AoC 2022 
 | Day                                                                                                  | Kotlin                                                                          | TypeScript                                         | 
