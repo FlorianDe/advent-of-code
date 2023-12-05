@@ -1,0 +1,23 @@
+{
+  "name": "aoc",
+  "version": "1.0.0",
+  "description": "Advent of Code CLI",
+  "type": "commonjs",
+  "scripts": {
+    "generate:readme": "ts-node ./cli.ts"
+  },
+  "keywords": [
+    "aoc"
+  ],
+  "author": "FlorianDe",
+  "devDependencies": {
+    "typescript": "^5.3.2",
+    "ts-node": "^10.9.1",
+    "@types/node": "^20.10.2"
+  },
+  "dependencies": {
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
