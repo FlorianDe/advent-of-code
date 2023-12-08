@@ -26,6 +26,7 @@
 | [05 - If You Give A Seed A Fertilizer](https://adventofcode.com/2023/day/5)                          | [Day 05 TypeScript](/typescript/src/2023/day05.ts) | 
 | [06 - Wait For It](https://adventofcode.com/2023/day/6)                                              | [Day 06 TypeScript](/typescript/src/2023/day06.ts) | 
 | [07 - Camel Cards](https://adventofcode.com/2023/day/7)                                              | [Day 07 TypeScript](/typescript/src/2023/day07.ts) | 
+| [08 - Haunted Wasteland](https://adventofcode.com/2023/day/8)                                        | [Day 08 TypeScript](/typescript/src/2023/day08.ts) | 
 
 ### AoC 2022 
 | Day                                                                                                  | Kotlin                                                                          | TypeScript                                         | 
