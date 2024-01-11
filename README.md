@@ -4,6 +4,7 @@
 ## Languages used per year
 | Year              | Kotlin                                                                             | Python                                    | Rust                                              | TypeScript                                        | 
 | ----------------- | ---------------------------------------------------------------------------------- | ----------------------------------------- | ------------------------------------------------- | ------------------------------------------------- | 
+| [2024](#aoc-2024) | :x:                                                                                | :x:                                       | :x:                                               | :x:                                               | 
 | [2023](#aoc-2023) | :x:                                                                                | :x:                                       | :x:                                               | :white_check_mark: ([here](/typescript/src/2023)) | 
 | [2022](#aoc-2022) | :white_check_mark: ([here](/kotlin/src/main/kotlin/de/florian/adventofcode/y2022)) | :x:                                       | :x:                                               | :white_check_mark: ([here](/typescript/src/2022)) | 
 | [2021](#aoc-2021) | :white_check_mark: ([here](/kotlin/src/main/kotlin/de/florian/adventofcode/y2021)) | :x:                                       | :x:                                               | :x:                                               | 
@@ -16,6 +17,10 @@
 
 
 ## Yearly Overview
+### AoC 2024 
+| Day                                                                                                  | 
+| ---------------------------------------------------------------------------------------------------- | 
+
 ### AoC 2023 
 | Day                                                                                                  | TypeScript                                         | 
 | ---------------------------------------------------------------------------------------------------- | -------------------------------------------------- | 
@@ -27,6 +32,23 @@
 | [06 - Wait For It](https://adventofcode.com/2023/day/6)                                              | [Day 06 TypeScript](/typescript/src/2023/day06.ts) | 
 | [07 - Camel Cards](https://adventofcode.com/2023/day/7)                                              | [Day 07 TypeScript](/typescript/src/2023/day07.ts) | 
 | [08 - Haunted Wasteland](https://adventofcode.com/2023/day/8)                                        | [Day 08 TypeScript](/typescript/src/2023/day08.ts) | 
+| [09 - Mirage Maintenance](https://adventofcode.com/2023/day/9)                                       | [Day 09 TypeScript](/typescript/src/2023/day09.ts) | 
+| [10 - Pipe Maze](https://adventofcode.com/2023/day/10)                                               | -                                                  | 
+| [11 - Cosmic Expansion](https://adventofcode.com/2023/day/11)                                        | -                                                  | 
+| [12 - Hot Springs](https://adventofcode.com/2023/day/12)                                             | -                                                  | 
+| [13 - Point of Incidence](https://adventofcode.com/2023/day/13)                                      | -                                                  | 
+| [14 - Parabolic Reflector Dish](https://adventofcode.com/2023/day/14)                                | -                                                  | 
+| [15 - Lens Library](https://adventofcode.com/2023/day/15)                                            | -                                                  | 
+| [16 - The Floor Will Be Lava](https://adventofcode.com/2023/day/16)                                  | -                                                  | 
+| [17 - Clumsy Crucible](https://adventofcode.com/2023/day/17)                                         | -                                                  | 
+| [18 - Lavaduct Lagoon](https://adventofcode.com/2023/day/18)                                         | -                                                  | 
+| [19 - Aplenty](https://adventofcode.com/2023/day/19)                                                 | -                                                  | 
+| [20 - Pulse Propagation](https://adventofcode.com/2023/day/20)                                       | -                                                  | 
+| [21 - Step Counter](https://adventofcode.com/2023/day/21)                                            | -                                                  | 
+| [22 - Sand Slabs](https://adventofcode.com/2023/day/22)                                              | -                                                  | 
+| [23 - A Long Walk](https://adventofcode.com/2023/day/23)                                             | -                                                  | 
+| [24 - Never Tell Me The Odds](https://adventofcode.com/2023/day/24)                                  | -                                                  | 
+| [25 - Snowverload](https://adventofcode.com/2023/day/25)                                             | -                                                  | 
 
 ### AoC 2022 
 | Day                                                                                                  | Kotlin                                                                          | TypeScript                                         | 
