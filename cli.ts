@@ -38,7 +38,7 @@ const config: Config = {
 	},
 	Python: {
 		yearResolver: (year: number) => `/python/${year}`,
-		dayResolver: (year, day) => `/python/${year}/day_${padDay(day)}.ts`,
+		dayResolver: (year, day) => `/python/${year}/day_${padDay(day)}.py`,
 	},
 	Rust: {
 		yearResolver: (year: number) => `/rust/src/y${year}/days`,
