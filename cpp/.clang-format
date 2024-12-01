@@ -1,0 +1,8 @@
+---
+Language: Cpp
+BasedOnStyle: LLVM
+ColumnLimit: 120
+TabWidth: 2
+UseTab: Always
+PointerAlignment: Left
+---

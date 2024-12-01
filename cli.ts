@@ -47,6 +47,10 @@ const config: Config = {
 	TypeScript: {
 		yearResolver: (year: number) => `/typescript/src/${year}`,
 		dayResolver: (year, day) => `/typescript/src/${year}/day${padDay(day)}.ts`,
+	},
+	CPP: {
+		yearResolver: (year: number) => `/cpp/src/${year}`,
+		dayResolver: (year, day) => `/cpp/src/${year}/day${padDay(day)}.cpp`,
 	}
 }
 
@@ -95,6 +99,7 @@ const searchSolutions = (): Solutions => {
 				const relativeSolutionPath = langConfig.dayResolver(year, day);
 				const solutionPath = path.join(__dirname, relativeSolutionPath)
 				const solutionExists = fs.existsSync(solutionPath)
+				
 				if(solutionExists){
 					if(!solutions[year]){
 						solutions[year] = {};
@@ -155,7 +160,7 @@ const generateReadmeContent = async (solutions: Solutions, config: Config): Prom
 
 		let tableRows = ""
 		for (let day = 1; day <= 25 ; day++) {
-			if(year < currentYear){ // || (year === currentYear && day <= new Date().getDate())){ //workaround should also check time with timezone
+			if(year < currentYear || (year === currentYear && day <= new Date().getDate())){ //workaround should also check time with timezone
 				const aocDayDescription = await getExerciseFile(year, day);
 				const dayTitle = extractDayTitle(aocDayDescription).replace(/Day.\d{0,2}:/, "").trim();
 				const languagesColumnContents = availableLangSolutions.map(lang => solutions[year]?.[lang]?.[day] ? getLanguageSolutionLink(lang,  year, day) : spaceLanguageColumn("-", lang))
