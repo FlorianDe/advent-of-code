@@ -2,24 +2,25 @@
 # Advent of Code
 
 ## Languages used per year
-| Year              | Kotlin                                                                             | Python                                    | Rust                                              | TypeScript                                        | 
-| ----------------- | ---------------------------------------------------------------------------------- | ----------------------------------------- | ------------------------------------------------- | ------------------------------------------------- | 
-| [2024](#aoc-2024) | :x:                                                                                | :x:                                       | :x:                                               | :x:                                               | 
-| [2023](#aoc-2023) | :x:                                                                                | :x:                                       | :x:                                               | :white_check_mark: ([here](/typescript/src/2023)) | 
-| [2022](#aoc-2022) | :white_check_mark: ([here](/kotlin/src/main/kotlin/de/florian/adventofcode/y2022)) | :x:                                       | :x:                                               | :white_check_mark: ([here](/typescript/src/2022)) | 
-| [2021](#aoc-2021) | :white_check_mark: ([here](/kotlin/src/main/kotlin/de/florian/adventofcode/y2021)) | :x:                                       | :x:                                               | :x:                                               | 
-| [2020](#aoc-2020) | :white_check_mark: ([here](/kotlin/src/main/kotlin/de/florian/adventofcode/y2020)) | :x:                                       | :x:                                               | :x:                                               | 
-| [2019](#aoc-2019) | :white_check_mark: ([here](/kotlin/src/main/kotlin/de/florian/adventofcode/y2019)) | :x:                                       | :x:                                               | :x:                                               | 
-| [2018](#aoc-2018) | :x:                                                                                | :x:                                       | :x:                                               | :x:                                               | 
-| [2017](#aoc-2017) | :x:                                                                                | :x:                                       | :x:                                               | :white_check_mark: ([here](/typescript/src/2017)) | 
-| [2016](#aoc-2016) | :x:                                                                                | :x:                                       | :white_check_mark: ([here](/rust/src/y2016/days)) | :x:                                               | 
-| [2015](#aoc-2015) | :white_check_mark: ([here](/kotlin/src/main/kotlin/de/florian/adventofcode/y2015)) | :x:                                       | :white_check_mark: ([here](/rust/src/y2015/days)) | :x:                                               | 
+| Year              | Kotlin                                                                             | Python                                    | Rust                                              | TypeScript                                        | CPP                                        | 
+| ----------------- | ---------------------------------------------------------------------------------- | ----------------------------------------- | ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------ | 
+| [2024](#aoc-2024) | :x:                                                                                | :x:                                       | :x:                                               | :x:                                               | :white_check_mark: ([here](/cpp/src/2024)) | 
+| [2023](#aoc-2023) | :x:                                                                                | :x:                                       | :x:                                               | :white_check_mark: ([here](/typescript/src/2023)) | :x:                                        | 
+| [2022](#aoc-2022) | :x:                                                                                | :x:                                       | :x:                                               | :white_check_mark: ([here](/typescript/src/2022)) | :x:                                        | 
+| [2021](#aoc-2021) | :white_check_mark: ([here](/kotlin/src/main/kotlin/de/florian/adventofcode/y2021)) | :x:                                       | :x:                                               | :x:                                               | :x:                                        | 
+| [2020](#aoc-2020) | :white_check_mark: ([here](/kotlin/src/main/kotlin/de/florian/adventofcode/y2020)) | :x:                                       | :x:                                               | :x:                                               | :x:                                        | 
+| [2019](#aoc-2019) | :white_check_mark: ([here](/kotlin/src/main/kotlin/de/florian/adventofcode/y2019)) | :x:                                       | :x:                                               | :x:                                               | :x:                                        | 
+| [2018](#aoc-2018) | :x:                                                                                | :x:                                       | :x:                                               | :x:                                               | :x:                                        | 
+| [2017](#aoc-2017) | :x:                                                                                | :x:                                       | :x:                                               | :white_check_mark: ([here](/typescript/src/2017)) | :x:                                        | 
+| [2016](#aoc-2016) | :x:                                                                                | :x:                                       | :white_check_mark: ([here](/rust/src/y2016/days)) | :x:                                               | :x:                                        | 
+| [2015](#aoc-2015) | :white_check_mark: ([here](/kotlin/src/main/kotlin/de/florian/adventofcode/y2015)) | :x:                                       | :white_check_mark: ([here](/rust/src/y2015/days)) | :x:                                               | :x:                                        | 
 
 
 ## Yearly Overview
 ### AoC 2024 
-| Day                                                                                                  | 
-| ---------------------------------------------------------------------------------------------------- | 
+| Day                                                                                                  | CPP                                   | 
+| ---------------------------------------------------------------------------------------------------- | ------------------------------------- | 
+| [01 - Historian Hysteria](https://adventofcode.com/2024/day/1)                                       | [Day 01 CPP](/cpp/src/2024/day01.cpp) | 
 
 ### AoC 2023 
 | Day                                                                                                  | TypeScript                                         | 
@@ -51,33 +52,33 @@
 | [25 - Snowverload](https://adventofcode.com/2023/day/25)                                             | -                                                  | 
 
 ### AoC 2022 
-| Day                                                                                                  | Kotlin                                                                          | TypeScript                                         | 
-| ---------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | -------------------------------------------------- | 
-| [01 - Calorie Counting](https://adventofcode.com/2022/day/1)                                         | [Day 01 Kotlin](/kotlin/src/main/kotlin/de/florian/adventofcode/y2022/Day01.kt) | [Day 01 TypeScript](/typescript/src/2022/day01.ts) | 
-| [02 - Rock Paper Scissors](https://adventofcode.com/2022/day/2)                                      | -                                                                               | [Day 02 TypeScript](/typescript/src/2022/day02.ts) | 
-| [03 - Rucksack Reorganization](https://adventofcode.com/2022/day/3)                                  | -                                                                               | [Day 03 TypeScript](/typescript/src/2022/day03.ts) | 
-| [04 - Camp Cleanup](https://adventofcode.com/2022/day/4)                                             | -                                                                               | [Day 04 TypeScript](/typescript/src/2022/day04.ts) | 
-| [05 - Supply Stacks](https://adventofcode.com/2022/day/5)                                            | -                                                                               | [Day 05 TypeScript](/typescript/src/2022/day05.ts) | 
-| [06 - Tuning Trouble](https://adventofcode.com/2022/day/6)                                           | -                                                                               | [Day 06 TypeScript](/typescript/src/2022/day06.ts) | 
-| [07 - No Space Left On Device](https://adventofcode.com/2022/day/7)                                  | -                                                                               | [Day 07 TypeScript](/typescript/src/2022/day07.ts) | 
-| [08 - Treetop Tree House](https://adventofcode.com/2022/day/8)                                       | -                                                                               | [Day 08 TypeScript](/typescript/src/2022/day08.ts) | 
-| [09 - Rope Bridge](https://adventofcode.com/2022/day/9)                                              | -                                                                               | [Day 09 TypeScript](/typescript/src/2022/day09.ts) | 
-| [10 - Cathode-Ray Tube](https://adventofcode.com/2022/day/10)                                        | -                                                                               | -                                                  | 
-| [11 - Monkey in the Middle](https://adventofcode.com/2022/day/11)                                    | -                                                                               | -                                                  | 
-| [12 - Hill Climbing Algorithm](https://adventofcode.com/2022/day/12)                                 | -                                                                               | -                                                  | 
-| [13 - Distress Signal](https://adventofcode.com/2022/day/13)                                         | -                                                                               | -                                                  | 
-| [14 - Regolith Reservoir](https://adventofcode.com/2022/day/14)                                      | -                                                                               | -                                                  | 
-| [15 - Beacon Exclusion Zone](https://adventofcode.com/2022/day/15)                                   | -                                                                               | -                                                  | 
-| [16 - Proboscidea Volcanium](https://adventofcode.com/2022/day/16)                                   | -                                                                               | -                                                  | 
-| [17 - Pyroclastic Flow](https://adventofcode.com/2022/day/17)                                        | -                                                                               | -                                                  | 
-| [18 - Boiling Boulders](https://adventofcode.com/2022/day/18)                                        | -                                                                               | -                                                  | 
-| [19 - Not Enough Minerals](https://adventofcode.com/2022/day/19)                                     | -                                                                               | -                                                  | 
-| [20 - Grove Positioning System](https://adventofcode.com/2022/day/20)                                | -                                                                               | -                                                  | 
-| [21 - Monkey Math](https://adventofcode.com/2022/day/21)                                             | -                                                                               | -                                                  | 
-| [22 - Monkey Map](https://adventofcode.com/2022/day/22)                                              | -                                                                               | -                                                  | 
-| [23 - Unstable Diffusion](https://adventofcode.com/2022/day/23)                                      | -                                                                               | -                                                  | 
-| [24 - Blizzard Basin](https://adventofcode.com/2022/day/24)                                          | -                                                                               | -                                                  | 
-| [25 - Full of Hot Air](https://adventofcode.com/2022/day/25)                                         | -                                                                               | -                                                  | 
+| Day                                                                                                  | TypeScript                                         | 
+| ---------------------------------------------------------------------------------------------------- | -------------------------------------------------- | 
+| [01 - Calorie Counting](https://adventofcode.com/2022/day/1)                                         | [Day 01 TypeScript](/typescript/src/2022/day01.ts) | 
+| [02 - Rock Paper Scissors](https://adventofcode.com/2022/day/2)                                      | [Day 02 TypeScript](/typescript/src/2022/day02.ts) | 
+| [03 - Rucksack Reorganization](https://adventofcode.com/2022/day/3)                                  | [Day 03 TypeScript](/typescript/src/2022/day03.ts) | 
+| [04 - Camp Cleanup](https://adventofcode.com/2022/day/4)                                             | [Day 04 TypeScript](/typescript/src/2022/day04.ts) | 
+| [05 - Supply Stacks](https://adventofcode.com/2022/day/5)                                            | [Day 05 TypeScript](/typescript/src/2022/day05.ts) | 
+| [06 - Tuning Trouble](https://adventofcode.com/2022/day/6)                                           | [Day 06 TypeScript](/typescript/src/2022/day06.ts) | 
+| [07 - No Space Left On Device](https://adventofcode.com/2022/day/7)                                  | [Day 07 TypeScript](/typescript/src/2022/day07.ts) | 
+| [08 - Treetop Tree House](https://adventofcode.com/2022/day/8)                                       | [Day 08 TypeScript](/typescript/src/2022/day08.ts) | 
+| [09 - Rope Bridge](https://adventofcode.com/2022/day/9)                                              | [Day 09 TypeScript](/typescript/src/2022/day09.ts) | 
+| [10 - Cathode-Ray Tube](https://adventofcode.com/2022/day/10)                                        | -                                                  | 
+| [11 - Monkey in the Middle](https://adventofcode.com/2022/day/11)                                    | -                                                  | 
+| [12 - Hill Climbing Algorithm](https://adventofcode.com/2022/day/12)                                 | -                                                  | 
+| [13 - Distress Signal](https://adventofcode.com/2022/day/13)                                         | -                                                  | 
+| [14 - Regolith Reservoir](https://adventofcode.com/2022/day/14)                                      | -                                                  | 
+| [15 - Beacon Exclusion Zone](https://adventofcode.com/2022/day/15)                                   | -                                                  | 
+| [16 - Proboscidea Volcanium](https://adventofcode.com/2022/day/16)                                   | -                                                  | 
+| [17 - Pyroclastic Flow](https://adventofcode.com/2022/day/17)                                        | -                                                  | 
+| [18 - Boiling Boulders](https://adventofcode.com/2022/day/18)                                        | -                                                  | 
+| [19 - Not Enough Minerals](https://adventofcode.com/2022/day/19)                                     | -                                                  | 
+| [20 - Grove Positioning System](https://adventofcode.com/2022/day/20)                                | -                                                  | 
+| [21 - Monkey Math](https://adventofcode.com/2022/day/21)                                             | -                                                  | 
+| [22 - Monkey Map](https://adventofcode.com/2022/day/22)                                              | -                                                  | 
+| [23 - Unstable Diffusion](https://adventofcode.com/2022/day/23)                                      | -                                                  | 
+| [24 - Blizzard Basin](https://adventofcode.com/2022/day/24)                                          | -                                                  | 
+| [25 - Full of Hot Air](https://adventofcode.com/2022/day/25)                                         | -                                                  | 
 
 ### AoC 2021 
 | Day                                                                                                  | Kotlin                                                                          | 
