@@ -3,11 +3,18 @@
 #include <string>
 #include <string_view>
 #include <filesystem>
+#include <ranges>
 
 struct FileData {
     std::string content;
     size_t char_count;
     size_t line_count;
+
+    auto getLines() const {
+        return content | std::views::split('\n') | std::views::transform([](auto&& rng) {
+            return std::string(rng.begin(), rng.end());
+        });
+    }
 };
 
 FileData readFile(const std::string& filename) {
