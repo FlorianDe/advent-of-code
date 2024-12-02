@@ -21,6 +21,7 @@
 | Day                                                                                                  | CPP                                   | 
 | ---------------------------------------------------------------------------------------------------- | ------------------------------------- | 
 | [01 - Historian Hysteria](https://adventofcode.com/2024/day/1)                                       | [Day 01 CPP](/cpp/src/2024/day01.cpp) | 
+| [02 - Red-Nosed Reports](https://adventofcode.com/2024/day/2)                                        | [Day 02 CPP](/cpp/src/2024/day02.cpp) | 
 
 ### AoC 2023 
 | Day                                                                                                  | TypeScript                                         | 
