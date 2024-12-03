@@ -42,6 +42,8 @@
         "variant": "cpp",
         "vector": "cpp",
         "algorithm": "cpp",
-        "istream": "cpp"
+        "istream": "cpp",
+        "ostream": "cpp",
+        "regex": "cpp"
     }
 }
