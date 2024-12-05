@@ -44,7 +44,7 @@ template <NumericRange Range> bool isSafe(Range&& range, const int maxValueDelta
 
 int main() {
 	auto start = std::chrono::high_resolution_clock::now();
-	auto file = readFile("src/2024/inputs/day02.txt");
+	auto file = readFile("../generated/aoc/inputs/2024/day02.txt");
 	auto lines = file.getLines();
 	auto isSafeForDelta3 = [](auto&& range) { return isSafe(range, 3); };
 
@@ -55,7 +55,7 @@ int main() {
 		if (isSafeForDelta3(row)) {
 			safeCount++;
 		} else {
-			for (int i = 0; i < row.size(); i++) {
+			for (size_t i=0; i < row.size(); i++) {
 				if (isSafeForDelta3(copyDropAt(row, i))) {
 					safeWithDampenerCount++;
 					break;

@@ -42,7 +42,7 @@ int part02(std::vector<int> left, std::vector<int> right) {
 
 int main() {
 	auto start = std::chrono::high_resolution_clock::now();
-	auto file = readFile("src/2024/inputs/day01.txt");
+	auto file = readFile("../generated/aoc/inputs/2024/day01.txt");
 
 	std::vector<int> left, right;
 	left.reserve(file.line_count);
@@ -54,11 +54,12 @@ int main() {
 		left.push_back(l);
 		right.push_back(r);
 	}
-
-	std::cout << part01(left, right) << std::endl;
-	std::cout << part02(left, right) << std::endl;
+	auto part1 = part01(left, right);
+	auto part2 = part02(left, right);
 
 	auto end = std::chrono::high_resolution_clock::now();
 	std::chrono::duration<double, std::milli> duration_ms = end - start;
 	std::cout << "Execution time: " << duration_ms.count() << " ms" << std::endl;
+	std::cout << part1 << std::endl;
+	std::cout << part2 << std::endl;
 };

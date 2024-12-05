@@ -11,9 +11,11 @@ struct FileData {
     size_t line_count;
 
     auto getLines() const {
-        return content | std::views::split('\n') | std::views::transform([](auto&& rng) {
-            return std::string(rng.begin(), rng.end());
-        });
+        std::vector<std::string> lines;
+        for (auto&& rng : content | std::views::split('\n')) {
+            lines.push_back(std::string(rng.begin(), rng.end()));
+        }
+        return lines;
     }
 };
 

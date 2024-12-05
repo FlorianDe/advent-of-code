@@ -7,7 +7,7 @@
 
 int main() {
 	auto start = std::chrono::high_resolution_clock::now();
-	auto file = readFile("src/2024/inputs/day03.txt");
+	auto file = readFile("../generated/aoc/inputs/2024/day03.txt");
 
 	std::unordered_map<std::string, bool> shouldProcessLookup = {{"do()", true}, {"don't()", false}};
 	auto shouldProcessNextMultiplications{true};
