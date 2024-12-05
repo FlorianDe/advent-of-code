@@ -4,7 +4,8 @@
   "description": "Advent of Code CLI",
   "type": "commonjs",
   "scripts": {
-    "generate:readme": "ts-node ./cli.ts"
+    "generate:readme": "ts-node ./cli.ts generate:readme",
+    "download:input": "ts-node ./cli.ts download:input"
   },
   "keywords": [
     "aoc"
