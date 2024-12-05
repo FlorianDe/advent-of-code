@@ -1,19 +1,18 @@
 #include "../utils/containers.cpp"
 #include "../utils/files.cpp"
 #include <algorithm>
-#include <cmath>
-#include <format>
+#include <chrono>
 #include <iostream>
 #include <ranges>
-#include <set>
 #include <sstream>
 #include <string>
 #include <string_view>
 #include <unordered_map>
+#include <unordered_set>
 #include <vector>
 
-std::unordered_map<int, std::set<int>> extractOrderings(std::string_view ordersStr) {
-	std::unordered_map<int, std::set<int>> order;
+std::unordered_map<int, std::unordered_set<int>> extractOrderings(std::string_view ordersStr) {
+	std::unordered_map<int, std::unordered_set<int>> order;
 	std::istringstream stream{std::string(ordersStr)};
 	std::string line;
 	while (std::getline(stream, line)) {
@@ -33,23 +32,12 @@ std::vector<std::vector<int>> extractUpdates(std::string_view updatesStr) {
 	std::string line;
 	while (std::getline(stream, line)) {
 		std::vector<int> updateInstructions;
-		for (auto&& part : line | std::ranges::views::split(std::string_view(","))) {
-			std::string valueStr(part.begin(), part.end());
-			updateInstructions.emplace_back(std::stoi(valueStr));
+		for (auto&& part : line | std::ranges::views::split(',')) {
+			updateInstructions.emplace_back(std::stoi(std::string(part.begin(), part.end())));
 		}
 		updates.push_back(updateInstructions);
 	}
 	return updates;
-}
-
-inline bool orderingsComparator(int a, int b, const std::unordered_map<int, std::set<int>>& orders) {
-	if (orders.count(a) && orders.at(a).count(b)) {
-		return true;
-	}
-	if (orders.count(b) && orders.at(b).count(a)) {
-		return false;
-	}
-	return a < b;
 }
 
 int main() {
@@ -77,31 +65,18 @@ int main() {
 		return a < b;
 	};
 
-	auto getMiddleElement = [](const std::vector<int>& row) {
-		auto idx = row.size() / 2;
-		return row[idx];
-	};
+	auto getMiddleElement = [](const std::vector<int>& row) { return row[row.size() / 2]; };
 
-	auto fixOrdering = [orders, orderingsComparator](std::vector<int> row) {
+	auto fixOrdering = [](std::vector<int> row, auto orderingsComparator) {
 		std::ranges::sort(row, orderingsComparator);
-		return row;
+		return std::move(row);
 	};
 
 	for (auto&& row : updates) {
-		auto valid = true;
-		for (size_t i = 0; i < row.size(); i++) {
-			auto curOrdering = orders[row[i]];
-			for (size_t j = 0; j < i && valid; j++) {
-				if (curOrdering.contains(row[j])) {
-					valid = false;
-					break;
-				}
-			}
-		}
-		if (valid) {
+		if (std::ranges::is_sorted(row, orderingsComparator)) {
 			part1 += getMiddleElement(row);
 		} else {
-			part2 += getMiddleElement(fixOrdering(row));
+			part2 += getMiddleElement(fixOrdering(row, orderingsComparator));
 		}
 	}
 
@@ -110,4 +85,4 @@ int main() {
 	std::cout << "Execution time: " << duration_ms.count() << " ms" << std::endl;
 	std::cout << "Part 01: " << (part1) << std::endl;
 	std::cout << "Part 02: " << (part2) << std::endl;
-};
+}
