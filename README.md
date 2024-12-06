@@ -24,6 +24,8 @@
 | [02 - Red-Nosed Reports](https://adventofcode.com/2024/day/2)                                        | [Day 02 CPP](/cpp/src/2024/day02.cpp) | 
 | [03 - Mull It Over](https://adventofcode.com/2024/day/3)                                             | [Day 03 CPP](/cpp/src/2024/day03.cpp) | 
 | [04 - Ceres Search](https://adventofcode.com/2024/day/4)                                             | [Day 04 CPP](/cpp/src/2024/day04.cpp) | 
+| [05 - Print Queue](https://adventofcode.com/2024/day/5)                                              | [Day 05 CPP](/cpp/src/2024/day05.cpp) | 
+| [06 - Guard Gallivant](https://adventofcode.com/2024/day/6)                                          | [Day 06 CPP](/cpp/src/2024/day06.cpp) | 
 
 ### AoC 2023 
 | Day                                                                                                  | TypeScript                                         | 
