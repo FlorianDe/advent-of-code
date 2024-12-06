@@ -74,24 +74,25 @@ inline auto isInsideMap(const std::complex<int64_t>& pos, const size_t width, co
 				 std::cmp_greater_equal(pos.imag(), 0) && std::cmp_less(pos.imag(), height);
 };
 
-int part01(const FileData& file, const size_t width, const size_t height, std::complex<int64_t> pos) {
+auto part01(const FileData& file, const size_t width, const size_t height, std::complex<int64_t> pos) {
 	auto dir = std::complex<int64_t>(-1, 0); // start position looking up
-	std::unordered_set<std::complex<std::int64_t>> visitedPositions{pos};
+	std::unordered_set<std::complex<std::int64_t>> visitedPositions;
 
 	while (isInsideMap(pos, width, height)) {
+		visitedPositions.insert(pos);
 		auto nextPos = pos + dir;
 		if (getChar(nextPos, file, width) == '#') {
 			dir *= COMPLEX_CLOCKWISE_ROTATION;
-			continue;
+		} else {
+			pos = nextPos;
 		}
-		pos = nextPos;
-		visitedPositions.insert(pos);
 	}
 
-	return visitedPositions.size() - 1;
+	return visitedPositions;
 }
 
-int part02(const FileData& file, const size_t width, const size_t height, std::complex<int64_t> initialPos) {
+int part02(const FileData& file, const size_t width, const size_t height, std::complex<int64_t> initialPos,
+					 const std::unordered_set<std::complex<int64_t>>& originalVisitedPositions) {
 	using PosType = decltype(initialPos);
 
 	auto hasLoop = [&file, &initialPos, &width, &height](PosType addedBlockage) {
@@ -102,12 +103,12 @@ int part02(const FileData& file, const size_t width, const size_t height, std::c
 		std::unordered_set<std::pair<PosType, DirectionType>> visitedPositionsWithDirections;
 
 		while (isInsideMap(pos, width, height)) {
-			auto insertResult = visitedPositionsWithDirections.insert(std::make_pair(pos, dir));
-			if (!insertResult.second) {
-				return true; // loop found!
-			}
 			auto nextPos = pos + dir;
 			if (addedBlockage == nextPos || getChar(nextPos, file, width) == '#') {
+				auto insertResult = visitedPositionsWithDirections.insert(std::make_pair(pos, dir));
+				if (!insertResult.second) {
+					return true; // loop found!
+				}
 				dir *= COMPLEX_CLOCKWISE_ROTATION;
 			} else {
 				pos = nextPos;
@@ -120,7 +121,7 @@ int part02(const FileData& file, const size_t width, const size_t height, std::c
 	for (int64_t y = 0; std::cmp_less(y, height); y++) {
 		for (int64_t x = 0; std::cmp_less(x, width); x++) {
 			const std::complex<int64_t> blockagePos{y, x};
-			if (getChar(blockagePos, file, width) != '#' && blockagePos != initialPos && hasLoop(blockagePos)) {
+			if (originalVisitedPositions.contains(blockagePos) && blockagePos != initialPos && hasLoop(blockagePos)) {
 				loopCount++;
 			}
 		}
@@ -136,9 +137,10 @@ int main() {
 	const auto width = getMapWidth(file.content);
 	const auto height = file.line_count;
 	const auto initialPos = findGuardPosition(file.content, width);
+	const auto originalVisitedPositions = part01(file, width, height, initialPos);
 
-	auto part1 = part01(file, width, height, initialPos);
-	auto part2 = part02(file, width, height, initialPos);
+	auto part1 = originalVisitedPositions.size();
+	auto part2 = part02(file, width, height, initialPos, originalVisitedPositions);
 
 	auto end = std::chrono::high_resolution_clock::now();
 	std::chrono::duration<double, std::milli> duration_ms = end - start;

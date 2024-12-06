@@ -86,27 +86,28 @@ inline auto isInsideMap(const Vec2<int64_t>& pos, const size_t width, const size
 const std::array<Vec2<int64_t>, 4> DIRECTIONS = {Vec2<int64_t>{-1LL, 0LL}, Vec2<int64_t>{0LL, 1LL},
 																								 Vec2<int64_t>{1LL, 0LL}, Vec2<int64_t>{0LL, -1LL}};
 
-int part01(const FileData& file, const size_t width, const size_t height, Vec2<int64_t> pos) {
+auto part01(const FileData& file, const size_t width, const size_t height, Vec2<int64_t> pos) {
 	auto dirIdx = 0; // start position looking up
-	std::unordered_set<Vec2<std::int64_t>> visitedPositions{pos};
+	std::unordered_set<Vec2<std::int64_t>> visitedPositions;
 
 	while (isInsideMap(pos, width, height)) {
+		visitedPositions.insert(pos);
 		auto nextPos = pos + DIRECTIONS[dirIdx];
 		if (getChar(nextPos, file, width) == '#') {
 			dirIdx = (++dirIdx) % DIRECTIONS.size();
-			continue;
+		} else {
+			pos = nextPos;
 		}
-		pos = nextPos;
-		visitedPositions.insert(pos);
 	}
 
-	return visitedPositions.size() - 1;
+	return visitedPositions;
 }
 
-int part02(const FileData& file, const size_t width, const size_t height, Vec2<int64_t> initialPos) {
+int part02(const FileData& file, const size_t width, const size_t height, Vec2<int64_t> initialPos,
+					 const std::unordered_set<Vec2<std::int64_t>>& originalVisitedPositions) {
 	using PosType = decltype(initialPos);
 
-	auto hasLoop = [&file, &initialPos, &width, &height](PosType addedBlockage) {
+	auto hasLoop = [&file, &width, &height, &initialPos](PosType addedBlockage) {
 		auto dirIdx = 0; // start position looking up
 		auto pos = initialPos;
 
@@ -114,12 +115,12 @@ int part02(const FileData& file, const size_t width, const size_t height, Vec2<i
 		std::unordered_set<std::pair<PosType, DirectionType>> visitedPositionsWithDirections;
 
 		while (isInsideMap(pos, width, height)) {
-			auto insertResult = visitedPositionsWithDirections.insert(std::make_pair(pos, dirIdx));
-			if (!insertResult.second) {
-				return true; // loop found!
-			}
 			auto nextPos = pos + DIRECTIONS[dirIdx];
 			if (addedBlockage == nextPos || getChar(nextPos, file, width) == '#') {
+				auto insertResult = visitedPositionsWithDirections.insert(std::make_pair(pos, dirIdx));
+				if (!insertResult.second) {
+					return true; // loop found!
+				}
 				dirIdx = (++dirIdx) % DIRECTIONS.size();
 			} else {
 				pos = nextPos;
@@ -132,7 +133,7 @@ int part02(const FileData& file, const size_t width, const size_t height, Vec2<i
 	for (int64_t y = 0; std::cmp_less(y, height); y++) {
 		for (int64_t x = 0; std::cmp_less(x, width); x++) {
 			const Vec2<int64_t> blockagePos{y, x};
-			if (getChar(blockagePos, file, width) != '#' && blockagePos != initialPos && hasLoop(blockagePos)) {
+			if (originalVisitedPositions.contains(blockagePos) && blockagePos != initialPos && hasLoop(blockagePos)) {
 				loopCount++;
 			}
 		}
@@ -148,9 +149,10 @@ int main() {
 	const auto width = getMapWidth(file.content);
 	const auto height = file.line_count;
 	const auto initialPos = findGuardPosition(file.content, width);
+	const auto originalVisitedPositions = part01(file, width, height, initialPos);
 
-	auto part1 = part01(file, width, height, initialPos);
-	auto part2 = part02(file, width, height, initialPos);
+	auto part1 = originalVisitedPositions.size();
+	auto part2 = part02(file, width, height, initialPos, originalVisitedPositions);
 
 	auto end = std::chrono::high_resolution_clock::now();
 	std::chrono::duration<double, std::milli> duration_ms = end - start;
