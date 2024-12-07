@@ -1,8 +1,41 @@
 ---
-Language: Cpp
 BasedOnStyle: LLVM
-ColumnLimit: 120
+
+IndentWidth: 2
 TabWidth: 2
 UseTab: Always
+ColumnLimit: 120
+
+# Alignment
+AlignConsecutiveAssignments: true
+AlignConsecutiveDeclarations: true
+AlignTrailingComments: true
+
+# Bracing style
+BraceWrapping:
+  AfterFunction: true
+  AfterControlStatement: true
+  AfterEnum: true
+  AfterStruct: true
+  AfterClass: true
+  AfterNamespace: true
+  AfterUnion: true
+
+# Pointer and reference alignment
 PointerAlignment: Left
+ReferenceAlignment: Left
+
+# Space management
+SpacesInAngles: false
+SpacesInParentheses: false
+SpaceBeforeParens: ControlStatements
+SpaceBeforeCpp11RangeBasedForLoop: true
+
+# Function and method definitions
+SpaceAfterCStyleCast: true
+SpaceBeforeCpp11LambdaBody: true
+
+# Commenting style
+CommentPragmas: '^clang'
+InsertTrailingCommas: true
 ---
