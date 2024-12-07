@@ -416,7 +416,7 @@ export const getInput = async (opts: {year: number, day: number, account?: strin
 		fs.mkdirSync(aocYearInputsFolderPath, {recursive: true})
 	}
 	console.log(`Writing input for ${year}/${day} to: ${aocInputsFilePath}`)
-	fs.writeFileSync(aocInputsFilePath, input)
+	fs.writeFileSync(aocInputsFilePath, input.trimEnd())
   };
 
 const downloadInput = async (opts: {year: number, day: number, token: string}): Promise<string> => {

@@ -4,6 +4,7 @@
 #include <string_view>
 #include <filesystem>
 #include <ranges>
+#include <vector>
 
 struct FileData {
     std::string content;
