@@ -26,6 +26,8 @@
 | [04 - Ceres Search](https://adventofcode.com/2024/day/4)                                             | [Day 04 CPP](/cpp/src/2024/day04.cpp) | 
 | [05 - Print Queue](https://adventofcode.com/2024/day/5)                                              | [Day 05 CPP](/cpp/src/2024/day05.cpp) | 
 | [06 - Guard Gallivant](https://adventofcode.com/2024/day/6)                                          | [Day 06 CPP](/cpp/src/2024/day06.cpp) | 
+| [07 - Bridge Repair](https://adventofcode.com/2024/day/7)                                            | [Day 07 CPP](/cpp/src/2024/day07.cpp) | 
+| [08 - Resonant Collinearity](https://adventofcode.com/2024/day/8)                                    | [Day 08 CPP](/cpp/src/2024/day08.cpp) | 
 
 ### AoC 2023 
 | Day                                                                                                  | TypeScript                                         | 
