@@ -393,6 +393,9 @@ export const getCurrentDay = (year: number): number => {
 	return currentDay;
 };
 
+const getSampleInputFileName = (day: number) => {
+	return `day${padDay(day)}_sample.txt`
+}
 const getInputFileName = (day: number) => {
 	return `day${padDay(day)}.txt`
 }
@@ -454,6 +457,34 @@ const downloadInput = async (opts: {year: number, day: number, token: string}): 
 	throw new Error(`Unknown error occoured.`);
 }
 
+const getSampleInput = async (opts: {year: number, day: number}): Promise<void> => {
+	const {
+		year,
+		day
+	} = opts;
+	validateDate({day, year});
+
+	const aocYearInputsFolderPath =  path.join(aocInputsFolderPath, `${year}`);
+	const aocSampleInputsFilePath =  path.join(aocYearInputsFolderPath, getSampleInputFileName(day));
+	if(fs.existsSync(aocSampleInputsFilePath) && fs.readFileSync(aocSampleInputsFilePath, 'utf8').trim().length !== 0){
+		return;
+	}
+
+	const htmlContent = await getExerciseFile(year, day);
+	const regex = /<pre><code>([\s\S]*?)<\/code><\/pre>/;
+	// const regex = /<pre[^>]*>\s*<code[^>]*>\s*([\s\S]*?)\s*<\/code>\s*<\/pre>/i;
+	const match = htmlContent.match(regex);
+
+	if(!match || match.length <= 1){
+		throw Error(`Could not determine sample input from ${year} ${day}`);
+	}
+	if(!fs.existsSync(aocYearInputsFolderPath)){
+		fs.mkdirSync(aocYearInputsFolderPath, {recursive: true})
+	}
+	console.log(`Writing sample input for ${year}/${day} to: ${aocSampleInputsFilePath}`)
+	fs.writeFileSync(aocSampleInputsFilePath, match[1].trimEnd())
+  };
+
 const run = async () => {
 	const [command, ...args] = process.argv.slice(2)
 	switch(command){
@@ -461,9 +492,15 @@ const run = async () => {
 			if(args.length != 2){
 				throw new Error("When running the 'download:input' command you have to pass a year and day.")
 			}
-			getInput({
-				year: parseInt(args[0]),
-				day: parseInt(args[1])
+			const year = parseInt(args[0]);
+			const day = parseInt(args[1]);
+			await getInput({
+				year,
+				day
+			})
+			await getSampleInput({
+				year,
+				day
 			})
 			break;
 		case "generate:readme": 
