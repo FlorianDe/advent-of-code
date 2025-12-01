@@ -4,6 +4,7 @@
 ## Languages used per year
 | Year              | Kotlin                                                                             | Python                                    | Rust                                              | TypeScript                                        | CPP                                        | 
 | ----------------- | ---------------------------------------------------------------------------------- | ----------------------------------------- | ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------ | 
+| [2025](#aoc-2025) | :x:                                                                                | :x:                                       | :x:                                               | :white_check_mark: ([here](/typescript/src/2025)) | :x:                                        | 
 | [2024](#aoc-2024) | :x:                                                                                | :x:                                       | :x:                                               | :x:                                               | :white_check_mark: ([here](/cpp/src/2024)) | 
 | [2023](#aoc-2023) | :x:                                                                                | :x:                                       | :x:                                               | :white_check_mark: ([here](/typescript/src/2023)) | :x:                                        | 
 | [2022](#aoc-2022) | :x:                                                                                | :x:                                       | :x:                                               | :white_check_mark: ([here](/typescript/src/2022)) | :x:                                        | 
@@ -17,6 +18,11 @@
 
 
 ## Yearly Overview
+### AoC 2025 
+| Day                                                                                                  | TypeScript                                         | 
+| ---------------------------------------------------------------------------------------------------- | -------------------------------------------------- | 
+| [01 - Secret Entrance](https://adventofcode.com/2025/day/1)                                          | [Day 01 TypeScript](/typescript/src/2025/day01.ts) | 
+
 ### AoC 2024 
 | Day                                                                                                  | CPP                                   | 
 | ---------------------------------------------------------------------------------------------------- | ------------------------------------- | 
@@ -28,6 +34,23 @@
 | [06 - Guard Gallivant](https://adventofcode.com/2024/day/6)                                          | [Day 06 CPP](/cpp/src/2024/day06.cpp) | 
 | [07 - Bridge Repair](https://adventofcode.com/2024/day/7)                                            | [Day 07 CPP](/cpp/src/2024/day07.cpp) | 
 | [08 - Resonant Collinearity](https://adventofcode.com/2024/day/8)                                    | [Day 08 CPP](/cpp/src/2024/day08.cpp) | 
+| [09 - Disk Fragmenter](https://adventofcode.com/2024/day/9)                                          | [Day 09 CPP](/cpp/src/2024/day09.cpp) | 
+| [10 - Hoof It](https://adventofcode.com/2024/day/10)                                                 | -                                     | 
+| [11 - Plutonian Pebbles](https://adventofcode.com/2024/day/11)                                       | -                                     | 
+| [12 - Garden Groups](https://adventofcode.com/2024/day/12)                                           | -                                     | 
+| [13 - Claw Contraption](https://adventofcode.com/2024/day/13)                                        | -                                     | 
+| [14 - Restroom Redoubt](https://adventofcode.com/2024/day/14)                                        | -                                     | 
+| [15 - Warehouse Woes](https://adventofcode.com/2024/day/15)                                          | -                                     | 
+| [16 - Reindeer Maze](https://adventofcode.com/2024/day/16)                                           | -                                     | 
+| [17 - Chronospatial Computer](https://adventofcode.com/2024/day/17)                                  | -                                     | 
+| [18 - RAM Run](https://adventofcode.com/2024/day/18)                                                 | -                                     | 
+| [19 - Linen Layout](https://adventofcode.com/2024/day/19)                                            | -                                     | 
+| [20 - Race Condition](https://adventofcode.com/2024/day/20)                                          | -                                     | 
+| [21 - Keypad Conundrum](https://adventofcode.com/2024/day/21)                                        | -                                     | 
+| [22 - Monkey Market](https://adventofcode.com/2024/day/22)                                           | -                                     | 
+| [23 - LAN Party](https://adventofcode.com/2024/day/23)                                               | -                                     | 
+| [24 - Crossed Wires](https://adventofcode.com/2024/day/24)                                           | -                                     | 
+| [25 - Code Chronicle](https://adventofcode.com/2024/day/25)                                          | -                                     | 
 
 ### AoC 2023 
 | Day                                                                                                  | TypeScript                                         | 

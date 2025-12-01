@@ -57,7 +57,7 @@ export namespace Files {
 		assertValidYear(year);
 		assertValidDay(day);
 		const fileName = `day${String(day).padStart(2, '0')}.txt`;
-		const inputTextPath = path.resolve(__dirname, "..", `${year}`, 'inputs', fileName);
+		const inputTextPath = path.resolve(__dirname, "../../../generated/aoc/inputs/", `${year}`, fileName);
 		const fileContent = readFileSync(inputTextPath, {encoding: "utf-8"});
 		if(fileContent.trim().length === 0){
 			throw new Error(`The content of the puzzle input for the year ${year} day ${day} is empty!`);
