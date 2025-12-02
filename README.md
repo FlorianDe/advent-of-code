@@ -22,6 +22,7 @@
 | Day                                                                                                  | TypeScript                                         | 
 | ---------------------------------------------------------------------------------------------------- | -------------------------------------------------- | 
 | [01 - Secret Entrance](https://adventofcode.com/2025/day/1)                                          | [Day 01 TypeScript](/typescript/src/2025/day01.ts) | 
+| [02 - Gift Shop](https://adventofcode.com/2025/day/2)                                                | [Day 02 TypeScript](/typescript/src/2025/day02.ts) | 
 
 ### AoC 2024 
 | Day                                                                                                  | CPP                                   | 
