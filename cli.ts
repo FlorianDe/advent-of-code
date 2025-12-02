@@ -322,7 +322,7 @@ function retrieveSessionToken(keyName: string): string | null {
 
 // macOS Keychain: Store and Retrieve
 function storeInKeychain(token: string, keyName: string): void {
-	execSync(`security add-generic-password -s ${keyName} -a \${USER} -w "${token}"`);
+	execSync(`security add-generic-password -U -s ${keyName} -a $USER -w "${token}"`);
 }
 function getFromKeychain(keyName: string): string | null {
   try {
@@ -423,38 +423,26 @@ export const getInput = async (opts: {year: number, day: number, account?: strin
   };
 
 const downloadInput = async (opts: {year: number, day: number, token: string}): Promise<string> => {
-	const {
-		year,
-		day,
-		token
-	} = opts;
+    const { year, day, token } = opts;
+    const inputUrl = `/${year}/day/${day}/input`;
+    const options: RequestInit = {
+        method: 'GET',
+        headers: {
+            'Cookie': `session=${token}`
+        },
+    };
+    const res = await fetch(`${BASE_URL_AOC}${inputUrl}`, options);
+    const responseText = await res.text();
 
-	const inputUrl = `/${year}/day/${day}/input`;
-	try {
-		const options: RequestInit = {
-			method: 'GET',
-			headers: {
-				'Cookie': `session=${token}`
-			},
-		};
-		const res = await fetch(`${BASE_URL_AOC}${inputUrl}`, options);
-		const responseText = await res.text();
+    if (res.status >= 300) {
+        if (res.status === 401 || (res.status === 400 && res.headers.get('set-cookie')?.startsWith('session=;'))) {
+            const newToken = await promptForNewSessionToken();
+            return await downloadInput({ year, day, token: newToken });
+        }
+        throw new Error(`Request failed: ${res.status} ${responseText}`);
+    }
 
-		if (res.status >= 300) throw new Error(responseText);
-		return responseText;
-	} catch (err) {
-		const response = (err as any)?.response;
-		if (response && response.status >= 300 && response.status < 500) {
-			if ( response.status === 401 || (response.status === 400 && response.headers['set-cookie']?.some((cookie: string) => cookie.startsWith('session=;')))) {
-				//TODO: Retry
-				// await promptForNewSessionToken();
-				// downloadInput(year, day);
-			}
-			throw new Error(`Request failed: ${err}`);
-		}
-	}
-
-	throw new Error(`Unknown error occoured.`);
+    return responseText;
 }
 
 const getSampleInput = async (opts: {year: number, day: number}): Promise<void> => {
