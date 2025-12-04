@@ -24,7 +24,7 @@
 | [01 - Secret Entrance](https://adventofcode.com/2025/day/1)                                          | [Day 01 TypeScript](/typescript/src/2025/day01.ts) | 
 | [02 - Gift Shop](https://adventofcode.com/2025/day/2)                                                | [Day 02 TypeScript](/typescript/src/2025/day02.ts) | 
 | [03 - Lobby](https://adventofcode.com/2025/day/3)                                                    | [Day 03 TypeScript](/typescript/src/2025/day03.ts) | 
-| [04 - Printing Department](https://adventofcode.com/2025/day/4)                                      | -                                                  | 
+| [04 - Printing Department](https://adventofcode.com/2025/day/4)                                      | [Day 04 TypeScript](/typescript/src/2025/day04.ts) | 
 
 ### AoC 2024 
 | Day                                                                                                  | CPP                                   | 
