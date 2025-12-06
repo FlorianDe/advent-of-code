@@ -1,7 +1,7 @@
 {
   "name": "aoc2021",
   "version": "1.0.0",
-  "description": "Advent of Code typescript solutions",
+  "description": "Advent of Code Typescript solutions",
   "type": "commonjs",
   "scripts": {
     "start": "ts-node ./src/index.ts",
@@ -26,8 +26,7 @@
     "eslint-plugin-import": "^2.29.0",
     "prettier": "^2.8.8"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "engines": {
     "node": ">=20.0.0"
   }

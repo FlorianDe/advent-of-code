@@ -212,9 +212,28 @@ const generateReadmeContent = async (solutions: Solutions, config: Config): Prom
 			return title ?? '-'
 		}
 
+		const isExerciseAvailable = (year: number, day: number): boolean => {
+			const now = new Date();
+			const germanyDate = new Date(
+				now.toLocaleString("en-US", { timeZone: "Europe/Berlin" })
+			);
+
+			const currentYear = germanyDate.getFullYear();
+			const currentDay = germanyDate.getDate();
+			const currentHour = germanyDate.getHours();
+
+			if (year < currentYear) return true;
+			if (year === currentYear) {
+				if (day < currentDay) return true;
+				if (day === currentDay && currentHour >= 6) return true;
+			}
+
+			return false;
+		}
+
 		let tableRows = ""
 		for (let day = 1; day <= 25 ; day++) {
-			if(year < currentYear || (year === currentYear && day <= new Date().getDate())){ //workaround should also check time with timezone
+			if(isExerciseAvailable(year, day)){
 				const aocDayDescription = await getExerciseFile(year, day);
 				const dayTitle = extractDayTitle(aocDayDescription).replace(/Day.\d{0,2}:/, "").trim();
 				const languagesColumnContents = availableLangSolutions.map(lang => solutions[year]?.[lang]?.[day] ? getLanguageSolutionLink(lang,  year, day) : spaceLanguageColumn("-", lang))
