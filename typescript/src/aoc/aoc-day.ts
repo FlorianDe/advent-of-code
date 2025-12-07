@@ -68,6 +68,14 @@ export abstract class AocDay implements IAocDay {
 		return this._input;
 	}
 
+	protected _sampleInput: string | undefined;
+	get sampleInput(): string {
+		if (!this._sampleInput) {
+			throw Error(`The private _sampleInput field of the AocDay implementation ${this.constructor.name} was not set.`);
+		}
+		return this._sampleInput;
+	}
+
 	private readonly _year: Year | undefined;
 	get year(): Year {
 		if (!this._year) {
@@ -88,6 +96,7 @@ export abstract class AocDay implements IAocDay {
 
 	solve(): Solution {
 		this._input = Files.readContent(this.year, this.day);
+		this._sampleInput = Files.readContent(this.year, this.day, true);
 		const aocDayKey = `${this.year}${this.day}`;
 		const aocDayValue = `${this.constructor.name}`;
 		const instanceValue = AocDay.instances.get(aocDayKey);
