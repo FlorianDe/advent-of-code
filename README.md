@@ -27,6 +27,7 @@
 | [04 - Printing Department](https://adventofcode.com/2025/day/4)                                      | [Day 04 TypeScript](/typescript/src/2025/day04.ts) | 
 | [05 - Cafeteria](https://adventofcode.com/2025/day/5)                                                | [Day 05 TypeScript](/typescript/src/2025/day05.ts) | 
 | [06 - Trash Compactor](https://adventofcode.com/2025/day/6)                                          | [Day 06 TypeScript](/typescript/src/2025/day06.ts) | 
+| [07 - Laboratories](https://adventofcode.com/2025/day/7)                                             | [Day 07 TypeScript](/typescript/src/2025/day07.ts) | 
 
 ### AoC 2024 
 | Day                                                                                                  | CPP                                   | 
